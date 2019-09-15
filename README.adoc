@@ -1,105 +1,453 @@
 ---
 permalink: /guides/app-monitoring/
 ---
-:projectid: app-monitoring
+:projectid: guide-codewind
 :page-layout: guide-multipane
-:page-duration: 60 minutes
-:page-releasedate: 2019-08-27
+:page-duration: TBD
+:page-releasedate: TBD
 :page-guide-category: monitoring
 :page-essential: true
 :page-essential-order: 1
-:page-description: Learn how to monitor applications on OpenShift with Prometheus and Grafana.
+:page-description: To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. 
 :guide-author: Kabanero
-:page-tags: ['monitoring', 'prometheus', 'grafana']
+:page-tags: ['kabanero', 'appsody', 'codewind', 'tekton']
 :page-permalink: /guides/{projectid}
-:repo-description: Visit the https://kabanero.io/guides/{projectid}.html[website] for the rendered version of the guide.
-= Application Monitoring on OpenShift with Prometheus and Grafana
+:repo-description: TBD
+= Guide on Using Codewind
 
-== Introduction
+== Table of Contents:  
 
-For application monitoring on OpenShift, you need to set up your own Prometheus and Grafana deployments. There are two approaches for setting up Prometheus on OpenShift. 
+I. Objectives
+II. Using this guide
+III. Overview--Kabanero
+IV. Overview--Appsody
+V. Overview--Codewind
+VI.Overview--Tekton
+VII. Developing a simple app with VS Code
+VIII. Developing a simple app with VS Eclipse 
+IX. Developing a simple app with Eclipse 
+X. What you have learned
+XI. Nice work! Where to next
 
-	A. The first approach is via Prometheus Operator and Service Monitor, which is the newest and the most popular way of setting up Prometheus on a Kubernetes system. 
-	B. Use the legacy way of deploying Prometheus on OpenShift without the Prometheus Operator. 
+== I. Objectives:
 
-This guide explores both approaches to set up Prometheus on Openshift. 
+Guide's objective:
+* To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. 
 
-=== Deploy A Sample Application with MP Metrics Endpoint
-Prior to deploying Prometheus, ensure that there is a running application that has a service endpoint for outputting metrics in Prometheus format. 
+Learnaing objective:
+* Gain a conceptual understanding of Kabanero’s functions and Kabanero’s subcomponents: Appsody, Codewind, Tekton.
 
-It is assumed such a running application has been deployed to the OpenShift cluster inside a project/namespace called `myapp`, and that the Prometheus metrics endpoint is exposed on path `/metrics`.
+* Learn how Codewind works within Kabanero and with Kabanero’s other parts, Appsody and Tekton, in order to build cloud native applications. 
 
-== A: Deploy Prometheus - Prometheus Operator
+* Install Codewind on Eclipse Che, VS Code, or Eclipse so you can instantly begin work on their projects.
 
-The Prometheus Operator is an open-source project originating from CoreOS and exists as as part of their Kubernetes Operator offering. The Kubernetes Operator framework is becoming the standard for Prometheus deployments on a Kubernetes system. When the Prometheus Operator is installed on the Kubernetes system, you no longer need to hand-configure the Prometheus configuration. Instead, you create ServiceMonitor resources for each of the service endpoints that needs to be monitored: this makes daily maintainenance of the Prometheus server a lot easier. An architecture overview of the Prometheus Operator is shown below:
+* Practice using your IDE and Codewind's  features on sample application so you can work independently after completing this guide.   
 
-image::/img/guide/prometheusOperator.png[link="/img/guide/prometheusOperator.png" alt="Prometheus Operator"]
+== II. Using this guide 
 
-There are two ways to install the Prometheus Operator. 
+The following steps illustrate how you will use this guide and what you will learn as you complete each step:
 
-	1. One is through Openshift Operator Lifecycle Manager or OLM, (which is still in its technology preview phase in release 3.11 of Openshift). This approach installs an older version of the Prometheus Operator that is supported by Red Hat. 
-	2. Another approach is to install Prometheus Operator by following the guide from the https://github.com/coreos/prometheus-operator[Prometheus Operator git repository]. Since OLM is still at its technical preview stage and requires a Red Hat subscription account for installation, this guide showsthe installation without OLM to target a larger audience base. The guide will be updated with the OLM approach when Kabanero officially adopts Openshift 4.x.
+1. Read an overview of Kabanero, Appsody, Codewind, and Tekton. 
+2. Choose which IDE (VS Code, Eclipse, Eclipse Che) you want to install for Codewind (you have the opportunity to learn how to install all three).
+3. Practice creating an application with the IDE of your choice.
+4. Learn how to use the IDE while creating your application. 
+5. Review what you have learned throughout this guide. 
+6. Discover further readings to continue your education. 
 
-=== Prometheus Operator Installation without OLM
+Diagram of using this guide:
+image: https://github.com/kabanero-io/draft-guide-codewind-guide/blob/master/assets/Using%20this%20guide.png
 
-The following procedure is based on the https://github.com/coreos/prometheus-operator/blob/master/Documentation/user-guides/getting-started.md[Prometheus Getting Started] guide maintained by the CoreOS team, with the added inclusion of Openshift commands needed to complete each step.   
+== III. Kabanero Overview: 
 
+Kabanero: 
+Kabanero is an open source project focused on bringing together foundational open source technologies into a modern microservices-based framework. Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, without having to spend time defining container images or building infrastructure. Focus on developing new applications and let the Kabanero tools do the heavy lifting of building and packaging deployment-ready containers.
 
-1. Clone the Prometheus Operator repository
+Kabanero has four fey features:
 
-[role="command"]
-----
-[root@rhel7-openshift ~]# git clone https://github.com/coreos/prometheus-operator
-----
+1. Kabanero Collections:
+Kabanero Collections are logical collections, stored and managed in a GitHub repository. During the development phase, the collection seamlessly empowers developers to build applications and microservices to the architect’s standard configuration. Collections allow standardization and customization. 
 
-2. Open the `bundle.yaml` file and change all instances of **namespace: default** to the namespace where you want to deploy the Prometheus Operator. For example, if the namespace is **namespace: prometheus-operator**, you might need to create a new namespace called **prometheus-operator** if it does not exit on your Openshift cluster.
+2. Kabanero Foundation:
+Installing Kabanero Foundation will allow you to activate, manage, and share collections with your team and maintain governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. 
 
-3. Save the `bundle.yaml` file and deploy the Prometheus Operator using the following command.
+3. Managment CLI:
+Using the Command Line Interface (CLI), you choose a collection and configure it. You then can set up your pipelines and share the pipelines with your development team so they can start to build applications. 
 
-[role="command"]
-----
-[root@rhel7-openshift ~]# oc apply -f bundle.yaml
-----
+4. Developer Tools: 
+Developer tools give your team access to the collection(s) that have been activated in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio Code or Eclipse and also can be used in conjunction with their CLI using XCode. 
 
-You can receive an error message like the one below when running the command.
+Kabanero's components and how it all works: 
+Kabanero has three components, which all work together to execute Kabanero’s features and tasks. These components are:
 
-[source,role="no_copy"]
-----
-Error creating: pods "prometheus-operator-5b8bfd696-" is forbidden: unable to validate against any security context constraint: [spec.containers[0].securityContext.securityContext.runAsUser: Invalid value: 65534: must be in the ranges: [1000070000, 1000079999]]
-----
+1. Appsody, the architect phase
+2. Codewind, the coding phase
+3. Tekton, the deployment phase
 
-To correct the error, change the **runAsUser: 65534** field in the `bundle.yaml` file to a valid value that is in the range specified in the error message. In this case, setting **runAsUser: 1000070000** in the `bundle.yaml` would be in the valid range. Save the `bundle.yaml` file and re-deploy the Prometheus Operator.
+You need to use all three of Kabanero’s components in order to build cloud native applications. You install Kabanero to ensure integration and cooperation among its three components, and each component requires its own installations. 
 
-[role="command"]
-----
-[root@rhel7-openshift ~]# oc delete -f bundle.yaml
-[root@rhel7-openshift ~]# oc apply -f bundle.yaml
-----
+With cloud native projects, architects and developers face new challenges, like having to work with microservices and more technology than they used to. Kabanero helps these professionals select the technologies and cloud services best for their needs. Here is an explanation of Kabanero and all its moving parts:
 
-service_monitor.yaml
-[source, yaml, linenums, role='code-column']
-----
-include::code/service_monitor.yaml[]
-----
+With Kabanero, Champ (a solution architect) builds preconfigured stacks which allow him to decide which languages and frameworks are used, how they are used, and how they interact with his platform. The platform Champ builds includes the preconfigured stacks and decided framework. Champ then gives these platforms to Jane (the lead developer), so now she can build and deploy microservices from the given preconfigured stacks.  During the Appsody stage in Kabanero, the stacks, frameworks, and platforms are created. 
 
-prometheus.yaml
-[source, yaml, linenums, role='code-column']
-----
-include::code/prometheus.yaml[]
-----
+Jane discovers the stacks available to her by using the CLI. Once Jane has chosen the project type she wants to build, and once she has made a new directory for her application, she can type “app dev init” in the CLI. This command pulls down Champ’s stacks and adds them to Jane’s application, giving her an iterative development environment using her application and Champs’s specified platform runtime stack. This stack also allows Jane to develop in any IDE of her choosing, like Eclipse or VS Code. During the Codewind stage in Kabanero, the code is built, tested, and debugged. 
 
-prometheus_snippet.yaml
-[source, yaml, linenums, role='code-column']
-----
-include::code/prometheus_snippet.yaml[]
-----
+The CLI provides a build command to allow Jane to set up a Continuous Integration and Continuous Delivery (CI/CD) pipeline. Jane can use this pipeline for her Git project or for a local build. When Jane commits the code to GitHub, the pipeline pushes the code to a Kubernetes cluster on OpenShift Cloud. If Jane is building locally, the pipeline takes Jane’s application and Champ’s stacks and uses the two to build a full microservice inside a Docker container that can be used anywhere. During the Tekton stage in Kabanero, the CI/CD pipeline automates and deploys code. 
 
-The [hotspot file=0]`service_monitor.yaml` file defines a ServiceMonitor resource. A ServiceMonitor defines a service endpoint that needs to be monitored by the Prometheus instance. Take for example, an application with label **app: myapp** from namespace **myapp**, and metrics endpoints defined in **spec.endpoints** to be monitored by the Promtheus Operator. If the metrics endpoint is secured, you can define a secured endpoint with authentication configuration by following the https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#endpoint[endpoint] API documentation of Prometheus Operator.
+See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. Read about each component and its specific functions in greater detail throughout this guide.
 
-[role="code_command hotspot file=0", subs="quotes"]
-----
-Create the `service_monitor.yaml` file
-----
+Diagram of Kabanero's components:
+image: https://github.com/kabanero-io/draft-guide-codewind-guide/blob/master/assets/Kabanero%20and%20its%20moving%20parts.png
+
+== IV. Appsody Overview:
+
+Appsody:
+Appsody simplifies Kabanero's creation of cloud-native applications in containers. Appsody provides pre-configured container images, or stacks, that are prebuilt, cloud optimized development and production configurations for different languages and Microservice frameworks. These stacks provide a foundation to build applications for Kubernetes and Knative deployments.
+
+If you're a software developer, Appsody aims to remove the burden of managing the full software development stack. With Appsody, you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code! Basically, by providing stacks and templates, Appsody allows developers to focus solely on coding during the Codewind phase.    
+
+Appsody consists of three key features:
+
+1. Appsody Stacks:
+Appsody provides pre-configured application stacks that enable rapid development of quality microservice-based applications. Stacks include a base container image and project templates which act as a starting point for your application development.
+
+Appsody stacks include language runtimes, frameworks and any additional libraries and tools that are required to simplify your local application development. Stacks are an easy way to manage consistency and adopt best practices across many applications.
+
+Appsody Hub is the central point of control for Appsody Stacks where you can find available stacks, create new stacks, or modify existing ones. By making changes to the stacks in the hub, you can deploy updates to any application that's been built on them, simply by restarting the application.
+
+2. Appsody CLI:
+Working with the stacks, Appsody CLI provides commands that implement the full development lifecycle, so it has the ability to create a new or enable an existing application. Appsody CLI also provides commands to run, test, debug, and build an image and deploy it to Kubernetes. Appsody CLI works with Codewind so you can develop with the stacks directly in your choice of IDE using Codewind’s plugins. 
+
+3. Appsody Deploy:
+Appsody deploy allows you to create a standard production optimized container image of your cloud native Microservices then deploy that image into Kubernetes using the deploy command. Appsody deploy utilizes Appsody Operator which minimizes the configuration required to deploy the Microservice so now you can deploy using a serverless deployment either through Knative or a Kubernetes service. 
+
+== V. Codewind Overview: 
+
+Codewind:
+Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che. As an open source project under Eclipse, Codewind gives you a set of tools for you to use to build high quality cloud native applications for Kubernetes regardless of the IDE or language you use. When Codewind enhances your IDE, you can run your applications in a Docker container. So you now can rapidly iterate, debug, and perform test apps inside containers with the same environment as production and in your preferred IDE. During the Codewind phase, developers can simply code and not concern themselves with any other tasks. 
+
+Codewind consists of four key features: 
+
+1. Inner Loop:
+Codewind adopts the “inner loop” practice which basically is an iterative process that developers perform as they write, build, or debug code. The inner loop mostly has three parts: experimentation (example, coding), feedback collection (example, building) and tax (example, committing). Adopting the inner loop, Codewind quickens development and feedback.   
+
+2. Container Development Everywhere:
+Codewind can support application development on any Kubernetes cluster. If you use a local IDE plugin, Codewind provides support on the Docker. With Codewind, you use the same tools in local or hosted IDE and run in local containers or deploy directly on Kubernetes.    
+
+3. IDE Support:
+Codewind delivers native IDE integration with VS Code, Eclipse, and Eclipse Che. This way, regardless of your preferred IDE or language, you can use Codewind to build your cloud native application. 
+
+4. Developer Performanace Monitoring:
+Codewind automatically analyzes applications for performance issues. Configurable load testing makes code changes which immediately show through live and historical performance graphs. 
+
+==VI. Tekton Overview:
+
+Tekton:
+Tekton is a Kubernetes-native open-source framework for creating continuous integration and delivery (CI/CD) systems. Tekton lets you build, test, and deploy across multiple cloud providers or on-premises systems. Tekton provides open-source components to help standardize your CI/CD tooling and processes across vendors, languages, and deployment environments. 
+
+Tekton pipeline is a collection of tasks, and each task is a set of instructions to execute within a container. The pipeline can then automate common activities in Kubernetes environments. Tekton takes all the work, development, build, and code from the Codewind phase and uses its pipeline to deploy Codewind’s outcomes to OpenShift Cloud. 
+
+Tekton consists of four key features: 
+
+1. Steps:
+A step is a container spec which is a container image with all the information that you need to run it. Steps are also the most basic building blocks of Tekton pipelines.  Steps run in sequential order on the same Kubernetes node. 
+
+2. Tasks:
+Tasks are made up by steps. Tasks are custom resource definitions (CRDs). Tasks can run sequentially or concurrently on different nodes. Tasks make up a pipeline. 
+
+3. Pipelines:
+Pipelines express the order of the tasks. Pipelines connect the outputs of one task with the inputs of another. Pipelines: git clones, build docker images, publish images to repositories, and deploys images. 
+
+4. Dashboard: 
+The dashboard is the web user interface for Tekton Pipelines. The dashboard inputs runtime parameters into pipeline runs and views the execution logs of the pipeline runs. A deployment pipeline is an automated manifestation of your software process from version control all the way to production. It ensures a consistent, repeatable and reliable way to release software to production including new releases, fixes, security patches basically anything released to production should always go through this automated process.
+
+== VII. Developing a simple app with VS Code:
+
+Table of Contents
+I. Why VS Code?
+II. Imnstall Codewind for VS Code
+III. Use Appsody template
+IV. Create project
+V. Edit file
+VI. Test new endpoint
+VII. Debug app
+VIII. Run app
+IX. Nice work and where to next 
+
+I. WHy VS Code? 
+You can use Codewind for Visual Studio Code to develop and debug your containerizedprojects from within VS Code.
+
+Write code, track application and build statuses, view project logs, and run your application.
+Codewind for VS Code supports development of Microprofile/Java EE, Java Lagom, Spring, Node.js, Go, Python, Swift, and Appsody containerized projects.
+In addition, the tools support easily debugging Microprofile/Java EE, Spring, and Node.js applications.
+
+The VS Code tools are open source. You can browse the code, open issues, and contribute.
+
+II. Install Codewind for VS Code
+The Codewind installation includes two parts:
+
+1. The VS Code extension installs when you install Codewind from the VS Code Marketplace or when you install by searching in the VS Code Extensions view.
+
+2. The Codewind back end containers install after you click Install when you are prompted. After you click Install, the necessary images are downloaded from the internet. The download is approximately 1 GB.
+
+3. Optional: If you don’t click Install when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over Codewind, and click the switch so that it changes to the On position. The window appears. 
+
+The following images are pulled. These images together form the Codewind back end:
+
+1. eclipse/codewind-initialize-amd64
+2. eclipse/codewind-performance-amd64
+3. eclipse/codewind-pfe-amd64
+When the installation is complete, the extension is ready to use, and you area prompted to open the Codewind workspace.
+
+Codewind creates the `~/codewind-workspace` folder to contain your projects. 
+On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
+You can open the `codewind-workspace` or a project within the workspace as your VS Code workspace. 
+
+III. Use Appsody template
+Instructions here on how to retrieve and use Appsody’s templates. 
+
+IV. Create project
+NOTE: Users will work with the a Java application that comes with the VS Code installation. 
+1. Make the new project your workspace folder. This project is the only project that you need to work on for this tutorial.
+    * Right-click the project and select `Open Folder as Workspace.` VS Code restarts with the selected project folder as the workspace folder.
+2. Open the Project Overview page to view project information.
+    * Right-click the project and select `Show Project Overview.`
+
+V. Edit file
+1. Open a file to edit. For example, modify the health endpoint of the default Node.js project.
+    * Open a Javascript file, such as `nodeproject/server/routers/health.js.`
+    * Make a code change.
+    * For example, you can add the following endpoint to `health.js` after the existing `GET `/ middleware function:
+    * router.get('/test', function (req, res, next) {
+    * return res.send("Yep, it worked!!");
+    * });
+    * Codewind detects the file changes and restarts your application.
+        * In the Codewind tree, the application stops and starts again as the application server restarts.
+        * You can also see nodemon restart the project in the application logs.
+At this point, your VS Code should look similar to the following example: 
+
+VI. Test default endpoint
+1. To make sure your code change was picked up, test your new endpoint.
+    * Right-click the project and select Open in Browser. The project root endpoint opens in the browser, and the IBM Cloud Starter page appears.
+    * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL.
+    * See the new response: (screenshot image here)
+
+VII. Debug app
+ 1. You can debug your application within the container. To debug a containerized project, restart it in Debug mode.
+    * Right-click the project and select Restart in Debug Mode.
+    * The project restarts into the Debugging state.
+    * A debug launch configuration is created in `nodeproject/.vscode/launch.json.`
+    * The debugger attaches, and VS Code opens the Debug view.
+    * You can detach and reattach the debugger at any time, as long as the project is still in Debug mode.
+    
+ 2. All of the VS Code debug functionality is now available.
+    * If your code matches the screenshot, set a breakpoint at line 13 in `health.js.`
+    * Refresh the new endpoint page that you opened in step 7 so that a new request is made, and the breakpoint gets hit.
+    
+VS Code suspends your application at the breakpoint. Here you can step through the code, inspect variables, see the call stack, and evaluate expressions in the Debug Console.
+
+VII. Run app
+Instructions here on how to run the application the user just built.
+
+IX. Nice work and were to next
+If you would also like to use Codewind with Eclipse Che or Eclipse, you may read instructions to install and work with those IDEs in this guide. 
+To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
+
+== VIII. Developing a simple app with Eclipse
+
+Table of contents
+I. Why Eclipse?
+II. Install Codewind for Eclipse
+III. Use Appsody template
+IV. Create project
+V. Edit project files
+VI. Test new endpoint
+VII. Debug app
+VIII. Run app
+IX. Nice work and where to next 
+
+I. Why Eclipse?
+You can use Codewind for Eclipse to develop and debug your containerized projects from within Eclipse.
+
+Use the Eclipse IDE to create and make modifications to your application, see the application and build status, view the logs, and run your application.
+Codewind for Eclipse supports development of Microprofile/Java EE, Java Lagom, Spring, Node.js, Go, Python, Swift, and Appsody containerized projects. 
+In addition, Microprofile/Java EE, Spring, and Node.js applications can be debugged.
+
+The Eclipse tools are open source. You are encouraged to browse the code, open issues, and contribute.
+
+II. Install Codewind for Eclipse 
+The Codewind installation includes two parts:
+
+1. The Eclipse plug-in installs when you install Codewind from the Eclipse Marketplace or when you install by searching in the Eclipse Extensions view.
+2. The Codewind back end containers install after you click Install when you are prompted. After you click Install, the necessary images are downloaded from the internet. The download is approximately 1 GB.
+3. Optional: If you don’t click Install when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over Codewind, and click the switch so that it changes to the On position. The window appears.
+
+The following images are pulled. These images together form the Codewind back end:
+
+1. eclipse/codewind-initialize-amd64
+2. eclipse/codewind-performance-amd64
+3. eclipse/codewind-pfe-amd64
+
+When the installation is complete, the extension is ready to use, and you are prompted to open the Codewind workspace. 
+
+Codewind creates the `~/codewind-workspace` folder to contain your projects.
+On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
+You can open the `codewind-workspace` or a project within the workspace as your Eclipse workspace. 
+
+III. Use Appsody template
+Instructions here on how to retrieve and use Appsody’s templates. 
+
+IV. Create project
+NOTE: users will work with the Java application that comes with the Eclipse installation.
+
+You can work with your Codewind projects from the Codewind Explorer view in Eclipse.
+If the view is not showing, open it as follows:
+
+1. From the Window menu select Show View > Other.
+2. Start to type Codewind in the filter field or locate and expand the Codewind entry in the list.
+3. Select Codewind Explorer and click Open.
+
+To create a new project or import an existing one, use the context menu on the Local Projects item in the Codewind Explorer view. 
+Once you have a project, the first thing you might want to do is import your project into the Eclipse workspace so you can start editing files.
+This also makes your source available for debugging.
+
+Each project shows the application status and the build status. 
+A context menu on each project enables you to open your application in a browser, view application and build logs, restart in debug mode, and much more.
+
+When auto build is enabled for a project, Codewind for Eclipse detects when you make a change and starts a build automatically.
+If you have disabled auto build for the project, you can start a build manually when you have made a change or a set of changes:
+
+1. Right-click your project in the Codewind Explorer view and select Build.
+2. Wait for the project state to return to Running or Debugging in the Codewind Explorer view and then test your changes.
+
+V. Edit project files
+Editing actions are available by right clicking on the project in the Codewind Explorer view.
+Most actions are only available if the project is enabled.
+
+Some actions open the default Eclipse browser. 
+If you find that the default Eclipse browser cannot handle the content, change the default browser by navigating to Window > Web Browser and selecting a different browser from the list.
+
+Project settings tell Codewind more about the specifics of your project and can affect the status and/or behavior of your application. 
+You can configure project settings when you:
+
+1. Go to Project Overview page that is accessible from a project’s context menu, or, 
+2. Find the project settings in the .cw-settings file of the project which you can edit
+
+VI. Test new endpoint
+Instructions here on how to test the new endpoint
+
+VII. Debug app
+Codewind for Eclipse supports debugging Microprofile/Java EE and Spring projects.
+The tools also help you set up a debug session for Node.js projects in a Chromium based browser.
+
+Debugging Microprofile/Java EE and Spring projects:
+Prerequisites:
+
+1. If you have not done so already, import your project into Eclipse to make the source available to debug.
+    * Right-click your project in the Codewind Explorer view.
+    * Select Import Project.
+2. If you need to debug any initialization code, set breakpoints in this code now. You can also set breakpoints in your application code at this time.
+3. [Optional] If you want to use Java hot code replace and change your code while you debug, disable automatic builds.
+    * To disable automatic builds, right-click your project in the Codewind Explorer view and select Disable Auto Build.
+    * If you want to start a build while automatic builds are disabled, right-click your project and select Build.
+    * Enable automatic builds again after you finish debugging. To enable automatic builds again, right-click your project and select Enable Auto Build.
+
+Debugging:
+ 1. To restart your Microprofile/Java EE or Spring application in debug mode, right-click on the project in the Codewind Explorer view and select Restart in Debug Mode.
+ 
+ 2. If you did not import your project into Eclipse you are prompted to do so now. Select one of the following:
+    * Yes: To import your project into Eclipse and make the source available for debugging.
+    * No: To continue restarting in debug mode without importing your project. There might be no source available for debugging if you choose this option.
+    * Cancel: To cancel restarting your application in debug mode.
+    
+ 3. Wait for the project state to change to Debugging or for the debugger to stop at a breakpoint if you are debugging initialization code. If you have hit a breakpoint in initialization code, skip to step 6.
+ 
+ 4. If you have not done so already, set up any breakpoints that you need in your application.
+ 
+ 5. Reload your application in the browser or, if you have not already opened it, right-click on the project in the "Codewind Explorer" view and select "Open Application."
+ 
+ 6. Eclipse prompts you to switch to the "Debug" perspective when a breakpoint is hit or you can switch manually by clicking "Window > Perspective > Open Perspective > Debug." All of the Java debug capabilities provided by Eclipse including various breakpoint types, the "Variables" and "Expression" views, and hot code replace are available to you.
+ 
+ 7. You can reload your application multiple times to isolate the problem. However, if you are debugging initialization code, you must restart your project in debug mode to stop in this code again.
+ 
+ 8. When you have finished debugging, you can switch back to run mode. Right-click on your project in the "Codewind Explorer" view and select "Restart in Run Mode."
+ 
+ Attaching to a project in debug mode: 
+ If you detached from the debugger, or you restarted Eclipse, you can attach the debugger without restarting again:
+ 
+ 1. Make sure to do any of the setup you need such as importing your project into Eclipse and setting breakpoints. For more information, see Prerequisites.
+ 
+ 2. Right click on your project in the "Codewind Explorer" view and select "Attach Debugger." The "Attach Debugger" menu item is only available for Codewind/Java EE or Spring applications in debug mode if a debugger is not already attached.
+ 
+Debugging Node.js projects: 
+You can restart your Node.js application in debug mode and the tools help you launch a debug session in a Chromium based web browser:
+
+1. To restart your Node.js application in debug mode, right-click on the project in the "Codewind Explorer" view and select "Restart in Debug Mode."
+
+2. If you are prompted to select a Chromium based web browser for launching the debug session:
+	* Select a Chromium based browser from the list of browsers or use the "Manage" link to add one.
+	* Optionally, select to always use this browser for Node.js debugging.
+	* Click "OK" to continue.
+
+3. Launch a debug session using the information on the "Node.js Debug Inspector URL" dialog:
+	* Click the "Copy URL to Clipboard" button to copy the debug URL.
+	* Click the "Open Browser" button to open the browser you selected in the previous dialog.
+	* Paste the URL into the address bar of the browser to start the debug session.
+
+Launching a debug session for a Node.js project in debug mode: 
+You can launch a debug session for a Node.js project that is already in debug mode.
+
+1. Right-click on your project in the "Codewind Explorer" view and select "Launch Debug Session." This menu item is only available for Node.js projects in debug mode if a debug session is not already started.
+
+2. Follow the steps in Debugging Node.js projects to launch a Node.js debug session, starting with step 2.
+
+Modifying the Node.js debug launch preferences: 
+To change the browser to use when launching a Node.js debug session, edit the Codewind preferences:
+
+1. Open the Eclipse preferences and select "Codewind" from the list.
+
+2. In the "Select a Chromium based web browser for launching the Node.js debugger" group, choose a Chromium based web browser from the list of browsers or add one using the "Managelink." You can also clear the selected browser by selecting "No web browser selected" in the list.
+
+3. Click "Apply and Close."
+
+VIII. Run Application 
+Instructions here on how to run the application. 
+
+IX. Nice Work and Where to Next 
+If you would like to use Codewind with Eclipse Che or VS Code, you may read instructions to install and work with those IDEs in this guide. 
+To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
+
+== IX. Developing a simple app with Eclipse Che:
+
+== X. What you have learned: 
+
+Now, at the end of this guide, you have:
+
+1.    Learned the basics and foundations of Kabanero, Appsody, Codewind, and Tekton.
+
+2.    Learned how Codewind works within Kabanero and with its other components: Appsody and Tekton.
+
+3.    Installed Codewind on your preference of Eclipse Che, VS Code, or Eclipse. 
+
+4.    Practiced how to use some of the basic features of Codewind on your preferred authoring tool. 
+
+5.    Prepared to create your own cloud native application using Codewind. 
+
+== XI. Nice Work! Where to next? 
+
+Nice work! You’ve learned the basics of Kabanero and its components: Appsody, Codewind, and Tekton. You’ve also learned how to install and use Codewind. Quite the accomplishments!
+
+Do you have ideas to make this guide better?
+	* Raise an issue on our GitHub page.
+	* Create a pull request on our GitHub page to contribute to this guide. 
+
+What do you think of our guide?
+	* Rate this guide
+
+Do you need help?
+	* Ask a question on Stack Overflow
+
+Where to next?
+	* Check out our other guides more specifically looking at Kabanero, Appsody, and Tekton. 
 
 4. Apply the `servicemonitor.yaml` file to create the ServiceMonitor resource.
 
