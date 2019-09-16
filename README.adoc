@@ -241,36 +241,38 @@ NOTE: Users will work with the a Java application that comes with the VS Code in
     * Right-click the project and select `Show Project Overview.`
 
 *V. Edit file*
-1. Open a file to edit. For example, modify the health endpoint of the default Node.js project.
-    * Open a Javascript file, such as `nodeproject/server/routers/health.js.`
-    * Make a code change.
-    * For example, you can add the following endpoint to `health.js` after the existing `GET `/ middleware function:
-    * router.get('/test', function (req, res, next) {
-    * return res.send("Yep, it worked!!");
-    * });
-    * Codewind detects the file changes and restarts your application.
-        ** In the Codewind tree, the application stops and starts again as the application server restarts.
-        ** You can also see *nodemon* restart the project in the application logs.
+
+1. Open a file to edit. For example, modify the health endpoint of the default Node.js project. +
+    * Open a Javascript file, such as `nodeproject/server/routers/health.js.` +
+    * Make a code change. +
+    * For example, you can add the following endpoint to `health.js` after the existing `GET `/ middleware function: +
+    * router.get('/test', function (req, res, next) { +
+    * return res.send("Yep, it worked!!"); +
+    * }); +
+    * Codewind detects the file changes and restarts your application. +
+        ** In the Codewind tree, the application stops and starts again as the application server restarts. +
+        ** You can also see *nodemon* restart the project in the application logs. 
+	
 At this point, your VS Code should look similar to the following example: 
 
 *VI. Test default endpoint*
 
-1. To make sure your code change was picked up, test your new endpoint.
-    * Right-click the project and select Open in Browser. The project root endpoint opens in the browser, and the *IBM Cloud Starter* page appears.
-    * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL.
+1. To make sure your code change was picked up, test your new endpoint. +
+    * Right-click the project and select Open in Browser. The project root endpoint opens in the browser, and the *IBM Cloud Starter* page appears. +
+    * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL. +
     * See the new response: (screenshot image here)
 
 *VII. Debug app*
 
- 1. You can debug your application within the container. To debug a containerized project, restart it in *Debug* mode.
-    * Right-click the project and select Restart in Debug Mode.
-    * The project restarts into the *Debugging* state.
-    * A debug launch configuration is created in `nodeproject/.vscode/launch.json.`
-    * The debugger attaches, and VS Code opens the *Debug* view.
+ 1. You can debug your application within the container. To debug a containerized project, restart it in *Debug* mode. +
+    * Right-click the project and select Restart in Debug Mode. +
+    * The project restarts into the *Debugging* state. +
+    * A debug launch configuration is created in `nodeproject/.vscode/launch.json.` +
+    * The debugger attaches, and VS Code opens the *Debug* view. +
     * You can detach and reattach the debugger at any time, as long as the project is still in *Debug* mode.
     
- 2. All of the VS Code debug functionality is now available.
-    * If your code matches the screenshot, set a breakpoint at line 13 in `health.js.`
+ 2. All of the VS Code debug functionality is now available. +
+    * If your code matches the screenshot, set a breakpoint at line 13 in `health.js.` +
     * Refresh the new endpoint page that you opened in step 7 so that a new request is made, and the breakpoint gets hit.
     
 VS Code suspends your application at the breakpoint. Here you can step through the code, inspect variables, see the call stack, and evaluate expressions in the *Debug Console.*
@@ -288,6 +290,7 @@ To continue to learn about Codewind, visit Codewind API, https://eclipse.github.
 == VIII. Developing a simple app with Eclipse
 
 *Table of contents*
+
 I. Why Eclipse? +
 II. Install Codewind for Eclipse +
 III. Use Appsody template +
@@ -432,7 +435,7 @@ Launching a debug session for a Node.js project in debug mode: 
 You can launch a debug session for a Node.js project that is already in debug mode.
 
 1. Right-click on your project in the *Codewind Explorer* view and select *Launch Debug Session.* This menu item is only available for Node.js projects in debug mode if a debug session is not already started. +
-2. Follow the steps in Debugging Node.js projects to launch a Node.js debug session, starting with step 2. +
+2. Follow the steps in Debugging Node.js projects to launch a Node.js debug session, starting with step 2. 
 
 Modifying the Node.js debug launch preferences: 
 
