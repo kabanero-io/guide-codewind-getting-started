@@ -17,19 +17,17 @@ permalink: /guides/app-monitoring/
 
 == Table of Contents:  
 
-===
-.I. Objectives
-.II. Using this guide
-.III. Overview--Kabanero
-.IV. Overview--Appsody
-.V. Overview--Codewind
-.VI.Overview--Tekton
-.VII. Developing a simple app with VS Code
-.VIII. Developing a simple app with VS Eclipse
-.IX. Developing a simple app with Eclipse
-.X. What you have learned
-.XI. Nice work! Where to next
-===
+I. Objectives +
+II. Using this guide +
+III. Overview--Kabanero +
+IV. Overview--Appsody +
+V. Overview--Codewind +
+VI.Overview--Tekton +
+VII. Developing a simple app with VS Code +
+VIII. Developing a simple app with VS Eclipse +
+IX. Developing a simple app with Eclipse +
+X. What you have learned +
+XI. Nice work! Where to next +
 
 == I. Objectives:
 
