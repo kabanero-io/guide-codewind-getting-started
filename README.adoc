@@ -54,29 +54,29 @@ The following steps illustrate how you will use this guide and what you will lea
 5. Review what you have learned throughout this guide. 
 6. Discover further readings to continue your education. 
 
-Diagram of using this guide:
+*Diagram of using this guide:*
 image: https://github.com/kabanero-io/draft-guide-codewind-guide/blob/master/assets/Using%20this%20guide.png
 
 == III. Kabanero Overview: 
 
-Kabanero: 
+*Kabanero:* 
 Kabanero is an open source project focused on bringing together foundational open source technologies into a modern microservices-based framework. Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, without having to spend time defining container images or building infrastructure. Focus on developing new applications and let the Kabanero tools do the heavy lifting of building and packaging deployment-ready containers.
 
 Kabanero has four fey features:
 
-1. Kabanero Collections:
+*1. Kabanero Collections:*
 Kabanero Collections are logical collections, stored and managed in a GitHub repository. During the development phase, the collection seamlessly empowers developers to build applications and microservices to the architect’s standard configuration. Collections allow standardization and customization. 
 
-2. Kabanero Foundation:
+*2. Kabanero Foundation:*
 Installing Kabanero Foundation will allow you to activate, manage, and share collections with your team and maintain governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. 
 
-3. Managment CLI:
+*3. Managment CLI:*
 Using the Command Line Interface (CLI), you choose a collection and configure it. You then can set up your pipelines and share the pipelines with your development team so they can start to build applications. 
 
-4. Developer Tools: 
+*4. Developer Tools:* 
 Developer tools give your team access to the collection(s) that have been activated in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio Code or Eclipse and also can be used in conjunction with their CLI using XCode. 
 
-Kabanero's components and how it all works: 
+*Kabanero's components and how it all works:* 
 Kabanero has three components, which all work together to execute Kabanero’s features and tasks. These components are:
 
 1. Appsody, the architect phase
@@ -95,74 +95,74 @@ The CLI provides a build command to allow Jane to set up a Continuous Integratio
 
 See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. Read about each component and its specific functions in greater detail throughout this guide.
 
-Diagram of Kabanero's components:
+*Diagram of Kabanero's components:*
 image: https://github.com/kabanero-io/draft-guide-codewind-guide/blob/master/assets/Kabanero%20and%20its%20moving%20parts.png
 
 == IV. Appsody Overview:
 
-Appsody:
+*Appsody:*
 Appsody simplifies Kabanero's creation of cloud-native applications in containers. Appsody provides pre-configured container images, or stacks, that are prebuilt, cloud optimized development and production configurations for different languages and Microservice frameworks. These stacks provide a foundation to build applications for Kubernetes and Knative deployments.
 
 If you're a software developer, Appsody aims to remove the burden of managing the full software development stack. With Appsody, you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code! Basically, by providing stacks and templates, Appsody allows developers to focus solely on coding during the Codewind phase.    
 
 Appsody consists of three key features:
 
-1. Appsody Stacks:
+*1. Appsody Stacks:*
 Appsody provides pre-configured application stacks that enable rapid development of quality microservice-based applications. Stacks include a base container image and project templates which act as a starting point for your application development.
 
 Appsody stacks include language runtimes, frameworks and any additional libraries and tools that are required to simplify your local application development. Stacks are an easy way to manage consistency and adopt best practices across many applications.
 
 Appsody Hub is the central point of control for Appsody Stacks where you can find available stacks, create new stacks, or modify existing ones. By making changes to the stacks in the hub, you can deploy updates to any application that's been built on them, simply by restarting the application.
 
-2. Appsody CLI:
+*2. Appsody CLI:*
 Working with the stacks, Appsody CLI provides commands that implement the full development lifecycle, so it has the ability to create a new or enable an existing application. Appsody CLI also provides commands to run, test, debug, and build an image and deploy it to Kubernetes. Appsody CLI works with Codewind so you can develop with the stacks directly in your choice of IDE using Codewind’s plugins. 
 
-3. Appsody Deploy:
+*3. Appsody Deploy:*
 Appsody deploy allows you to create a standard production optimized container image of your cloud native Microservices then deploy that image into Kubernetes using the deploy command. Appsody deploy utilizes Appsody Operator which minimizes the configuration required to deploy the Microservice so now you can deploy using a serverless deployment either through Knative or a Kubernetes service. 
 
 == V. Codewind Overview: 
 
-Codewind:
+*Codewind:*
 Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che. As an open source project under Eclipse, Codewind gives you a set of tools for you to use to build high quality cloud native applications for Kubernetes regardless of the IDE or language you use. When Codewind enhances your IDE, you can run your applications in a Docker container. So you now can rapidly iterate, debug, and perform test apps inside containers with the same environment as production and in your preferred IDE. During the Codewind phase, developers can simply code and not concern themselves with any other tasks. 
 
 Codewind consists of four key features: 
 
-1. Inner Loop:
+*1. Inner Loop:*
 Codewind adopts the “inner loop” practice which basically is an iterative process that developers perform as they write, build, or debug code. The inner loop mostly has three parts: experimentation (example, coding), feedback collection (example, building) and tax (example, committing). Adopting the inner loop, Codewind quickens development and feedback.   
 
-2. Container Development Everywhere:
+*2. Container Development Everywhere:*
 Codewind can support application development on any Kubernetes cluster. If you use a local IDE plugin, Codewind provides support on the Docker. With Codewind, you use the same tools in local or hosted IDE and run in local containers or deploy directly on Kubernetes.    
 
-3. IDE Support:
+*3. IDE Support:*
 Codewind delivers native IDE integration with VS Code, Eclipse, and Eclipse Che. This way, regardless of your preferred IDE or language, you can use Codewind to build your cloud native application. 
 
-4. Developer Performanace Monitoring:
+*4. Developer Performanace Monitoring:*
 Codewind automatically analyzes applications for performance issues. Configurable load testing makes code changes which immediately show through live and historical performance graphs. 
 
 ==VI. Tekton Overview:
 
-Tekton:
+*Tekton:*
 Tekton is a Kubernetes-native open-source framework for creating continuous integration and delivery (CI/CD) systems. Tekton lets you build, test, and deploy across multiple cloud providers or on-premises systems. Tekton provides open-source components to help standardize your CI/CD tooling and processes across vendors, languages, and deployment environments. 
 
 Tekton pipeline is a collection of tasks, and each task is a set of instructions to execute within a container. The pipeline can then automate common activities in Kubernetes environments. Tekton takes all the work, development, build, and code from the Codewind phase and uses its pipeline to deploy Codewind’s outcomes to OpenShift Cloud. 
 
 Tekton consists of four key features: 
 
-1. Steps:
+*1. Steps:*
 A step is a container spec which is a container image with all the information that you need to run it. Steps are also the most basic building blocks of Tekton pipelines.  Steps run in sequential order on the same Kubernetes node. 
 
-2. Tasks:
+*2. Tasks:*
 Tasks are made up by steps. Tasks are custom resource definitions (CRDs). Tasks can run sequentially or concurrently on different nodes. Tasks make up a pipeline. 
 
-3. Pipelines:
+*3. Pipelines:*
 Pipelines express the order of the tasks. Pipelines connect the outputs of one task with the inputs of another. Pipelines: git clones, build docker images, publish images to repositories, and deploys images. 
 
-4. Dashboard: 
+*4. Dashboard:* 
 The dashboard is the web user interface for Tekton Pipelines. The dashboard inputs runtime parameters into pipeline runs and views the execution logs of the pipeline runs. A deployment pipeline is an automated manifestation of your software process from version control all the way to production. It ensures a consistent, repeatable and reliable way to release software to production including new releases, fixes, security patches basically anything released to production should always go through this automated process.
 
 == VII. Developing a simple app with VS Code:
 
-Table of Contents
+*Table of Contents*
 I. Why VS Code?
 II. Imnstall Codewind for VS Code
 III. Use Appsody template
@@ -173,7 +173,8 @@ VII. Debug app
 VIII. Run app
 IX. Nice work and where to next 
 
-I. WHy VS Code? 
+*I. WHy VS Code?* 
+
 You can use Codewind for Visual Studio Code to develop and debug your containerizedprojects from within VS Code.
 
 Write code, track application and build statuses, view project logs, and run your application.
@@ -182,14 +183,13 @@ In addition, the tools support easily debugging Microprofile/Java EE, Spring, an
 
 The VS Code tools are open source. You can browse the code, open issues, and contribute.
 
-II. Install Codewind for VS Code
+*II. Install Codewind for VS Code*
+
 The Codewind installation includes two parts:
 
-1. The VS Code extension installs when you install Codewind from the VS Code Marketplace or when you install by searching in the VS Code Extensions view.
-
-2. The Codewind back end containers install after you click Install when you are prompted. After you click Install, the necessary images are downloaded from the internet. The download is approximately 1 GB.
-
-3. Optional: If you don’t click Install when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over Codewind, and click the switch so that it changes to the On position. The window appears. 
+1. The VS Code extension installs when you install Codewind from the VS Code Marketplace or when you install by searching in the *VS Code Extensions* view.
+2. The Codewind back end containers install after you click *Install* when you are prompted. After you click *Install*, the necessary images are downloaded from the internet. The download is approximately 1 GB.
+3. Optional: If you don’t click *Install* when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over *Codewind*, and click the switch so that it changes to the *On* position. The window appears. 
 
 The following images are pulled. These images together form the Codewind back end:
 
@@ -202,17 +202,19 @@ Codewind creates the `~/codewind-workspace` folder to contain your projects.
 On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
 You can open the `codewind-workspace` or a project within the workspace as your VS Code workspace. 
 
-III. Use Appsody template
+*III. Use Appsody template*
+
 Instructions here on how to retrieve and use Appsody’s templates. 
 
-IV. Create project
+*IV. Create project*
+
 NOTE: Users will work with the a Java application that comes with the VS Code installation. 
 1. Make the new project your workspace folder. This project is the only project that you need to work on for this tutorial.
     * Right-click the project and select `Open Folder as Workspace.` VS Code restarts with the selected project folder as the workspace folder.
-2. Open the Project Overview page to view project information.
+2. Open the *Project Overview* page to view project information.
     * Right-click the project and select `Show Project Overview.`
 
-V. Edit file
+*V. Edit file*
 1. Open a file to edit. For example, modify the health endpoint of the default Node.js project.
     * Open a Javascript file, such as `nodeproject/server/routers/health.js.`
     * Make a code change.
@@ -222,39 +224,42 @@ V. Edit file
     * });
     * Codewind detects the file changes and restarts your application.
         * In the Codewind tree, the application stops and starts again as the application server restarts.
-        * You can also see nodemon restart the project in the application logs.
+        * You can also see *nodemon* restart the project in the application logs.
 At this point, your VS Code should look similar to the following example: 
 
-VI. Test default endpoint
+*VI. Test default endpoint*
+
 1. To make sure your code change was picked up, test your new endpoint.
-    * Right-click the project and select Open in Browser. The project root endpoint opens in the browser, and the IBM Cloud Starter page appears.
+    * Right-click the project and select Open in Browser. The project root endpoint opens in the browser, and the *IBM Cloud Starter* page appears.
     * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL.
     * See the new response: (screenshot image here)
 
-VII. Debug app
- 1. You can debug your application within the container. To debug a containerized project, restart it in Debug mode.
+*VII. Debug app*
+
+ 1. You can debug your application within the container. To debug a containerized project, restart it in *Debug* mode.
     * Right-click the project and select Restart in Debug Mode.
-    * The project restarts into the Debugging state.
+    * The project restarts into the *Debugging* state.
     * A debug launch configuration is created in `nodeproject/.vscode/launch.json.`
-    * The debugger attaches, and VS Code opens the Debug view.
-    * You can detach and reattach the debugger at any time, as long as the project is still in Debug mode.
+    * The debugger attaches, and VS Code opens the *Debug* view.
+    * You can detach and reattach the debugger at any time, as long as the project is still in *Debug* mode.
     
  2. All of the VS Code debug functionality is now available.
     * If your code matches the screenshot, set a breakpoint at line 13 in `health.js.`
     * Refresh the new endpoint page that you opened in step 7 so that a new request is made, and the breakpoint gets hit.
     
-VS Code suspends your application at the breakpoint. Here you can step through the code, inspect variables, see the call stack, and evaluate expressions in the Debug Console.
+VS Code suspends your application at the breakpoint. Here you can step through the code, inspect variables, see the call stack, and evaluate expressions in the *Debug Console.*
 
-VII. Run app
+*VIII. Run app*
 Instructions here on how to run the application the user just built.
 
-IX. Nice work and were to next
+*IX. Nice work and were to next*
+
 If you would also like to use Codewind with Eclipse Che or Eclipse, you may read instructions to install and work with those IDEs in this guide. 
 To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
 
 == VIII. Developing a simple app with Eclipse
 
-Table of contents
+*Table of contents*
 I. Why Eclipse?
 II. Install Codewind for Eclipse
 III. Use Appsody template
@@ -265,7 +270,8 @@ VII. Debug app
 VIII. Run app
 IX. Nice work and where to next 
 
-I. Why Eclipse?
+*I. Why Eclipse?*
+
 You can use Codewind for Eclipse to develop and debug your containerized projects from within Eclipse.
 
 Use the Eclipse IDE to create and make modifications to your application, see the application and build status, view the logs, and run your application.
@@ -274,12 +280,13 @@ In addition, Microprofile/Java EE, Spring, and Node.js applications can be debug
 
 The Eclipse tools are open source. You are encouraged to browse the code, open issues, and contribute.
 
-II. Install Codewind for Eclipse 
+*II. Install Codewind for Eclipse*
+
 The Codewind installation includes two parts:
 
-1. The Eclipse plug-in installs when you install Codewind from the Eclipse Marketplace or when you install by searching in the Eclipse Extensions view.
-2. The Codewind back end containers install after you click Install when you are prompted. After you click Install, the necessary images are downloaded from the internet. The download is approximately 1 GB.
-3. Optional: If you don’t click Install when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over Codewind, and click the switch so that it changes to the On position. The window appears.
+1. The Eclipse plug-in installs when you install Codewind from the Eclipse Marketplace or when you install by searching in the *Eclipse Extensions* view.
+2. The Codewind back end containers install after you click *Install* when you are prompted. After you click *Install*, the necessary images are downloaded from the internet. The download is approximately 1 GB.
+3. Optional: If you don’t click *Install* when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over *Codewind*, and click the switch so that it changes to the *On* position. The window appears.
 
 The following images are pulled. These images together form the Codewind back end:
 
@@ -293,20 +300,22 @@ Codewind creates the `~/codewind-workspace` folder to contain your projects.
 On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
 You can open the `codewind-workspace` or a project within the workspace as your Eclipse workspace. 
 
-III. Use Appsody template
+*III. Use Appsody template*
+
 Instructions here on how to retrieve and use Appsody’s templates. 
 
-IV. Create project
+*IV. Create project*
+
 NOTE: users will work with the Java application that comes with the Eclipse installation.
 
-You can work with your Codewind projects from the Codewind Explorer view in Eclipse.
+You can work with your Codewind projects from the *Codewind Explorer* view in Eclipse.
 If the view is not showing, open it as follows:
 
-1. From the Window menu select Show View > Other.
-2. Start to type Codewind in the filter field or locate and expand the Codewind entry in the list.
-3. Select Codewind Explorer and click Open.
+1. From the *Window* menu select *Show View > Other.*
+2. Start to type *Codewind* in the filter field or locate and expand the *Codewind* entry in the list.
+3. Select *Codewind Explorer* and click *Open.*
 
-To create a new project or import an existing one, use the context menu on the Local Projects item in the Codewind Explorer view. 
+To create a new project or import an existing one, use the context menu on the *Local Projects* item in the *Codewind Explorer* view. 
 Once you have a project, the first thing you might want to do is import your project into the Eclipse workspace so you can start editing files.
 This also makes your source available for debugging.
 
@@ -316,109 +325,107 @@ A context menu on each project enables you to open your application in a browser
 When auto build is enabled for a project, Codewind for Eclipse detects when you make a change and starts a build automatically.
 If you have disabled auto build for the project, you can start a build manually when you have made a change or a set of changes:
 
-1. Right-click your project in the Codewind Explorer view and select Build.
-2. Wait for the project state to return to Running or Debugging in the Codewind Explorer view and then test your changes.
+1. Right-click your project in the *Codewind Explorer* view and select *Build.*
+2. Wait for the project state to return to *Running* or *Debugging* in the *Codewind Explorer* view and then test your changes.
 
-V. Edit project files
-Editing actions are available by right clicking on the project in the Codewind Explorer view.
+*V. Edit project files*
+
+Editing actions are available by right clicking on the project in the *Codewind Explorer* view.
 Most actions are only available if the project is enabled.
 
 Some actions open the default Eclipse browser. 
-If you find that the default Eclipse browser cannot handle the content, change the default browser by navigating to Window > Web Browser and selecting a different browser from the list.
+If you find that the default Eclipse browser cannot handle the content, change the default browser by navigating to *Window > Web Browser* and selecting a different browser from the list.
 
 Project settings tell Codewind more about the specifics of your project and can affect the status and/or behavior of your application. 
 You can configure project settings when you:
 
 1. Go to Project Overview page that is accessible from a project’s context menu, or, 
-2. Find the project settings in the .cw-settings file of the project which you can edit
+2. Find the project settings in the *.cw-settings* file of the project which you can edit
 
-VI. Test new endpoint
+*VI. Test new endpoint*
 Instructions here on how to test the new endpoint
 
-VII. Debug app
+*VII. Debug app*
 Codewind for Eclipse supports debugging Microprofile/Java EE and Spring projects.
 The tools also help you set up a debug session for Node.js projects in a Chromium based browser.
 
-Debugging Microprofile/Java EE and Spring projects:
+_Debugging Microprofile/Java EE and Spring projects:_
+
 Prerequisites:
 
 1. If you have not done so already, import your project into Eclipse to make the source available to debug.
-    * Right-click your project in the Codewind Explorer view.
-    * Select Import Project.
+    * Right-click your project in the *Codewind Explorer* view.
+    * Select *Import Project.*
 2. If you need to debug any initialization code, set breakpoints in this code now. You can also set breakpoints in your application code at this time.
 3. [Optional] If you want to use Java hot code replace and change your code while you debug, disable automatic builds.
-    * To disable automatic builds, right-click your project in the Codewind Explorer view and select Disable Auto Build.
-    * If you want to start a build while automatic builds are disabled, right-click your project and select Build.
-    * Enable automatic builds again after you finish debugging. To enable automatic builds again, right-click your project and select Enable Auto Build.
+    * To disable automatic builds, right-click your project in the *Codewind Explorer* view and select *Disable Auto Build.*
+    * If you want to start a build while automatic builds are disabled, right-click your project and select *Build.*
+    * Enable automatic builds again after you finish debugging. To enable automatic builds again, right-click your project and select *Enable Auto Build.*
 
 Debugging:
- 1. To restart your Microprofile/Java EE or Spring application in debug mode, right-click on the project in the Codewind Explorer view and select Restart in Debug Mode.
- 
+
+ 1. To restart your Microprofile/Java EE or Spring application in debug mode, right-click on the project in the *Codewind Explorer* view and select *Restart in Debug Mode.*
  2. If you did not import your project into Eclipse you are prompted to do so now. Select one of the following:
-    * Yes: To import your project into Eclipse and make the source available for debugging.
-    * No: To continue restarting in debug mode without importing your project. There might be no source available for debugging if you choose this option.
-    * Cancel: To cancel restarting your application in debug mode.
-    
- 3. Wait for the project state to change to Debugging or for the debugger to stop at a breakpoint if you are debugging initialization code. If you have hit a breakpoint in initialization code, skip to step 6.
- 
+    * *Yes:* To import your project into Eclipse and make the source available for debugging.
+    * *No:* To continue restarting in debug mode without importing your project. There might be no source available for debugging if you choose this option.
+    * *Cancel:* To cancel restarting your application in debug mode. 
+ 3. Wait for the project state to change to *Debugging* or for the debugger to stop at a breakpoint if you are debugging initialization code. If you have hit a breakpoint in initialization code, skip to step 6.
  4. If you have not done so already, set up any breakpoints that you need in your application.
- 
- 5. Reload your application in the browser or, if you have not already opened it, right-click on the project in the "Codewind Explorer" view and select "Open Application."
- 
- 6. Eclipse prompts you to switch to the "Debug" perspective when a breakpoint is hit or you can switch manually by clicking "Window > Perspective > Open Perspective > Debug." All of the Java debug capabilities provided by Eclipse including various breakpoint types, the "Variables" and "Expression" views, and hot code replace are available to you.
- 
+ 5. Reload your application in the browser or, if you have not already opened it, right-click on the project in the *Codewind Explorer* view and select *Open Application.*
+ 6. Eclipse prompts you to switch to the *Debug* perspective when a breakpoint is hit or you can switch manually by clicking *Window > Perspective > Open Perspective > Debug.* All of the Java debug capabilities provided by Eclipse including various breakpoint types, the *Variables* and *Expression* views, and hot code replace are available to you.
  7. You can reload your application multiple times to isolate the problem. However, if you are debugging initialization code, you must restart your project in debug mode to stop in this code again.
- 
- 8. When you have finished debugging, you can switch back to run mode. Right-click on your project in the "Codewind Explorer" view and select "Restart in Run Mode."
+ 8. When you have finished debugging, you can switch back to run mode. Right-click on your project in the *Codewind Explorer* view and select *Restart in Run Mode.*
  
  Attaching to a project in debug mode: 
+ 
  If you detached from the debugger, or you restarted Eclipse, you can attach the debugger without restarting again:
  
  1. Make sure to do any of the setup you need such as importing your project into Eclipse and setting breakpoints. For more information, see Prerequisites.
+ 2. Right click on your project in the *Codewind Explorer* view and select *Attach Debugger.* The *Attach Debugger* menu item is only available for Codewind/Java EE or Spring applications in debug mode if a debugger is not already attached.
  
- 2. Right click on your project in the "Codewind Explorer" view and select "Attach Debugger." The "Attach Debugger" menu item is only available for Codewind/Java EE or Spring applications in debug mode if a debugger is not already attached.
- 
-Debugging Node.js projects: 
+_Debugging Node.js projects:_
+
 You can restart your Node.js application in debug mode and the tools help you launch a debug session in a Chromium based web browser:
 
-1. To restart your Node.js application in debug mode, right-click on the project in the "Codewind Explorer" view and select "Restart in Debug Mode."
-
+1. To restart your Node.js application in debug mode, right-click on the project in the *Codewind Explorer* view and select *Restart in Debug Mode.*
 2. If you are prompted to select a Chromium based web browser for launching the debug session:
-	* Select a Chromium based browser from the list of browsers or use the "Manage" link to add one.
+	* Select a Chromium based browser from the list of browsers or use the *Manage* link to add one.
 	* Optionally, select to always use this browser for Node.js debugging.
-	* Click "OK" to continue.
-
-3. Launch a debug session using the information on the "Node.js Debug Inspector URL" dialog:
-	* Click the "Copy URL to Clipboard" button to copy the debug URL.
-	* Click the "Open Browser" button to open the browser you selected in the previous dialog.
+	* Click *OK* to continue.
+3. Launch a debug session using the information on the *Node.js Debug Inspector URL* dialog:
+	* Click the *Copy URL to Clipboard* button to copy the debug URL.
+	* Click the *Open Browser* button to open the browser you selected in the previous dialog.
 	* Paste the URL into the address bar of the browser to start the debug session.
 
 Launching a debug session for a Node.js project in debug mode: 
+
 You can launch a debug session for a Node.js project that is already in debug mode.
 
-1. Right-click on your project in the "Codewind Explorer" view and select "Launch Debug Session." This menu item is only available for Node.js projects in debug mode if a debug session is not already started.
-
+1. Right-click on your project in the *Codewind Explorer* view and select *Launch Debug Session.* This menu item is only available for Node.js projects in debug mode if a debug session is not already started.
 2. Follow the steps in Debugging Node.js projects to launch a Node.js debug session, starting with step 2.
 
 Modifying the Node.js debug launch preferences: 
+
 To change the browser to use when launching a Node.js debug session, edit the Codewind preferences:
 
-1. Open the Eclipse preferences and select "Codewind" from the list.
+1. Open the Eclipse preferences and select *Codewind* from the list.
+2. In the *Select a Chromium based web browser for launching the Node.js debugger* group, choose a Chromium based web browser from the list of browsers or add one using the *Manage*link. You can also clear the selected browser by selecting *No web browser selected* in the list.
+3. Click *Apply and Close.*
 
-2. In the "Select a Chromium based web browser for launching the Node.js debugger" group, choose a Chromium based web browser from the list of browsers or add one using the "Managelink." You can also clear the selected browser by selecting "No web browser selected" in the list.
+*VIII. Run Application* 
 
-3. Click "Apply and Close."
-
-VIII. Run Application 
 Instructions here on how to run the application. 
 
-IX. Nice Work and Where to Next 
+*IX. Nice Work and Where to Next*
+
 If you would like to use Codewind with Eclipse Che or VS Code, you may read instructions to install and work with those IDEs in this guide. 
+
 To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
 
 == IX. Developing a simple app with Eclipse Che:
 
-Table of Contents
+*Table of Contents*
+
 I. Why Eclipse Che?
 II. Install Eclipse Che
 III. Set up OKD/OS
@@ -428,11 +435,11 @@ VI. Create Project
 VII. Set up Tekton Pipeline
 VIII. Use Appsody Template
 
-I. Why Eclipse Che?
+*I. Why Eclipse Che?*
 
 Codewind provides support for multiple users via Eclipse Che on Kubernetes. If Eclipse Che were installed via its Operator or with `--multiuser=true` on OpenShift, a Keycloak OIDC server will be installed alongside Che. When you log in to Che, you will be provided with your own dashboards, where you can create workspaces separate from other users. Che configurations and workspace settings are also per-user. Since Che workspaces are per-user, Codewind workspaces in Che are also per-user.
 
-II. Install Eclipe Che
+*II. Install Eclipe Che*
 
 Prerequisites:
 
@@ -451,7 +458,7 @@ Install:
 	* ./install.sh -h will show the available CLI options
 	* By default, it runs a helm install of Eclipse Che, but you can configure the install method used with the -mflag.
 	
-III.  Set up OKD/OS
+*III.  Set up OKD/OS*
 
 Installing Che with deployment scripts:Git clone the `Eclipse Che repository`
 
@@ -465,7 +472,7 @@ Enable privileged and root containers to run:Codewind is currently required to r
 1. To enable privileged containers, enter, oc adm policy add-scc-to-group privileged system:serviceaccounts:eclipse-che 
 2. To enable containers to run as root, enter, oc adm policy add-scc-to-group anyuid system:serviceaccounts:eclipse-che 
 
-IV. Add Registries in Che
+*IV. Add Registries in Che*
 
 Adding registries in Che:
 
@@ -495,11 +502,11 @@ Skip this step if you are using the devfiles that Codewind provides by default. 
 	* https://raw.githubusercontent.com/eclipse/codewind-che-plugin/master/plugins/codewind/codewind-	sidecar/0.3.0/meta.yaml 
 	* and, https://raw.githubusercontent.com/eclipse/codewind-che-plugin/master/plugins/codewind/codewind-theia/0.3.0/meta.yaml 
 
-V. Set up workspace
+*V. Set up workspace*
 
 Confirm the Docker registry secrets:
 
-Confirm that you added the docker registry secrets in the Che dashboard. Go to "Administration>Add Registry" to check for the secrets.
+Confirm that you added the docker registry secrets in the Che dashboard. Go to *Administration>Add Registry* to check for the secrets.
 
 Creating the Codewind workspace with a Devfile:
 
@@ -516,29 +523,29 @@ Checking for the Codewind pod:
 1. If you are using the Terminal, switch to use the workspace namespace. You can check for the namespace with kubectl get ns.
 2. Ensure the projects are cloned into the workspace. You might need to refresh the browser to trigger the clone.
 
-VI. Create project
+*VI. Create project*
 
 Note: users will work with the Java application that comes with the Eclipse installation 
 
 Binding a project:
 
-Go to "View>Find Command…>Codewind: Add Project."
+Go to *View>Find Command…>Codewind: Add Project.*
 	* Altenrative instructions:
 	* From the sidecar container, run the following command: curl -k -H "Content-Type: application/json" -X POST https://codewind-release:9191/api/v1/projects/bind -d '{"name": "microproj", "path": "/microclimate-workspace/microproj", "language": "java", "projectType": "liberty"}'
 	
 Checking the status of a project:
 
-Go to "View>Find Command…>Codewind: App status."
+Go to *View>Find Command…>Codewind: App status.*
 	*Alternative instructions:
 	* From the sidecar container, run the following command: curl -k -H "Content-Type: application/json" -X GET https://codewind-release:9191/api/v1/projects
 
 Building a project:
 
-Go to "View>Find Command…>Codewind: Build."
+Go to *View>Find Command…>Codewind: Build.*
 	* Alternative instructions:
 	* Enter the following command: curl -k -H "Content-Type: application/json" -X POST https://codewind-release:9191/api/v1/projects/8801a6d0-7805-11e9-b22f-19482c5ffbd6/build -d '{"action": "build"}'
 
-VII. Set up Tekton Pipeline
+*VII. Set up Tekton Pipeline*
 
 Configuring Codewind for Tekton pipelines:
 
@@ -547,11 +554,11 @@ From your command line, enter the following commands if you want to use existing
 1. oc apply -f setup/install_che/codewind-tektonrole.yaml
 2. oc apply -f setup/install_che/codewind-tektonbinding.yaml
 
-VIII. Use Appsody Template
+*VIII. Use Appsody Template*
 
 Instructions here on how to retrieve and use Appsody’s templates. 
 
-IX. Nice work! Where to next
+*IX. Nice work! Where to next*
 
 If you would also like to use Codewind with Eclipse or VS Code, you may read instructions to install and work with those IDEs in this guide. 
 
@@ -562,28 +569,24 @@ To continue to learn about Codewind, visit Codewind API, https://eclipse.github.
 Now, at the end of this guide, you have:
 
 1.    Learned the basics and foundations of Kabanero, Appsody, Codewind, and Tekton.
-
 2.    Learned how Codewind works within Kabanero and with its other components: Appsody and Tekton.
-
 3.    Installed Codewind on your preference of Eclipse Che, VS Code, or Eclipse. 
-
 4.    Practiced how to use some of the basic features of Codewind on your preferred authoring tool. 
-
 5.    Prepared to create your own cloud native application using Codewind. 
 
 == XI. Nice Work! Where to next? 
 
 Nice work! You’ve learned the basics of Kabanero and its components: Appsody, Codewind, and Tekton. You’ve also learned how to install and use Codewind. Quite the accomplishments!
 
-Do you have ideas to make this guide better?
+*Do you have ideas to make this guide better?*
 	* Raise an issue on our GitHub page.
 	* Create a pull request on our GitHub page to contribute to this guide. 
 
-What do you think of our guide?
+*What do you think of our guide?*
 	* Rate this guide
 
-Do you need help?
+*Do you need help?*
 	* Ask a question on Stack Overflow
 
-Where to next?
+*Where to next?*
 	* Check out our other guides more specifically looking at Kabanero, Appsody, and Tekton. 
