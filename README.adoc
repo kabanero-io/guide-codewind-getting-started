@@ -17,6 +17,7 @@ permalink: /guides/app-monitoring/
 
 == Table of Contents:  
 
+:toc:
 I. Objectives
 II. Using this guide
 III. Overview--Kabanero
@@ -28,6 +29,7 @@ VIII. Developing a simple app with VS Eclipse
 IX. Developing a simple app with Eclipse 
 X. What you have learned
 XI. Nice work! Where to next
+toc::[]
 
 == I. Objectives:
 
