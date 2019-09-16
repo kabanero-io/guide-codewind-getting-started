@@ -49,14 +49,15 @@ Practice using your IDE and Codewind's  features on sample application so you c
 
 The following steps illustrate how you will use this guide and what you will learn as you complete each step:
 
-1. Read an overview of Kabanero, Appsody, Codewind, and Tekton. 
-2. Choose which IDE (VS Code, Eclipse, Eclipse Che) you want to install for Codewind (you have the opportunity to learn how to install all three).
-3. Practice creating an application with the IDE of your choice.
-4. Learn how to use the IDE while creating your application. 
-5. Review what you have learned throughout this guide. 
-6. Discover further readings to continue your education. 
+1. Read an overview of Kabanero, Appsody, Codewind, and Tekton. +
+2. Choose which IDE (VS Code, Eclipse, Eclipse Che) you want to install for Codewind (you have the opportunity to learn how to install all three). +
+3. Practice creating an application with the IDE of your choice. +
+4. Learn how to use the IDE while creating your application. +
+5. Review what you have learned throughout this guide. +
+6. Discover further readings to continue your education. + 
 
 *Diagram of using this guide:*
+
 image: https://github.com/kabanero-io/draft-guide-codewind-guide/blob/master/assets/Using%20this%20guide.png
 
 == III. Kabanero Overview: 
