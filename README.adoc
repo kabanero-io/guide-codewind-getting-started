@@ -613,25 +613,25 @@ Now, at the end of this guide, you have:
 2.    Learned how Codewind works within Kabanero and with its other components: Appsody and Tekton. +
 3.    Installed Codewind on your preference of Eclipse Che, VS Code, or Eclipse. +
 4.    Practiced how to use some of the basic features of Codewind on your preferred authoring tool. + 
-5.    Prepared to create your own cloud native application using Codewind. 
+5.    Prepared to create your own cloud native application using Codewind. +
 
 == XI. Nice Work! Where to next? 
 
 Nice work! You’ve learned the basics of Kabanero and its components: Appsody, Codewind, and Tekton. You’ve also learned how to install and use Codewind. Quite the accomplishments!
 
-*Do you have ideas to make this guide better?*
+*Do you have ideas to make this guide better?* +
 
 	* Raise an issue on our GitHub page. +
-	* Create a pull request on our GitHub page to contribute to this guide. 
+	* Create a pull request on our GitHub page to contribute to this guide. +
 
-*What do you think of our guide?*
+*What do you think of our guide?* +
 
-	* Rate this guide
+	* Rate this guide +
 
-*Do you need help?*
+*Do you need help?* +
 
-	* Ask a question on Stack Overflow
+	* Ask a question on Stack Overflow +
 
-*Where to next?*
+*Where to next?* +
 
-	* Check out our other guides more specifically looking at Kabanero, Appsody, and Tekton. 
+	* Check out our other guides more specifically looking at Kabanero, Appsody, and Tekton. +
