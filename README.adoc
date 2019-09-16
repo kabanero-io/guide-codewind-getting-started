@@ -498,11 +498,11 @@ Installing Che with deployment scripts:Git clone the `Eclipse Che repository`
 1. Enter the `cd `command to go to the `deploy/openshift` directory +
 2. Deploy Che with, ./deploy_che.sh +
 3. To create a cluster role with the required permission, start from the Codewind Che plug-in repository and run the command, kubectl apply -f setup/install_che/codewind-clusterrole.yaml +
-4. From the Codewind Che plug-in repository run the command, kubectl apply -f setup/install_che/codewind-rolebinding.yaml + 
+4. From the Codewind Che plug-in repository run the command, kubectl apply -f setup/install_che/codewind-rolebinding.yaml 
 
 Enable privileged and root containers to run:Codewind is currently required to run as privileged (as it builds container images) and as root. Run the following commands to enable that functionality:
 
-1. To enable privileged containers, enter, oc adm policy add-scc-to-group privileged system:serviceaccounts:eclipse-che + 
+1. To enable privileged containers, enter, oc adm policy add-scc-to-group privileged system:serviceaccounts:eclipse-che 
 2. To enable containers to run as root, enter, oc adm policy add-scc-to-group anyuid system:serviceaccounts:eclipse-che 
 
 *IV. Add Registries in Che*
@@ -613,7 +613,7 @@ Now, at the end of this guide, you have:
 2.    Learned how Codewind works within Kabanero and with its other components: Appsody and Tekton. +
 3.    Installed Codewind on your preference of Eclipse Che, VS Code, or Eclipse. +
 4.    Practiced how to use some of the basic features of Codewind on your preferred authoring tool. + 
-5. Prepared to create your own cloud native application using Codewind. +
+5.    Prepared to create your own cloud native application using Codewind. +
 
 == XI. Nice Work! Where to next? 
 
