@@ -570,19 +570,19 @@ Note: users will work with the Java application that comes with the Eclipse inst
 
 Binding a project:
 
-Go to *View>Find Command…>Codewind: Add Project.* + 
+Go to *View>Find Command…>Codewind: Add Project.* 
 	* Altenrative instructions: +
 	* From the sidecar container, run the following command: curl -k -H "Content-Type: application/json" -X POST https://codewind-release:9191/api/v1/projects/bind -d '{"name": "microproj", "path": "/microclimate-workspace/microproj", "language": "java", "projectType": "liberty"}' 
 	
 Checking the status of a project:
 
-Go to *View>Find Command…>Codewind: App status.* +
+Go to *View>Find Command…>Codewind: App status.* 
 	*Alternative instructions: +
 	* From the sidecar container, run the following command: curl -k -H "Content-Type: application/json" -X GET https://codewind-release:9191/api/v1/projects
 
 Building a project:
 
-Go to *View>Find Command…>Codewind: Build.* +
+Go to *View>Find Command…>Codewind: Build.* 
 	* Alternative instructions: +
 	* Enter the following command: curl -k -H "Content-Type: application/json" -X POST https://codewind-release:9191/api/v1/projects/8801a6d0-7805-11e9-b22f-19482c5ffbd6/build -d '{"action": "build"}'
 
