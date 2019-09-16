@@ -233,7 +233,7 @@ Instructions here on how to retrieve and use Appsody’s templates.
 
 *IV. Create project*
 
-NOTE: Users will work with the a Java application that comes with the VS Code installation. 
+Note: Users will work with the a Java application that comes with the VS Code installation. 
 
 1. Make the new project your workspace folder. This project is the only project that you need to work on for this tutorial.
     * Right-click the project and select `Open Folder as Workspace.` VS Code restarts with the selected project folder as the workspace folder.
@@ -409,9 +409,9 @@ Debugging:
  7. You can reload your application multiple times to isolate the problem. However, if you are debugging initialization code, you must restart your project in debug mode to stop in this code again. +
  8. When you have finished debugging, you can switch back to run mode. Right-click on your project in the *Codewind Explorer* view and select *Restart in Run Mode.*
  
- Attaching to a project in debug mode: 
+Attaching to a project in debug mode: 
  
- If you detached from the debugger, or you restarted Eclipse, you can attach the debugger without restarting again:
+If you detached from the debugger, or you restarted Eclipse, you can attach the debugger without restarting again:
  
  1. Make sure to do any of the setup you need such as importing your project into Eclipse and setting breakpoints. For more information, see Prerequisites. +
  2. Right click on your project in the *Codewind Explorer* view and select *Attach Debugger.* The *Attach Debugger* menu item is only available for Codewind/Java EE or Spring applications in debug mode if a debugger is not already attached.
@@ -570,19 +570,19 @@ Note: users will work with the Java application that comes with the Eclipse inst
 
 Binding a project:
 
-Go to *View>Find Command…>Codewind: Add Project.* 
+Go to *View>Find Command…>Codewind: Add Project.* + 
 	* Altenrative instructions: +
 	* From the sidecar container, run the following command: curl -k -H "Content-Type: application/json" -X POST https://codewind-release:9191/api/v1/projects/bind -d '{"name": "microproj", "path": "/microclimate-workspace/microproj", "language": "java", "projectType": "liberty"}' 
 	
 Checking the status of a project:
 
-Go to *View>Find Command…>Codewind: App status.*
+Go to *View>Find Command…>Codewind: App status.* +
 	*Alternative instructions: +
 	* From the sidecar container, run the following command: curl -k -H "Content-Type: application/json" -X GET https://codewind-release:9191/api/v1/projects
 
 Building a project:
 
-Go to *View>Find Command…>Codewind: Build.*
+Go to *View>Find Command…>Codewind: Build.* +
 	* Alternative instructions: +
 	* Enter the following command: curl -k -H "Content-Type: application/json" -X POST https://codewind-release:9191/api/v1/projects/8801a6d0-7805-11e9-b22f-19482c5ffbd6/build -d '{"action": "build"}'
 
@@ -611,7 +611,7 @@ Now, at the end of this guide, you have:
 
 1.    Learned the basics and foundations of Kabanero, Appsody, Codewind, and Tekton. +
 2.    Learned how Codewind works within Kabanero and with its other components: Appsody and Tekton. +
-3.    Installed Codewind on your preference of Eclipse Che, VS Code, or Eclipse. + 
+3.    Installed Codewind on your preference of Eclipse Che, VS Code, or Eclipse. +
 4.    Practiced how to use some of the basic features of Codewind on your preferred authoring tool. + 
 5.    Prepared to create your own cloud native application using Codewind. 
 
@@ -620,14 +620,18 @@ Now, at the end of this guide, you have:
 Nice work! You’ve learned the basics of Kabanero and its components: Appsody, Codewind, and Tekton. You’ve also learned how to install and use Codewind. Quite the accomplishments!
 
 *Do you have ideas to make this guide better?*
+
 	* Raise an issue on our GitHub page. +
 	* Create a pull request on our GitHub page to contribute to this guide. 
 
 *What do you think of our guide?*
+
 	* Rate this guide
 
 *Do you need help?*
+
 	* Ask a question on Stack Overflow
 
 *Where to next?*
+
 	* Check out our other guides more specifically looking at Kabanero, Appsody, and Tekton. 
