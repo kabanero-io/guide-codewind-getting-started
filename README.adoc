@@ -416,7 +416,7 @@ If you detached from the debugger, or you restarted Eclipse, you can attach the 
  1. Make sure to do any of the setup you need such as importing your project into Eclipse and setting breakpoints. For more information, see Prerequisites. +
  2. Right click on your project in the *Codewind Explorer* view and select *Attach Debugger.* The *Attach Debugger* menu item is only available for Codewind/Java EE or Spring applications in debug mode if a debugger is not already attached.
  
-_Debugging Node.js projects:_
+Debugging Node.js projects:
 
 You can restart your Node.js application in debug mode and the tools help you launch a debug session in a Chromium based web browser:
 
