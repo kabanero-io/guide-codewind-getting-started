@@ -32,9 +32,11 @@ XI. Nice work! Where to next +
 == I. Objectives:
 
 *Guide's objective:*
+
 To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. +
 
 *Learnaing objective:*
+
 Gain a conceptual understanding of Kabanero’s functions and Kabanero’s subcomponents: Appsody, Codewind, Tekton. +
 
 Learn how Codewind works within Kabanero and with Kabanero’s other parts, Appsody and Tekton, in order to build cloud native applications. +
