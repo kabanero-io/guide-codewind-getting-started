@@ -17,25 +17,25 @@ permalink: /guides/app-monitoring/
 
 == Table of Contents:  
 
-I. Objectives +
-II. Using this guide +
-III. Overview--Kabanero +
-IV. Overview--Appsody +
-V. Overview--Codewind +
-VI.Overview--Tekton +
-VII. Developing a simple app with VS Code +
-VIII. Developing a simple app with VS Eclipse +
-IX. Developing a simple app with Eclipse +
-X. What you have learned +
-XI. Nice work! Where to next +
+1. Objectives +
+2. Using this guide +
+3. Kabanero Overview +
+4. Appsody Overview +
+5. Codewind Overview +
+6. Tekton Overview +
+7. Developing a simple app with VS Code +
+8. Developing a simple app with VS Eclipse +
+9. Developing a simple app with Eclipse +
+10. What you have learned +
+11. Nice work! Where to next +
 
-== I. Objectives:
+== 1. Objectives
 
 *Guide's objective:*
 
 To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. +
 
-*Learnaing objective:*
+*Learning objective:*
 
 Gain a conceptual understanding of Kabanero’s functions and Kabanero’s subcomponents: Appsody, Codewind, Tekton. +
 
@@ -45,7 +45,7 @@ Install Codewind on Eclipse Che, VS Code, or Eclipse so you can instantly begin 
 
 Practice using your IDE and Codewind's  features on sample application so you can work independently after completing this guide. 
 
-== II. Using this guide 
+== 2. Using this guide 
 
 The following steps illustrate how you will use this guide and what you will learn as you complete each step:
 
@@ -60,7 +60,7 @@ The following steps illustrate how you will use this guide and what you will lea
 
 image: https://github.com/kabanero-io/draft-guide-codewind-guide/blob/master/assets/Using%20this%20guide.png
 
-== III. Kabanero Overview: 
+== 3. Kabanero Overview: 
 
 *Kabanero:* 
 
@@ -108,7 +108,7 @@ See the following diagram for an illustration of how Kabanero’s components wor
 
 image: https://github.com/kabanero-io/draft-guide-codewind-guide/blob/master/assets/Kabanero%20and%20its%20moving%20parts.png
 
-== IV. Appsody Overview:
+== 4. Appsody Overview:
 
 *Appsody:*
 
@@ -134,7 +134,7 @@ Working with the stacks, Appsody CLI provides commands that implement the full d
 
 Appsody deploy allows you to create a standard production optimized container image of your cloud native Microservices then deploy that image into Kubernetes using the deploy command. Appsody deploy utilizes Appsody Operator which minimizes the configuration required to deploy the Microservice so now you can deploy using a serverless deployment either through Knative or a Kubernetes service. 
 
-== V. Codewind Overview: 
+== 5. Codewind Overview: 
 
 *Codewind:*
 
@@ -158,7 +158,7 @@ Codewind delivers native IDE integration with VS Code, Eclipse, and Eclipse Che.
 
 Codewind automatically analyzes applications for performance issues. Configurable load testing makes code changes which immediately show through live and historical performance graphs. 
 
-== VI. Tekton Overview:
+== 6. Tekton Overview:
 
 *Tekton:*
 
@@ -184,7 +184,7 @@ Pipelines express the order of the tasks. Pipelines connect the outputs of one t
 
 The dashboard is the web user interface for Tekton Pipelines. The dashboard inputs runtime parameters into pipeline runs and views the execution logs of the pipeline runs. A deployment pipeline is an automated manifestation of your software process from version control all the way to production. It ensures a consistent, repeatable and reliable way to release software to production including new releases, fixes, security patches basically anything released to production should always go through this automated process.
 
-== VII. Developing a simple app with VS Code:
+== 7. Developing a simple app with VS Code:
 
 *Table of Contents*
 
@@ -287,7 +287,7 @@ If you would also like to use Codewind with Eclipse Che or Eclipse, you may read
 
 To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
 
-== VIII. Developing a simple app with Eclipse
+== 8. Developing a simple app with Eclipse
 
 *Table of contents*
 
@@ -455,7 +455,7 @@ If you would like to use Codewind with Eclipse Che or VS Code, you may read inst
 
 To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
 
-== IX. Developing a simple app with Eclipse Che:
+== 9. Developing a simple app with Eclipse Che:
 
 *Table of Contents*
 
@@ -605,7 +605,7 @@ If you would also like to use Codewind with Eclipse or VS Code, you may read ins
 
 To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
 
-== X. What you have learned: 
+== 10. What you have learned: 
 
 Now, at the end of this guide, you have:
 
@@ -615,7 +615,7 @@ Now, at the end of this guide, you have:
 4.    Practiced how to use some of the basic features of Codewind on your preferred authoring tool. + 
 5.    Prepared to create your own cloud native application using Codewind. +
 
-== XI. Nice Work! Where to next? 
+== 11. Nice Work! Where to next? 
 
 Nice work! You’ve learned the basics of Kabanero and its components: Appsody, Codewind, and Tekton. You’ve also learned how to install and use Codewind. Quite the accomplishments!
 
