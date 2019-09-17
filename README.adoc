@@ -35,7 +35,7 @@ permalink: /guides/app-monitoring/
 
 To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. +
 
-*Learning objective:*
+*Learning objective*
 
 Gain a conceptual understanding of Kabanero’s functions and Kabanero’s subcomponents: Appsody, Codewind, Tekton. +
 
