@@ -58,8 +58,7 @@ The following steps illustrate how you will use this guide and what you will lea
 
 *Diagram of using this guide:*
 
-image: 
-https://github.com/kabanero-io/draft-guide-codewind-guide/blob/master/assets/Using%20this%20guide.png
+image::/img/guide/Using%20this%20guide.png[link=”/img/guide/Using%20this%20guide.png” alt=”Using%20this%20guide”]
 
 == 3. Kabanero overview: 
 
@@ -107,8 +106,7 @@ See the following diagram for an illustration of how Kabanero’s components wor
 
 *Diagram of Kabanero's components:*
 
-image: 
-https://github.com/kabanero-io/draft-guide-codewind-guide/blob/master/assets/Kabanero%20and%20its%20moving%20parts.png
+image:://img/guide/Kabanero%20and%20its%20moving%20parts.png[link=”/img/guide/Kabanero%20and%20its%20moving%20parts.png”alt=” Kabanero%20and%20its%20moving%20parts”] 
 
 == 4. Appsody overview:
 
@@ -614,8 +612,8 @@ Now, at the end of this guide, you have:
 1.    Learned the basics and foundations of Kabanero, Appsody, Codewind, and Tekton. +
 2.    Learned how Codewind works within Kabanero and with its other components: Appsody and Tekton. +
 3.    Installed Codewind on your preference of Eclipse Che, VS Code, or Eclipse. +
-4.    Practiced how to use some of the basic features of Codewind on your preferred authoring tool. + 
-5.    Prepared to create your own cloud native application using Codewind. +
+4.    Practiced how to use some of the basic features of Codewind on your preferred authoring tool. +
+5.    Prepared to create your own cloud native application using Codewind.
 
 == 11. Nice Work! Where to next? 
 
