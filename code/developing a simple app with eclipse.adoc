@@ -16,17 +16,17 @@ permalink: /guides/app-monitoring/
 
 *Table of contents*
 
-I. Why Eclipse? +
-II. Install Codewind for Eclipse +
-III. Use Appsody template +
-IV. Create project +
-V. Edit project files +
-VI. Test new endpoint +
-VII. Debug app +
-VIII. Run app +
-IX. Nice work and where to next
+1. Why Eclipse? +
+2. Install Codewind for Eclipse +
+3. Use Appsody template +
+4. Create project +
+5. Edit project files +
+6. Test new endpoint +
+7. Debug app +
+8. Run app +
+9. Nice work and where to next
 
-*I. Why Eclipse?*
+*1. Why Eclipse?*
 
 You can use Codewind for Eclipse to develop and debug your containerized projects from within Eclipse.
 
@@ -36,7 +36,7 @@ In addition, Microprofile/Java EE, Spring, and Node.js applications can be debug
 
 The Eclipse tools are open source. You are encouraged to browse the code, open issues, and contribute.
 
-*II. Install Codewind for Eclipse*
+*2. Install Codewind for Eclipse*
 
 The Codewind installation includes two parts:
 
@@ -56,11 +56,11 @@ Codewind creates the `~/codewind-workspace` folder to contain your projects.
 On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
 You can open the `codewind-workspace` or a project within the workspace as your Eclipse workspace. 
 
-*III. Use Appsody template*
+*3. Use Appsody template*
 
 Instructions here on how to retrieve and use Appsody’s templates. 
 
-*IV. Create project*
+*4. Create project*
 
 Note: users will work with the Java application that comes with the Eclipse installation.
 
@@ -84,7 +84,7 @@ If you have disabled auto build for the project, you can start a build manually 
 1. Right-click your project in the *Codewind Explorer* view and select *Build.* +
 2. Wait for the project state to return to *Running* or *Debugging* in the *Codewind Explorer* view and then test your changes.
 
-*V. Edit project files*
+*5. Edit project files*
 
 Editing actions are available by right clicking on the project in the *Codewind Explorer* view.
 Most actions are only available if the project is enabled.
@@ -98,11 +98,11 @@ You can configure project settings when you:
 1. Go to Project Overview page that is accessible from a project’s context menu, or, + 
 2. Find the project settings in the *.cw-settings* file of the project which you can edit
 
-*VI. Test new endpoint*
+*6. Test new endpoint*
 
 Instructions here on how to test the new endpoint
 
-*VII. Debug app*
+*7. Debug app*
 
 Codewind for Eclipse supports debugging Microprofile/Java EE and Spring projects.
 The tools also help you set up a debug session for Node.js projects in a Chromium based browser.
@@ -170,11 +170,11 @@ To change the browser to use when launching a Node.js debug session, edit the Co
 2. In the *Select a Chromium based web browser for launching the Node.js debugger* group, choose a Chromium based web browser from the list of browsers or add one using the *Manage*link. You can also clear the selected browser by selecting *No web browser selected* in the list. +
 3. Click *Apply and Close.*
 
-*VIII. Run Application* 
+*8. Run Application* 
 
 Instructions here on how to run the application. 
 
-*IX. Nice Work and Where to Next*
+*9. Nice Work and Where to Next*
 
 If you would like to use Codewind with Eclipse Che or VS Code, you may read instructions to install and work with those IDEs in this guide. 
 
