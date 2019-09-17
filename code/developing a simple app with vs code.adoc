@@ -17,17 +17,17 @@ permalink: /guides/app-monitoring/
 
 *Table of Contents*
 
-I. Why VS Code? +
-II. Imnstall Codewind for VS Code +
-III. Use Appsody template +
-IV. Create project +
-V. Edit file +
-VI. Test new endpoint +
-VII. Debug app +
-VIII. Run app +
-IX. Nice work and where to next 
+1. Why VS Code? +
+2. Imnstall Codewind for VS Code +
+3. Use Appsody template +
+4. Create project +
+5. Edit file +
+6. Test new endpoint +
+7. Debug app +
+8. Run app +
+9. Nice work and where to next 
 
-*I. WHy VS Code?* 
+*1. WHy VS Code?* 
 
 You can use Codewind for Visual Studio Code to develop and debug your containerizedprojects from within VS Code.
 
@@ -37,7 +37,7 @@ In addition, the tools support easily debugging Microprofile/Java EE, Spring, an
 
 The VS Code tools are open source. You can browse the code, open issues, and contribute.
 
-*II. Install Codewind for VS Code*
+*2. Install Codewind for VS Code*
 
 The Codewind installation includes two parts:
 
@@ -56,11 +56,11 @@ Codewind creates the `~/codewind-workspace` folder to contain your projects.
 On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
 You can open the `codewind-workspace` or a project within the workspace as your VS Code workspace. 
 
-*III. Use Appsody template*
+*3. Use Appsody template*
 
 Instructions here on how to retrieve and use Appsody’s templates. 
 
-*IV. Create project*
+*4. Create project*
 
 Note: Users will work with the a Java application that comes with the VS Code installation. 
 
@@ -69,7 +69,7 @@ Note: Users will work with the a Java application that comes with the VS Code in
 2. Open the *Project Overview* page to view project information.
     * Right-click the project and select `Show Project Overview.`
 
-*V. Edit file*
+*5. Edit file*
 
 1. Open a file to edit. For example, modify the health endpoint of the default Node.js project. +
     * Open a Javascript file, such as `nodeproject/server/routers/health.js.` +
@@ -84,14 +84,14 @@ Note: Users will work with the a Java application that comes with the VS Code in
 	
 At this point, your VS Code should look similar to the following example: 
 
-*VI. Test default endpoint*
+*6. Test default endpoint*
 
 1. To make sure your code change was picked up, test your new endpoint. +
     * Right-click the project and select Open in Browser. The project root endpoint opens in the browser, and the *IBM Cloud Starter* page appears. +
     * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL. +
     * See the new response: (screenshot image here)
 
-*VII. Debug app*
+*7. Debug app*
 
  1. You can debug your application within the container. To debug a containerized project, restart it in *Debug* mode. +
     * Right-click the project and select Restart in Debug Mode. +
@@ -106,11 +106,11 @@ At this point, your VS Code should look similar to the following example:
     
 VS Code suspends your application at the breakpoint. Here you can step through the code, inspect variables, see the call stack, and evaluate expressions in the *Debug Console.*
 
-*VIII. Run app*
+*8. Run app*
 
 Instructions here on how to run the application the user just built.
 
-*IX. Nice work and were to next*
+*9. Nice work and were to next*
 
 If you would also like to use Codewind with Eclipse Che or Eclipse, you may read instructions to install and work with those IDEs in this guide. 
 
