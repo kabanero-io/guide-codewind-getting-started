@@ -1,7 +1,7 @@
 ---
 permalink: /guides/guide-codewind/
 ---
-:layout: guide-multilane
+:layout: guide-multipane
 :duration: TBD
 :description: To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. 
 :tags: ['kabanero', 'appsody', 'codewind', 'tekton']
