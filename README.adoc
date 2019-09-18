@@ -1,24 +1,14 @@
 ---
 permalink: /guides/guide-codewind/
 ---
-:layout: guide
-:duration: TBD
-:description: To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. 
-:tags: ['kabanero', 'appsody', 'codewind', 'tekton']
-:projectid: guide-codewind
 :page-layout: guide
-:page-duration: TBD
-:page-releasedate: TBD
+:page-duration: 30
+:page-releasedate: 2019-09-19
 :page-guide-category: developer tools
-:page-essential: true
-:page-essential-order: 1
-:page-description: To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. 
+:page-description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use.
 :guide-author: Kabanero
 :page-tags: ['kabanero', 'appsody', 'codewind', 'tekton']
-:page-permalink: /guides/{projectid}
-:repo-description: TBD
 = Guide on Using Codewind
-:toc:
 
 == Objectives
 
