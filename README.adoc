@@ -3,7 +3,7 @@ permalink: /guides/guide-codewind/
 ---
 :layout: guide
 :duration: TBD
-:description: To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. 
+:description: To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. 
 :tags: ['kabanero', 'appsody', 'codewind', 'tekton']
 :projectid: guide-codewind
 :page-layout: guide
@@ -12,7 +12,7 @@ permalink: /guides/guide-codewind/
 :page-guide-category: developer tools
 :page-essential: true
 :page-essential-order: 1
-:page-description: To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. 
+:page-description: To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use. 
 :guide-author: Kabanero
 :page-tags: ['kabanero', 'appsody', 'codewind', 'tekton']
 :page-permalink: /guides/{projectid}
@@ -34,7 +34,7 @@ permalink: /guides/guide-codewind/
 
 . Install Codewind on Eclipse Che, VS Code, or Eclipse so you can instantly begin work on their projects.
 
-. Practice using your IDE and Codewind's  features on sample application so you can work independently after completing this guide. 
+. Practice using your IDE and Codewind's features on sample application so you can work independently after completing this guide. 
 
 === Using this guide 
 
@@ -61,19 +61,19 @@ Kabanero has four fey features:
 
 *1. Kabanero Collections*
 
-Kabanero Collections are logical collections, stored and managed in a GitHub repository. During the development phase, the collection seamlessly empowers developers to build applications and microservices to the architect’s standard configuration. Collections allow standardization and customization. 
+Kabanero Collections are logical collections, stored and managed in a GitHub repository. During the development phase, the collection seamlessly empowers developers to build applications and microservices to the architect’s standard configuration. Collections allow standardization and customization. 
 
 *2. Kabanero Foundation*
 
-Installing Kabanero Foundation will allow you to activate, manage, and share collections with your team and maintain governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. 
+Installing Kabanero Foundation will allow you to activate, manage, and share collections with your team and maintain governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. 
 
-*3. Managment CLI*
+*3. Management CLI*
 
-Using the Command Line Interface (CLI), you choose a collection and configure it. You then can set up your pipelines and share the pipelines with your development team so they can start to build applications. 
+Using the Command Line Interface (CLI), you choose a collection and configure it. You then can set up your pipelines and share the pipelines with your development team so they can start to build applications. 
 
 *4. Developer Tools* 
 
-Developer tools give your team access to the collection(s) that have been activated in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio Code or Eclipse and also can be used in conjunction with their CLI using XCode. 
+Developer tools give your team access to the collection(s) that have been activated in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio Code or Eclipse and also can be used in conjunction with their CLI using XCode. 
 
 *Kabanero's components and how it all works* 
 
@@ -83,21 +83,21 @@ Kabanero has three components, which all work together to execute Kabanero’s f
 . Codewind, the coding phase
 . Tekton, the deployment phase
 
-You need to use all three of Kabanero’s components in order to build cloud native applications. You install Kabanero to ensure integration and cooperation among its three components, and each component requires its own installations. 
+You need to use all three of Kabanero’s components in order to build cloud native applications. You install Kabanero to ensure integration and cooperation among its three components, and each component requires its own installations. 
 
 With cloud native projects, architects and developers face new challenges, like having to work with microservices and more technology than they used to. Kabanero helps these professionals select the technologies and cloud services best for their needs. Here is an explanation of Kabanero and all its moving parts:
 
-With Kabanero, Champ (a solution architect) builds preconfigured stacks which allow him to decide which languages and frameworks are used, how they are used, and how they interact with his platform. The platform Champ builds includes the preconfigured stacks and decided framework. Champ then gives these platforms to Jane (the lead developer), so now she can build and deploy microservices from the given preconfigured stacks.  During the Appsody stage in Kabanero, the stacks, frameworks, and platforms are created. 
+With Kabanero, Champ (a solution architect) builds preconfigured stacks which allow him to decide which languages and frameworks are used, how they are used, and how they interact with his platform. The platform Champ builds includes the preconfigured stacks and decided framework. Champ then gives these platforms to Jane (the lead developer), so now she can build and deploy microservices from the given preconfigured stacks.  During the Appsody stage in Kabanero, the stacks, frameworks, and platforms are created. 
 
-Jane discovers the stacks available to her by using the CLI. Once Jane has chosen the project type she wants to build, and once she has made a new directory for her application, she can type “app dev init” in the CLI. This command pulls down Champ’s stacks and adds them to Jane’s application, giving her an iterative development environment using her application and Champs’s specified platform runtime stack. This stack also allows Jane to develop in any IDE of her choosing, like Eclipse or VS Code. During the Codewind stage in Kabanero, the code is built, tested, and debugged. 
+Jane discovers the stacks available to her by using the CLI. Once Jane has chosen the project type she wants to build, and once she has made a new directory for her application, she can type “app dev init” in the CLI. This command pulls down Champ’s stacks and adds them to Jane’s application, giving her an iterative development environment using her application and Champs’s specified platform runtime stack. This stack also allows Jane to develop in any IDE of her choosing, like Eclipse or VS Code. During the Codewind stage in Kabanero, the code is built, tested, and debugged. 
 
-The CLI provides a build command to allow Jane to set up a Continuous Integration and Continuous Delivery (CI/CD) pipeline. Jane can use this pipeline for her Git project or for a local build. When Jane commits the code to GitHub, the pipeline pushes the code to a Kubernetes cluster on OpenShift Cloud. If Jane is building locally, the pipeline takes Jane’s application and Champ’s stacks and uses the two to build a full microservice inside a Docker container that can be used anywhere. During the Tekton stage in Kabanero, the CI/CD pipeline automates and deploys code. 
+The CLI provides a build command to allow Jane to set up a Continuous Integration and Continuous Delivery (CI/CD) pipeline. Jane can use this pipeline for her Git project or for a local build. When Jane commits the code to GitHub, the pipeline pushes the code to a Kubernetes cluster on OpenShift Cloud. If Jane is building locally, the pipeline takes Jane’s application and Champ’s stacks and uses the two to build a full microservice inside a Docker container that can be used anywhere. During the Tekton stage in Kabanero, the CI/CD pipeline automates and deploys code. 
 
 See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. Read about each component and its specific functions in greater detail throughout this guide.
 
 *Diagram of Kabanero's components*
 
-image::/img/guide/kabanero-moving-parts.png[link=”/img/guide/kabanero-moving-parts.png”alt=”A diagram of kabanero and all its moving parts: Appsody, Codewind, and Tekton."] 
+image::/img/guide/kabanero-moving-parts.png[link=”/img/guide/kabanero-moving-parts.png”alt=”A diagram of Kabanero and all its moving parts: Appsody, Codewind, and Tekton."] 
 
 === Appsody overview
 
@@ -105,7 +105,7 @@ image::/img/guide/kabanero-moving-parts.png[link=”/img/guide/kabanero-moving-p
 
 Appsody simplifies Kabanero's creation of cloud-native applications in containers. Appsody provides pre-configured container images, or stacks, that are prebuilt, cloud optimized development and production configurations for different languages and Microservice frameworks. These stacks provide a foundation to build applications for Kubernetes and Knative deployments.
 
-If you're a software developer, Appsody aims to remove the burden of managing the full software development stack. With Appsody, you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code! Basically, by providing stacks and templates, Appsody allows developers to focus solely on coding during the Codewind phase.    
+If you're a software developer, Appsody aims to remove the burden of managing the full software development stack. With Appsody, you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code! Basically, by providing stacks and templates, Appsody allows developers to focus solely on coding during the Codewind phase.    
 
 Appsody consists of three key features:
 
@@ -119,57 +119,57 @@ Appsody Hub is the central point of control for Appsody Stacks where you can fin
 
 *2. Appsody CLI*
 
-Working with the stacks, Appsody CLI provides commands that implement the full development lifecycle, so it has the ability to create a new or enable an existing application. Appsody CLI also provides commands to run, test, debug, and build an image and deploy it to Kubernetes. Appsody CLI works with Codewind so you can develop with the stacks directly in your choice of IDE using Codewind’s plugins. 
+Working with the stacks, Appsody CLI provides commands that implement the full development lifecycle, so it has the ability to create a new or enable an existing application. Appsody CLI also provides commands to run, test, debug, and build an image and deploy it to Kubernetes. Appsody CLI works with Codewind so you can develop with the stacks directly in your choice of IDE using Codewind’s plugins. 
 
 *3. Appsody Deploy*
 
-Appsody deploy allows you to create a standard production optimized container image of your cloud native Microservices then deploy that image into Kubernetes using the deploy command. Appsody deploy utilizes Appsody Operator which minimizes the configuration required to deploy the Microservice so now you can deploy using a serverless deployment either through Knative or a Kubernetes service. 
+Appsody deploy allows you to create a standard production optimized container image of your cloud native Microservices then deploy that image into Kubernetes using the deploy command. Appsody deploy utilizes Appsody Operator which minimizes the configuration required to deploy the Microservice so now you can deploy using a serverless deployment either through Knative or a Kubernetes service. 
 
 === Codewind overview 
 
 *Codewind*
 
-Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che. As an open source project under Eclipse, Codewind gives you a set of tools for you to use to build high quality cloud native applications for Kubernetes regardless of the IDE or language you use. When Codewind enhances your IDE, you can run your applications in a Docker container. So you now can rapidly iterate, debug, and perform test apps inside containers with the same environment as production and in your preferred IDE. During the Codewind phase, developers can simply code and not concern themselves with any other tasks. 
+Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che. As an open source project under Eclipse, Codewind gives you a set of tools for you to use to build high quality cloud native applications for Kubernetes regardless of the IDE or language you use. When Codewind enhances your IDE, you can run your applications in a Docker container. So you now can rapidly iterate, debug, and perform test apps inside containers with the same environment as production and in your preferred IDE. During the Codewind phase, developers can simply code and not concern themselves with any other tasks. 
 
-Codewind consists of four key features: 
+Codewind consists of four key features: 
 
 *1. Inner Loop*
 
-Codewind adopts the “inner loop” practice which basically is an iterative process that developers perform as they write, build, or debug code. The inner loop mostly has three parts: experimentation (example, coding), feedback collection (example, building) and tax (example, committing). Adopting the inner loop, Codewind quickens development and feedback.   
+Codewind adopts the “inner loop” practice which basically is an iterative process that developers perform as they write, build, or debug code. The inner loop mostly has three parts: experimentation (example, coding), feedback collection (example, building) and tax (example, committing). Adopting the inner loop, Codewind quickens development and feedback.   
 
 *2. Container Development Everywhere*
 
-Codewind can support application development on any Kubernetes cluster. If you use a local IDE plugin, Codewind provides support on the Docker. With Codewind, you use the same tools in local or hosted IDE and run in local containers or deploy directly on Kubernetes.    
+Codewind can support application development on any Kubernetes cluster. If you use a local IDE plugin, Codewind provides support on the Docker. With Codewind, you use the same tools in local or hosted IDE and run in local containers or deploy directly on Kubernetes.    
 
 *3. IDE Support*
 
 Codewind delivers native IDE integration with VS Code, Eclipse, and Eclipse Che. This way, regardless of your preferred IDE or language, you can use Codewind to build your cloud native application. 
 
-*4. Developer Performanace Monitoring*
+*4. Developer Performance Monitoring*
 
-Codewind automatically analyzes applications for performance issues. Configurable load testing makes code changes which immediately show through live and historical performance graphs. 
+Codewind automatically analyzes applications for performance issues. Configurable load testing makes code changes which immediately show through live and historical performance graphs. 
 
 === Tekton overview
 
 *Tekton*
 
-Tekton is a Kubernetes-native open-source framework for creating continuous integration and delivery (CI/CD) systems. Tekton lets you build, test, and deploy across multiple cloud providers or on-premises systems. Tekton provides open-source components to help standardize your CI/CD tooling and processes across vendors, languages, and deployment environments. 
+Tekton is a Kubernetes-native open-source framework for creating continuous integration and delivery (CI/CD) systems. Tekton lets you build, test, and deploy across multiple cloud providers or on-premises systems. Tekton provides open-source components to help standardize your CI/CD tooling and processes across vendors, languages, and deployment environments. 
 
-Tekton pipeline is a collection of tasks, and each task is a set of instructions to execute within a container. The pipeline can then automate common activities in Kubernetes environments. Tekton takes all the work, development, build, and code from the Codewind phase and uses its pipeline to deploy Codewind’s outcomes to OpenShift Cloud. 
+Tekton pipeline is a collection of tasks, and each task is a set of instructions to execute within a container. The pipeline can then automate common activities in Kubernetes environments. Tekton takes all the work, development, build, and code from the Codewind phase and uses its pipeline to deploy Codewind’s outcomes to OpenShift Cloud. 
 
-Tekton consists of four key features: 
+Tekton consists of four key features: 
 
 *1. Steps*
 
-A step is a container spec which is a container image with all the information that you need to run it. Steps are also the most basic building blocks of Tekton pipelines.  Steps run in sequential order on the same Kubernetes node. 
+A step is a container spec which is a container image with all the information that you need to run it. Steps are also the most basic building blocks of Tekton pipelines.  Steps run in sequential order on the same Kubernetes node. 
 
 *2. Tasks*
 
-Tasks are made up by steps. Tasks are custom resource definitions (CRDs). Tasks can run sequentially or concurrently on different nodes. Tasks make up a pipeline. 
+Tasks are made up by steps. Tasks are custom resource definitions (CRDs). Tasks can run sequentially or concurrently on different nodes. Tasks make up a pipeline. 
 
 *3. Pipelines*
 
-Pipelines express the order of the tasks. Pipelines connect the outputs of one task with the inputs of another. Pipelines: git clones, build docker images, publish images to repositories, and deploys images. 
+Pipelines express the order of the tasks. Pipelines connect the outputs of one task with the inputs of another. Pipelines: git clones, build docker images, publish images to repositories, and deploys images. 
 
 *4. Dashboard* 
 
@@ -179,7 +179,7 @@ The dashboard is the web user interface for Tekton Pipelines. The dashboard inpu
 
 === Developing with VS Code
 
-Why VS Code? You can use Codewind for Visual Studio Code to develop and debug your containerizedprojects from within VS Code.
+Why VS Code? You can use Codewind for Visual Studio Code to develop and debug your containerized projects from within VS Code.
 
 Write code, track application and build statuses, view project logs, and run your application.
 Codewind for VS Code supports development of Microprofile/Java EE, Java Lagom, Spring, Node.js, Go, Python, Swift, and Appsody containerized projects.
@@ -218,14 +218,14 @@ Restart Codewind to pick up the new extension.
 
 After installing the Appsody extension, the Appsody project templates will become available in Codewind, allowing you to create Appsody projects the same way you create other projects.
 
-*Test default endpoint*
+*Test the default endpoint*
 
 . To make sure your code change was picked up, test your new endpoint.
     * Right-click the project and select Open in Browser. The project root endpoint opens in the browser, and the *IBM Cloud Starter* page appears.
     * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL.
     * See the new response: (screenshot image here)
 
-*Debug app*
+*Debug the app*
 
  . You can debug your application within the container. To debug a containerized project, restart it in *Debug* mode.
     * Right-click the project and select Restart in Debug Mode.
@@ -240,7 +240,7 @@ After installing the Appsody extension, the Appsody project templates will becom
     
 VS Code suspends your application at the breakpoint. Here you can step through the code, inspect variables, see the call stack, and evaluate expressions in the *Debug Console.*
 
-*Run app*
+*Run the app*
 
 . Right click your project and select "open app."
 
@@ -292,7 +292,7 @@ Restart Codewind to pick up the new extension.
 
 After installing the Appsody extension, the Appsody project templates will become available in Codewind, allowing you to create Appsody projects the same way you create other projects.
 
-*Edit project files*
+*Edit the project files*
 
 Editing actions are available by right clicking on the project in the *Codewind Explorer* view.
 Most actions are only available if the project is enabled.
@@ -306,11 +306,11 @@ You can configure project settings when you:
 . Go to Project Overview page that is accessible from a project’s context menu, or, 
 . Find the project settings in the *.cw-settings* file of the project which you can edit
 
-*Test new endpoint*
+*Test the new endpoint*
 
 Instructions here on how to test the new endpoint
 
-*Debug app*
+*Debug the app*
 
 Codewind for Eclipse supports debugging Microprofile/Java EE and Spring projects.
 The tools also help you set up a debug session for Node.js projects in a Chromium based browser.
@@ -342,7 +342,7 @@ Debugging:
  . You can reload your application multiple times to isolate the problem. However, if you are debugging initialization code, you must restart your project in debug mode to stop in this code again.
  . When you have finished debugging, you can switch back to run mode. Right-click on your project in the *Codewind Explorer* view and select *Restart in Run Mode.*
  
-Attaching to a project in debug mode: 
+Attaching to a project in debug mode: 
  
 If you detached from the debugger, or you restarted Eclipse, you can attach the debugger without restarting again:
  
@@ -363,14 +363,14 @@ You can restart your Node.js application in debug mode and the tools help you la
 	* Click the *Open Browser* button to open the browser you selected in the previous dialog. 
 	* Paste the URL into the address bar of the browser to start the debug session.
 
-Launching a debug session for a Node.js project in debug mode: 
+Launching a debug session for a Node.js project in debug mode: 
 
 You can launch a debug session for a Node.js project that is already in debug mode.
 
 . Right-click on your project in the *Codewind Explorer* view and select *Launch Debug Session.* This menu item is only available for Node.js projects in debug mode if a debug session is not already started.
 . Follow the steps in Debugging Node.js projects to launch a Node.js debug session, starting with step 2. 
 
-Modifying the Node.js debug launch preferences: 
+Modifying the Node.js debug launch preferences: 
 
 To change the browser to use when launching a Node.js debug session, edit the Codewind preferences:
 
@@ -378,15 +378,15 @@ To change the browser to use when launching a Node.js debug session, edit the Co
 . In the *Select a Chromium based web browser for launching the Node.js debugger* group, choose a Chromium based web browser from the list of browsers or add one using the *Manage*link. You can also clear the selected browser by selecting *No web browser selected* in the list. 
 . Click *Apply and Close.*
 
-*Run Application* 
+*Run the app* 
 
-Instructions here on how to run the application. 
+. Right click your project and select "open app."
 
-*Nice Work and Where to Next*
+*Nice work and where to next*
 
-If you would like to use Codewind with Eclipse Che or VS Code, you may read instructions to install and work with those IDEs in this guide. 
+If you would like to use Codewind with Eclipse Che or VS Code, you may read instructions to install and work with those IDEs in this guide. 
 
-To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
+To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
 
 == What you have learned 
 
@@ -405,7 +405,7 @@ Nice work! You’ve learned the basics of Kabanero and its components: Appsody, 
 *Do you have ideas to make this guide better?* 
 
 	* Raise an issue on our GitHub page. 
-	* Create a pull request on our GitHub page to contribute to this guide. 
+	* Create a pull request on our GitHub page to contribute to this guide. 
 
 *What do you think of our guide?* 
 
@@ -418,3 +418,4 @@ Nice work! You’ve learned the basics of Kabanero and its components: Appsody, 
 *Where to next?* 
 
 	* Check out our other guides more specifically looking at Kabanero, Appsody, and Tekton.
+
