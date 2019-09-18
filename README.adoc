@@ -252,9 +252,7 @@ To continue to learn about Codewind, visit Codewind API, https://eclipse.github.
 
 === Developing with Eclipse
 
-*Why Eclipse?*
-
-You can use Codewind for Eclipse to develop and debug your containerized projects from within Eclipse.
+Why Eclipse? You can use Codewind for Eclipse to develop and debug your containerized projects from within Eclipse.
 
 Use the Eclipse IDE to create and make modifications to your application, see the application and build status, view the logs, and run your application.
 Codewind for Eclipse supports development of Microprofile/Java EE, Java Lagom, Spring, Node.js, Go, Python, Swift, and Appsody containerized projects. 
