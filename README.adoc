@@ -53,8 +53,6 @@ image::/img/guide/using-this-guide.png[link="/img/guide/using-this-guide.png" al
 
 == Kabanero overview 
 
-*Kabanero* 
-
 Kabanero is an open source project focused on bringing together foundational open source technologies into a modern microservices-based framework. Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, without having to spend time defining container images or building infrastructure. Focus on developing new applications and let the Kabanero tools do the heavy lifting of building and packaging deployment-ready containers.
 
 Kabanero has four fey features:
@@ -101,8 +99,6 @@ image::/img/guide/kabanero-moving-parts.png[link=”/img/guide/kabanero-moving-p
 
 === Appsody overview
 
-*Appsody*
-
 Appsody simplifies Kabanero's creation of cloud-native applications in containers. Appsody provides pre-configured container images, or stacks, that are prebuilt, cloud optimized development and production configurations for different languages and Microservice frameworks. These stacks provide a foundation to build applications for Kubernetes and Knative deployments.
 
 If you're a software developer, Appsody aims to remove the burden of managing the full software development stack. With Appsody, you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code! Basically, by providing stacks and templates, Appsody allows developers to focus solely on coding during the Codewind phase.    
@@ -127,8 +123,6 @@ Appsody deploy allows you to create a standard production optimized container im
 
 === Codewind overview 
 
-*Codewind*
-
 Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che. As an open source project under Eclipse, Codewind gives you a set of tools for you to use to build high quality cloud native applications for Kubernetes regardless of the IDE or language you use. When Codewind enhances your IDE, you can run your applications in a Docker container. So you now can rapidly iterate, debug, and perform test apps inside containers with the same environment as production and in your preferred IDE. During the Codewind phase, developers can simply code and not concern themselves with any other tasks. 
 
 Codewind consists of four key features: 
@@ -150,8 +144,6 @@ Codewind delivers native IDE integration with VS Code, Eclipse, and Eclipse Che.
 Codewind automatically analyzes applications for performance issues. Configurable load testing makes code changes which immediately show through live and historical performance graphs. 
 
 === Tekton overview
-
-*Tekton*
 
 Tekton is a Kubernetes-native open-source framework for creating continuous integration and delivery (CI/CD) systems. Tekton lets you build, test, and deploy across multiple cloud providers or on-premises systems. Tekton provides open-source components to help standardize your CI/CD tooling and processes across vendors, languages, and deployment environments. 
 
