@@ -45,7 +45,7 @@ image::/img/guide/using-this-guide.png[link="/img/guide/using-this-guide.png" al
 
 Kabanero is an open source project focused on bringing together foundational open source technologies into a modern microservices-based framework. Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, without having to spend time defining container images or building infrastructure. Focus on developing new applications and let the Kabanero tools do the heavy lifting of building and packaging deployment-ready containers.
 
-Kabanero has four fey features:
+Kabanero has four key features:
 
 *1. Kabanero Collections*
 
