@@ -8,7 +8,7 @@ permalink: /guides/guide-codewind/
 :page-description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use.
 :guide-author: Kabanero
 :page-tags: ['kabanero', 'appsody', 'codewind', 'tekton']
-= Getting Started with Codewind
+= Getting Started with Codewind in Kabanero
 
 == Objectives
 
