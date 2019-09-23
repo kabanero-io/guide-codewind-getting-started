@@ -182,19 +182,13 @@ The following images are pulled. These images together form the Codewind back en
 . eclipse/codewind-initialize-amd64
 . eclipse/codewind-performance-amd64 
 . eclipse/codewind-pfe-amd64
-When the installation is complete, the extension is ready to use, and you area prompted to open the Codewind workspace.
+When the installation is complete, the extension is ready to use, and you are prompted to open the Codewind workspace.
 
 Codewind creates the `~/codewind-workspace` folder to contain your projects. 
 On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
-You can open the `codewind-workspace` or a project within the workspace as your VS Code workspace. 
+You can open the `codewind-workspace` or a project within the workspace as your VS Code workspace.
 
-*Install Appsody Extension on Codewind*
-
-Download the latest [release](https://github.com/eclipse/codewind-appsody-extension/releases) and unzip or untar it under the Codewind workspace's `.extensions` folder, i.e.
-
-`/some_path/codewind-workspace/.extensions/codewind-appsody-extension`
-
-Restart Codewind to pick up the new extension.
+You no longer need to install an Appsody Extension because Appsody is integrated into Codewind 0.3.0
 
 *Create an Appsody project*
 
