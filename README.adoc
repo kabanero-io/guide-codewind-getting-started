@@ -178,11 +178,12 @@ The Codewind installation includes two parts:
 . Optional: If you don’t click *Install* when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over *Codewind*, and click the switch so that it changes to the *On* position. The window appears. 
 
 The following images are pulled. These images together form the Codewind back end:
-
+```
 . eclipse/codewind-initialize-amd64
 . eclipse/codewind-performance-amd64 
 . eclipse/codewind-pfe-amd64
-When the installation is complete, the extension is ready to use, and you are prompted to open the Codewind workspace.
+```
+When the installation is complete, the extension is ready to use, and you are prompted to open the `Codewind workspace.`
 
 Codewind creates the `~/codewind-workspace` folder to contain your projects. 
 On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
@@ -192,7 +193,7 @@ You no longer need to install an Appsody Extension because Appsody is integrated
 
 *Create an Appsody project*
 
-. Create a new MicroProfile project. Hover over the *Projects* entry underneath *Codewind in Visual Studio Code* and press the *+* icon to create a new project.
+. Create a new MicroProfile project. Hover over the `Projects` entry underneath `Codewind in Visual Studio Code` and press the `+` icon to create a new project.
 . Choose the `Appsody Eclipse Microprofile Template` and give the project a name, like `Appsody Calculator` (in this example).
 . Press `Enter` to create the project. 
 
@@ -340,7 +341,7 @@ The following images are pulled. These images together form the Codewind back en
 . eclipse/codewind-performance-amd64
 . eclipse/codewind-pfe-amd64
 ```
-When the installation is complete, the extension is ready to use, and you are prompted to open the Codewind workspace. 
+When the installation is complete, the extension is ready to use, and you are prompted to open the `Codewind workspace.` 
 
 Codewind creates the `~/codewind-workspace` folder to contain your projects.
 On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
@@ -349,6 +350,28 @@ You can open the `codewind-workspace` or a project within the workspace as your 
 You no longer need to install an Appsody Extension because Appsody is integrated into Codewind 0.3.0
 
 *Create an Appsody project*
+
+If after opening `Eclipse`, you don't see `Codewind Explorer`, follow these steps:
+
+. Select to `Window` in the top command bar
+. Select `Show View`
+. Select `Other`
+. Find the `Codewind` folder and click the drop down arrow
+. Select `Codewind Explorer`
+
+Follow these steps to create a new Appsody project:
+
+. Double click the `Codewind Explorer` tab
+. Expand `Codewind` by clicking the drop down arrow
+. Right click on `Projects (Local)`
+. Select `Create New Project...`
+. Under `Template`, select `Appsody Eclipse MicroProfile template` 
+. Name your project `Appsody Calculator` (for this example) in the `Project` name bar
+. Click the `Finish` button in the bottom right corner
+. Your project appears under `Projects (Local)`
+. When you see `[Running] [Build successful]` to the right of your project, then your project is ready 
+. Note, since this project is a MicroProfile, it takes a long time to build due to all its dependencies. 
+. Right click your project and select `Open Application` to begin work
 
 Let's take a look at the code. In the *Eclipse EXPLORER* you should see a `CODEWIND-WORKSPACE` entry with your project name. If you don't find it, right-click on the project and choose Add Folder to Workspace. In the workspace view, expand the project and the sub-folders to show all the files created from the Appsody template (Note, the template is not intended to be a sample as most people would end up having to delete the code each time, it aims to provide the starter code, server configuration and build to which you can add your code).
 
