@@ -267,13 +267,13 @@ public class Calculator extends Application {
 Any changes you make to your code will automatically be built and re-deployed by Codewind, and viewed in your browser. Let's see this in action.
 
 If you still have the logs *OUTPUT* tab open you will see that the code is compiled and the application restarted. You should see messages like:
-
+```
 [Container] [�[1;34mINFO�[m] Source compilation was successful.
 [Container] [�[1;34mINFO�[m] [AUDIT   ] CWWKT0017I: Web application removed (default_host): http://04013dbc9c11:9080/
 [Container] [�[1;34mINFO�[m] [AUDIT   ] CWWKZ0009I: The application starter-app has stopped successfully.
 [Container] [�[1;34mINFO�[m] [WARNING ] CWMH0053W: The readiness health check reported a DOWN overall status because the following applications have not started yet: [starter-app]
 [Container] [�[1;34mINFO�[m] [AUDIT   ] CWWKT0016I: Web application available (default_host): http://04013dbc9c11:9080/
-
+```
 Now we can do some interesting stuff with this new resource. You can point your browser at a couple of things (note, is the port number you saw when you first opened the application):
 
 http://127.0.0.1:/starter/calculator/aboutme You should see the following response:
