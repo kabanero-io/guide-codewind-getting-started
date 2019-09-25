@@ -294,7 +294,7 @@ So for `http://127.0.0.1:<port>/starter/calculator/+/10/3` you should see: `10+3
 
 *Debug the app*
 
- . You can debug your application within the container. To debug a containerized project, restart it in *Debug* mode.
+ . You can debug your application within the container. To debug a containerized project, restart it in `Debug` mode.
     * Right-click the project and select `Restart in Debug Mode.`
     * The project restarts into the `Debugging` state.
     * A debug launch configuration is created in `nodeproject/.vscode/launch.json.`
