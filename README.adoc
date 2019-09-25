@@ -193,10 +193,10 @@ You no longer need to install an Appsody Extension because Appsody is integrated
 *Create an Appsody project*
 
 . Create a new MicroProfile project. Hover over the *Projects* entry underneath *Codewind in Visual Studio Code* and press the *+* icon to create a new project.
-. Choose the *Appsody Eclipse Microprofile Template* and give the project a name, like *Appsody Calculator* (in this example).
-. Press *Enter* to create the project. 
+. Choose the `Appsody Eclipse Microprofile Template` and give the project a name, like `Appsody Calculator` (in this example).
+. Press `Enter` to create the project. 
 
-The project has now been generated and will take a little time to build. To monitor the progress, expand *Codewind -> Projects* and right click the menu option *Show all logs:*
+The project has now been generated and will take a little time to build. To monitor the progress, expand `Codewind -> Projects` and right click the menu option `Show all logs:`
 
 After several minutes, you should see a log message like the following:
 ```
@@ -206,11 +206,11 @@ And the project status should change to *Running.*
 
 To access the application endpoint in a browser, select the Open App icon next to the project's name, or right-click on the project and select the Open App menu option. This opens up the application in the running container showing the Welcome to your Appsody Microservice page.
 
-Let's take a look at the code. In the *VS Code EXPLORER* you should see a *CODEWIND-WORKSPACE* entry with your project name. If you don't find it, right-click on the project and choose Add Folder to Workspace. In the workspace view, expand the project and the sub-folders to show all the files created from the Appsody template (Note, the template is not intended to be a sample as most people would end up having to delete the code each time, it aims to provide the starter code, server configuration and build to which you can add your code).
+Let's take a look at the code. In the *VS Code EXPLORER* you should see a `CODEWIND-WORKSPACE` entry with your project name. If you don't find it, right-click on the project and choose Add Folder to Workspace. In the workspace view, expand the project and the sub-folders to show all the files created from the Appsody template (Note, the template is not intended to be a sample as most people would end up having to delete the code each time, it aims to provide the starter code, server configuration and build to which you can add your code).
 
 The main Java files are StarterLivenessCheck, StarterReadinessCheck and StarterApplication. The first two provide the outlines for liveness and readiness checks that can be hooked up to Kubernetes liveness and readiness probes. These are implemented using MicroProflie Health. The third file is a JAX-RS application, which provides the Application Path for your REST API.
 
-Let's add a *REST* service to your application. Navigate to the *src/main/java/dev/appsody/starter* directory, and create a file called *Calculator.java* - this will be our JAX-RS resource. Populate the file with the following code and save it:
+Let's add a REST service to your application. Navigate to the `src/main/java/dev/appsody/starter` directory, and create a file called `Calculator.java` - this will be our JAX-RS resource. Populate the file with the following code and save it:
 ```
 package dev.appsody.starter;
 
@@ -277,11 +277,12 @@ If you still have the logs *OUTPUT* tab open you will see that the code is compi
 Now we can do some interesting stuff with this new resource. You can point your browser at a couple of things (note, is the port number you saw when you first opened the application):
 
 http://127.0.0.1:/starter/calculator/aboutme You should see the following response:
-*You can add (+), subtract (-), and multiply (x) with this simple calculator.*
+```
+You can add (+), subtract (-), and multiply (*) with this simple calculator.
+```
+You could also try a few of the functions: `http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}`, where you can input one of the available operations `(+, _, *)`, and an integer a, and an integer b.
 
-You could also try a few of the functions: *http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}*, where you can input one of the available operations *(+, _, *)*, and an integer a, and an integer b.
-
-So for *http://127.0.0.1:<port>/starter/calculator/+/10/3* you should see: *10+3=13*
+So for `http://127.0.0.1:<port>/starter/calculator/+/10/3` you should see: `10+3=13`
 
 *Test the default endpoint*
 
@@ -334,11 +335,11 @@ The Codewind installation includes two parts:
 . Optional: If you don’t click *Install* when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over *Codewind*, and click the switch so that it changes to the *On* position. The window appears.
 
 The following images are pulled. These images together form the Codewind back end:
-
+```
 . eclipse/codewind-initialize-amd64
 . eclipse/codewind-performance-amd64
 . eclipse/codewind-pfe-amd64
-
+```
 When the installation is complete, the extension is ready to use, and you are prompted to open the Codewind workspace. 
 
 Codewind creates the `~/codewind-workspace` folder to contain your projects.
@@ -349,11 +350,11 @@ You no longer need to install an Appsody Extension because Appsody is integrated
 
 *Create an Appsody project*
 
-Let's take a look at the code. In the *VS Code EXPLORER* you should see a *CODEWIND-WORKSPACE* entry with your project name. If you don't find it, right-click on the project and choose Add Folder to Workspace. In the workspace view, expand the project and the sub-folders to show all the files created from the Appsody template (Note, the template is not intended to be a sample as most people would end up having to delete the code each time, it aims to provide the starter code, server configuration and build to which you can add your code).
+Let's take a look at the code. In the *Eclipse EXPLORER* you should see a `CODEWIND-WORKSPACE` entry with your project name. If you don't find it, right-click on the project and choose Add Folder to Workspace. In the workspace view, expand the project and the sub-folders to show all the files created from the Appsody template (Note, the template is not intended to be a sample as most people would end up having to delete the code each time, it aims to provide the starter code, server configuration and build to which you can add your code).
 
 The main Java files are StarterLivenessCheck, StarterReadinessCheck and StarterApplication. The first two provide the outlines for liveness and readiness checks that can be hooked up to Kubernetes liveness and readiness probes. These are implemented using MicroProflie Health. The third file is a JAX-RS application, which provides the Application Path for your REST API.
 
-Let's add a *REST* service to your application. Navigate to the *src/main/java/dev/appsody/starter* directory, and create a file called *Calculator.java* - this will be our JAX-RS resource. Populate the file with the following code and save it:
+Let's add a REST service to your application. Navigate to the `src/main/java/dev/appsody/starter` directory, and create a file called `Calculator.java` - this will be our JAX-RS resource. Populate the file with the following code and save it:
 ```
 package dev.appsody.starter;
 
@@ -420,11 +421,12 @@ If you still have the logs *OUTPUT* tab open you will see that the code is compi
 Now we can do some interesting stuff with this new resource. You can point your browser at a couple of things (note, is the port number you saw when you first opened the application):
 
 http://127.0.0.1:/starter/calculator/aboutme You should see the following response:
-*You can add (+), subtract (-), and multiply (x) with this simple calculator.*
+```
+You can add (+), subtract (-), and multiply (*) with this simple calculator.
+```
+You could also try a few of the functions: `http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}`, where you can input one of the available operations `(+, _, *)`, and an integer a, and an integer b.
 
-You could also try a few of the functions: *http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}*, where you can input one of the available operations *(+, _, *)*, and an integer a, and an integer b.
-
-So for *http://127.0.0.1:<port>/starter/calculator/+/10/3* you should see: *10+3=13*
+So for `http://127.0.0.1:<port>/starter/calculator/+/10/3` you should see: `10+3=13`
 
 *Edit the project files*
 
