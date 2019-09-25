@@ -231,15 +231,15 @@ import javax.ws.rs.PathParam;
 
 @Path("/calculator")
 public class Calculator extends Application {
-
-@GET
+    
+    @GET
     @Path("/aboutme")
     @Produces(MediaType.TEXT_PLAIN)
     public String aboutme(){
         return "You can add (+), subtract (-), and multiply (*) with this simple calculator.";
     }
-    
- @GET
+
+	@GET
     @Path("/{op}/{a}/{b}")
 	@Produces(MediaType.TEXT_PLAIN)
     public Response calculate(@PathParam("op") String op, @PathParam("a") String a, @PathParam("b") String b)
@@ -247,7 +247,7 @@ public class Calculator extends Application {
         int numA = Integer.parseInt(a);
         int numB = Integer.parseInt(b);
 
- switch(op)
+      switch(op)
       {
           case "+":
               return Response.ok(a + "+" + b + "=" + (Integer.toString((numA + numB)))).build();
@@ -277,7 +277,7 @@ If you still have the logs *OUTPUT* tab open you will see that the code is compi
 Now we can do some interesting stuff with this new resource. You can point your browser at a couple of things (note, is the port number you saw when you first opened the application):
 
 http://127.0.0.1:/starter/calculator/aboutme You should see the following response:
-*You can add (+), subtract (-), and multiply (*) with this simple calculator.*
+*You can add (+), subtract (-), and multiply (x) with this simple calculator.*
 
 You could also try a few of the functions: *http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}*, where you can input one of the available operations *(+, _, *)*, and an integer a, and an integer b.
 
