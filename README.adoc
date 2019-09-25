@@ -199,9 +199,9 @@ You no longer need to install an Appsody Extension because Appsody is integrated
 The project has now been generated and will take a little time to build. To monitor the progress, expand *Codewind -> Projects* and right click the menu option *Show all logs:*
 
 After several minutes, you should see a log message like the following:
-
+```
 [Container] [�[1;34mINFO�[m] [AUDIT   ] CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 69.467 seconds.
-
+```
 And the project status should change to *Running.*
 
 To access the application endpoint in a browser, select the Open App icon next to the project's name, or right-click on the project and select the Open App menu option. This opens up the application in the running container showing the Welcome to your Appsody Microservice page.
@@ -211,7 +211,7 @@ Let's take a look at the code. In the *VS Code EXPLORER* you should see a *CODEW
 The main Java files are StarterLivenessCheck, StarterReadinessCheck and StarterApplication. The first two provide the outlines for liveness and readiness checks that can be hooked up to Kubernetes liveness and readiness probes. These are implemented using MicroProflie Health. The third file is a JAX-RS application, which provides the Application Path for your REST API.
 
 Let's add a *REST* service to your application. Navigate to the *src/main/java/dev/appsody/starter* directory, and create a file called *Calculator.java* - this will be our JAX-RS resource. Populate the file with the following code and save it:
-
+```
 package dev.appsody.starter;
 
 import javax.ws.rs.ApplicationPath;
@@ -263,7 +263,7 @@ public class Calculator extends Application {
       }
     }
 }
-
+```
 Any changes you make to your code will automatically be built and re-deployed by Codewind, and viewed in your browser. Let's see this in action.
 
 If you still have the logs *OUTPUT* tab open you will see that the code is compiled and the application restarted. You should see messages like:
