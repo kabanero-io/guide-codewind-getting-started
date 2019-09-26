@@ -40,7 +40,7 @@ Developer tools give your team access to the collection(s) that have been activa
 
 *Kabanero's components and how it all works* 
 
-Kabanero has three components, which all work together to execute Kabanero’s features and tasks. These components are:
+Kabanero has three components:
 
 . Appsody, the architect phase
 . Codewind, the coding phase
