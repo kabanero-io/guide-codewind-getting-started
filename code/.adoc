@@ -28,7 +28,7 @@ Kabanero Collections are logical collections, stored and managed in a GitHub rep
 
 *2. Kabanero Foundation*
 
-Installing Kabanero Foundation will allow you to activate, manage, and share collections with your team and maintain governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. 
+Installing Kabanero Foundation allows you to activate, manage, and share collections with your team and maintain governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. 
 
 *3. Management CLI*
 
@@ -36,7 +36,7 @@ Using the Command Line Interface (CLI), you choose a collection and configure it
 
 *4. Developer Tools* 
 
-Developer tools give your team access to the collection(s) that have been activated in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio Code or Eclipse and also can be used in conjunction with their CLI using XCode. 
+Developer tools give your team access to the collection(s) that have been activated in Kabanero Foundation. Other public Kabanero Collections are also available for developers to use in either Visual Studio (VS) Code or Eclipse and also can be used in conjunction with their CLI using XCode. 
 
 *Kabanero's components and how it all works* 
 
@@ -56,15 +56,15 @@ Jane discovers the stacks available to her by using the CLI. Once Jane has chose
 
 The CLI provides a build command to allow Jane to set up a Continuous Integration and Continuous Delivery (CI/CD) pipeline. Jane can use this pipeline for her Git project or for a local build. When Jane commits the code to GitHub, the pipeline pushes the code to a Kubernetes cluster on OpenShift Cloud. If Jane is building locally, the pipeline takes Jane’s application and Champ’s stacks and uses the two to build a full microservice inside a Docker container that can be used anywhere. During the Tekton stage in Kabanero, the CI/CD pipeline automates and deploys code. 
 
-See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. Read about each component and its specific functions in greater detail throughout this guide.
+See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. Then read about each component and its specific functions in greater detail. 
 
 *Diagram of Kabanero's components*
 
 image::/img/guide/kabanero-moving-parts.png[link=”/img/guide/kabanero-moving-parts.png”alt=”A diagram of Kabanero and all its moving parts: Appsody, Codewind, and Tekton."] 
 
-=== Appsody overview
+== Appsody overview
 
-Appsody simplifies Kabanero's creation of cloud-native applications in containers. Appsody provides pre-configured container images, or stacks, that are prebuilt, cloud optimized development and production configurations for different languages and Microservice frameworks. These stacks provide a foundation to build applications for Kubernetes and Knative deployments.
+Appsody simplifies Kabanero's creation of cloud-native applications in containers. Appsody provides pre-configured container images, or stacks, that are prebuilt, cloud optimized development and production configurations for different languages and microservice frameworks. These stacks provide a foundation to build applications for Kubernetes and Knative deployments.
 
 If you're a software developer, Appsody aims to remove the burden of managing the full software development stack. With Appsody, you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code! Basically, by providing stacks and templates, Appsody allows developers to focus solely on coding during the Codewind phase.    
 
@@ -84,9 +84,9 @@ Working with the stacks, Appsody CLI provides commands that implement the full d
 
 *3. Appsody Deploy*
 
-Appsody deploy allows you to create a standard production optimized container image of your cloud native Microservices then deploy that image into Kubernetes using the deploy command. Appsody deploy utilizes Appsody Operator which minimizes the configuration required to deploy the Microservice so now you can deploy using a serverless deployment either through Knative or a Kubernetes service. 
+Appsody deploy allows you to create a standard production optimized container image of your cloud native microservices then deploy that image into Kubernetes using the deploy command. Appsody deploy utilizes Appsody Operator which minimizes the configuration required to deploy the Microservice so now you can deploy using a serverless deployment either through Knative or a Kubernetes service. 
 
-=== Codewind overview 
+== Codewind overview 
 
 Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che. As an open source project under Eclipse, Codewind gives you a set of tools for you to use to build high quality cloud native applications for Kubernetes regardless of the IDE or language you use. When Codewind enhances your IDE, you can run your applications in a Docker container. So you now can rapidly iterate, debug, and perform test apps inside containers with the same environment as production and in your preferred IDE. During the Codewind phase, developers can simply code and not concern themselves with any other tasks. 
 
@@ -108,7 +108,7 @@ Codewind delivers native IDE integration with VS Code, Eclipse, and Eclipse Che.
 
 Codewind automatically analyzes applications for performance issues. Configurable load testing makes code changes which immediately show through live and historical performance graphs. 
 
-=== Tekton overview
+== Tekton overview
 
 Tekton is a Kubernetes-native open-source framework for creating continuous integration and delivery (CI/CD) systems. Tekton lets you build, test, and deploy across multiple cloud providers or on-premises systems. Tekton provides open-source components to help standardize your CI/CD tooling and processes across vendors, languages, and deployment environments. 
 
@@ -132,3 +132,8 @@ Pipelines express the order of the tasks. Pipelines connect the outputs of one t
 
 The dashboard is the web user interface for Tekton Pipelines. The dashboard inputs runtime parameters into pipeline runs and views the execution logs of the pipeline runs. A deployment pipeline is an automated manifestation of your software process from version control all the way to production. It ensures a consistent, repeatable and reliable way to release software to production including new releases, fixes, security patches basically anything released to production should always go through this automated process.
 
+==What you have learned
+
+. Foundation of Kabanero and its subcomponents: Appsody, Codewind, and Tekton
+
+. How Kabanero, Appsody, Codewind, and Tekton build cloud native applications 
