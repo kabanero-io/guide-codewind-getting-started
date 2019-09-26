@@ -132,7 +132,7 @@ Pipelines express the order of the tasks. Pipelines connect the outputs of one t
 
 The dashboard is the web user interface for Tekton Pipelines. The dashboard inputs runtime parameters into pipeline runs and views the execution logs of the pipeline runs. A deployment pipeline is an automated manifestation of your software process from version control all the way to production. It ensures a consistent, repeatable and reliable way to release software to production including new releases, fixes, security patches basically anything released to production should always go through this automated process.
 
-==What you have learned
+== What you have learned
 
 . Foundation of Kabanero and its subcomponents: Appsody, Codewind, and Tekton
 
