@@ -54,7 +54,7 @@ The Codewind installation includes two parts:
 
 . The VS Code extension installs when you install Codewind from the VS Code Marketplace or when you install by searching in the `VS Code Extensions` view.
 . The Codewind back end containers install after you click `Install` when you are prompted. After you click `Install`, the necessary images are downloaded from the internet. The download is approximately 1 GB.
-. Optional: If you don’t click *Install* when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over `Codewind`, and click the switch so that it changes to the `On` position. The window appears. 
+. Optional: If you don’t click `Install1 when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over `Codewind`, and click the switch so that it changes to the `On` position. The window appears. 
 
 The following images are pulled. These images together form the Codewind back end:
 ```
@@ -156,7 +156,7 @@ If you still have the logs `OUTPUT` tab open you will see that the code is compi
 ```
 Now we can do some interesting stuff with this new resource. You can point your browser at a couple of things (note, is the port number you saw when you first opened the application):
 
-http://127.0.0.1:/starter/calculator/aboutme You should see the following response:
+`http://127.0.0.1:/starter/calculator/aboutme` You should see the following response:
 ```
 You can add (+), subtract (-), and multiply (*) with this simple calculator.
 ```
