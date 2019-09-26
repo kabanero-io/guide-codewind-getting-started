@@ -20,91 +20,21 @@ permalink: /guides/guide-codewind/
 
 . Install Codewind on VS Code or Eclipse so you can instantly begin to work on your projects.
 
-. Develope a simple Microservice with your chosen IDE so you can work independently after completing this guide. 
+. Develope a simple microservice with your chosen IDE so you can work independently after completing this guide. 
 
-*Kabanero's components and how it all works* 
+== Codewind in Kabanero 
 
-Kabanero has three components, which all work together to execute Kabanero’s features and tasks. These components are:
+Before working with Codewind, understand that Codewind works within Kabanero, an open source project in a microservices-based framework. Kabanero has three components:
 
-. Appsody, the architect phase
-. Codewind, the coding phase
-. Tekton, the deployment phase
+. Appsody, the architect phase.
+. Codewind, the coding phase.
+. Tekton, the deployment phase.
 
-See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. Read about each component and its specific functions in greater detail throughout this guide.
+See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. Read about each component and its specific functions in greater detail in the 'Learn About' sections of Kabanero.io: [provide link to the learn about sections]
 
 *Diagram of Kabanero's components*
 
 image::/img/guide/kabanero-moving-parts.png[link=”/img/guide/kabanero-moving-parts.png”alt=”A diagram of Kabanero and all its moving parts: Appsody, Codewind, and Tekton."] 
-
-=== Appsody overview
-
-Appsody simplifies Kabanero's creation of cloud-native applications in containers. Appsody provides pre-configured container images, or stacks, that are prebuilt, cloud optimized development and production configurations for different languages and Microservice frameworks. These stacks provide a foundation to build applications for Kubernetes and Knative deployments.
-
-If you're a software developer, Appsody aims to remove the burden of managing the full software development stack. With Appsody, you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code! Basically, by providing stacks and templates, Appsody allows developers to focus solely on coding during the Codewind phase.    
-
-Appsody consists of three key features:
-
-*1. Appsody Stacks*
-
-Appsody provides pre-configured application stacks that enable rapid development of quality microservice-based applications. Stacks include a base container image and project templates which act as a starting point for your application development.
-
-Appsody stacks include language runtimes, frameworks and any additional libraries and tools that are required to simplify your local application development. Stacks are an easy way to manage consistency and adopt best practices across many applications.
-
-Appsody Hub is the central point of control for Appsody Stacks where you can find available stacks, create new stacks, or modify existing ones. By making changes to the stacks in the hub, you can deploy updates to any application that's been built on them, simply by restarting the application.
-
-*2. Appsody CLI*
-
-Working with the stacks, Appsody CLI provides commands that implement the full development lifecycle, so it has the ability to create a new or enable an existing application. Appsody CLI also provides commands to run, test, debug, and build an image and deploy it to Kubernetes. Appsody CLI works with Codewind so you can develop with the stacks directly in your choice of IDE using Codewind’s plugins. 
-
-*3. Appsody Deploy*
-
-Appsody deploy allows you to create a standard production optimized container image of your cloud native Microservices then deploy that image into Kubernetes using the deploy command. Appsody deploy utilizes Appsody Operator which minimizes the configuration required to deploy the Microservice so now you can deploy using a serverless deployment either through Knative or a Kubernetes service. 
-
-=== Codewind overview 
-
-Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che. As an open source project under Eclipse, Codewind gives you a set of tools for you to use to build high quality cloud native applications for Kubernetes regardless of the IDE or language you use. When Codewind enhances your IDE, you can run your applications in a Docker container. So you now can rapidly iterate, debug, and perform test apps inside containers with the same environment as production and in your preferred IDE. During the Codewind phase, developers can simply code and not concern themselves with any other tasks. 
-
-Codewind consists of four key features: 
-
-*1. Inner Loop*
-
-Codewind adopts the “inner loop” practice which basically is an iterative process that developers perform as they write, build, or debug code. The inner loop mostly has three parts: experimentation (example, coding), feedback collection (example, building) and tax (example, committing). Adopting the inner loop, Codewind quickens development and feedback.   
-
-*2. Container Development Everywhere*
-
-Codewind can support application development on any Kubernetes cluster. If you use a local IDE plugin, Codewind provides support on the Docker. With Codewind, you use the same tools in local or hosted IDE and run in local containers or deploy directly on Kubernetes.    
-
-*3. IDE Support*
-
-Codewind delivers native IDE integration with VS Code, Eclipse, and Eclipse Che. This way, regardless of your preferred IDE or language, you can use Codewind to build your cloud native application. 
-
-*4. Developer Performance Monitoring*
-
-Codewind automatically analyzes applications for performance issues. Configurable load testing makes code changes which immediately show through live and historical performance graphs. 
-
-=== Tekton overview
-
-Tekton is a Kubernetes-native open-source framework for creating continuous integration and delivery (CI/CD) systems. Tekton lets you build, test, and deploy across multiple cloud providers or on-premises systems. Tekton provides open-source components to help standardize your CI/CD tooling and processes across vendors, languages, and deployment environments. 
-
-Tekton pipeline is a collection of tasks, and each task is a set of instructions to execute within a container. The pipeline can then automate common activities in Kubernetes environments. Tekton takes all the work, development, build, and code from the Codewind phase and uses its pipeline to deploy Codewind’s outcomes to OpenShift Cloud. 
-
-Tekton consists of four key features: 
-
-*1. Steps*
-
-A step is a container spec which is a container image with all the information that you need to run it. Steps are also the most basic building blocks of Tekton pipelines.  Steps run in sequential order on the same Kubernetes node. 
-
-*2. Tasks*
-
-Tasks are made up by steps. Tasks are custom resource definitions (CRDs). Tasks can run sequentially or concurrently on different nodes. Tasks make up a pipeline. 
-
-*3. Pipelines*
-
-Pipelines express the order of the tasks. Pipelines connect the outputs of one task with the inputs of another. Pipelines: git clones, build docker images, publish images to repositories, and deploys images. 
-
-*4. Dashboard* 
-
-The dashboard is the web user interface for Tekton Pipelines. The dashboard inputs runtime parameters into pipeline runs and views the execution logs of the pipeline runs. A deployment pipeline is an automated manifestation of your software process from version control all the way to production. It ensures a consistent, repeatable and reliable way to release software to production including new releases, fixes, security patches basically anything released to production should always go through this automated process.
 
 == Developing a simple microservice
 
@@ -258,13 +188,13 @@ VS Code suspends your application at the breakpoint. Here you can step through t
 
 *Run the app*
 
-. Right click your project and select "open app."
+. Right click your project and select `Open App.`
 
 *Nice work and were to next*
 
-If you would also like to use Codewind with Eclipse Che or Eclipse, you may read instructions to install and work with those IDEs in this guide. 
+If you would also like to use Codewind with Eclipse, you may read instructions to install and work with that IDE in this guide. 
 
-To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
+To continue to learn about Codewind, visit Codewind at: `https://www.eclipse.org/codewind/`.
 
 === Developing with Eclipse
 
@@ -488,21 +418,18 @@ To change the browser to use when launching a Node.js debug session, edit the Co
 
 *Run the app* 
 
-. Right click your project and select "open app."
+. Right click your project and select `Open App.`
 
 *Nice work and where to next*
 
-If you would like to use Codewind with Eclipse Che or VS Code, you may read instructions to install and work with those IDEs in this guide. 
+If you would like to use Codewind with VS Code, you may read instructions to install and work that IDE in this guide. 
 
-To continue to learn about Codewind, visit Codewind API, https://eclipse.github.io/codewind/. 
+To continue to learn about Codewind,  visit Codewind at: `https://www.eclipse.org/codewind/`.
 
 == What you have learned 
 
 Now, at the end of this guide, you have:
 
-. Learned the basics and foundations of Kabanero, Appsody, Codewind, and Tekton.
-. Learned how Codewind works within Kabanero and with its other components: Appsody and Tekton.
-. Installed Codewind on your preference of Eclipse Che, VS Code, or Eclipse.
-. Practiced how to use some of the basic features of Codewind on your preferred authoring tool.
-. Prepared to create your own cloud native application using Codewind.
-
+. Installed Codewind on your preference of VS Code or Eclipse.
+. Developed your own microservice using Codewind.
+. Practiced how to use some of the basic features of Codewind on your preferred IDE.
