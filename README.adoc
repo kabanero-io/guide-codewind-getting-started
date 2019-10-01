@@ -212,7 +212,14 @@ The Codewind installation includes two parts:
 
 . The Eclipse plug-in installs when you install Codewind from the Eclipse Marketplace or when you install by searching in the `Eclipse Extensions` view.
 . The Codewind back end containers install after you click `Install` when you are prompted. After you click `Install`, the necessary images are downloaded from the internet. The download is approximately 1 GB.
-. Optional: If you don’t click `Install` when the notification window first appears, you can access the notification again. Go to the Explorer view, hover the cursor over `Codewind`, and click the switch so that it changes to the `On` position. The window appears.
+
+To view Codewind Explorer: 
+
+. Select `Window` in the top command bar.
+. Select `Show View.`
+. Select `Other.`
+. Find the `Codewind` folder and click the drop down arrow.
+. Select `Codewind Explorer.`
 
 The following images are pulled. These images together form the Codewind back end:
 ```
@@ -230,27 +237,33 @@ You no longer need to install an Appsody Extension because Appsody is integrated
 
 *Create an Appsody project*
 
-If after opening `Eclipse`, you don't see `Codewind Explorer`, follow these steps:
-
-. Select to `Window` in the top command bar.
-. Select `Show View.`
-. Select `Other.`
-. Find the `Codewind` folder and click the drop down arrow.
-. Select `Codewind Explorer.`
-
 Follow these steps to create a new Appsody project:
 
 . Double click the `Codewind Explorer` tab.
 . Expand `Codewind` by clicking the drop down arrow.
 . Right click on `Projects (Local).`
 . Select `Create New Project...`
-. Under `Template`, select `Appsody Eclipse MicroProfile template.` 
+. Under `Template`, select `Appsody Eclipse MicroProfile template.` If you don't see Appsdoy templates, go to this guide's `Create an Appsody Template` section to complete steps to create an Appsody template for Eclipse. 
 . Name your project `Appsody Calculator` (for this example) in the `Project` name bar.
-. Click the `Finish` button in the bottom right corner.
-. Your project appears under `Projects (Local).`
-. When you see `[Running] [Build successful]` to the right of your project, then your project is ready. 
-. Note, since this project is a MicroProfile, it takes a long time to build due to all its dependencies. 
+. Click the `Finish` button at the bottom.
+. Your project appears under `Projects (Local)`, and the bottom of the screen tracks the progress of creating your project.
+. When you see `[Running] [Build successful]` next to your project, then your project is ready. 
+. Note, since this project is a MicroProfile, it takes a long time to create due to all its dependencies. 
 . Right click your project and select `Open Application` to begin work.
+. To see the backend of your project, right click on your project and select `Show Log Files.`
+. Select 'Show All.` Then a 'console tab' appears where you see your project's backend. 
+
+Create an Appsody Template:
+
+. Double click the `Codewind Explorer` tab.
+. Expand `Codewind` by clicking the drop down arrow.
+. Right click on `Projects (Local).`
+. Select `Create New Project...`
+. If you don't see an Appsody template, select the `Manage Tenplate Sources...` link at the bottom.  
+. Check the box next to `Appsody Stacks - appsodyhub.`
+. Select the `OK` button at the bottom. 
+. The templates are refreshed and you now can see the Appsody templates. 
+. Continue to create an Appsody project by starting with step 5 of `steps to create a new Appsody project.` 
 
 Let's take a look at the code. In the `Eclipse EXPLORER` you should see a `CODEWIND-WORKSPACE` entry with your project name. If you don't find it, right-click on the project and choose Add Folder to Workspace. In the workspace view, expand the project and the sub-folders to show all the files created from the Appsody template (Note, the template is not intended to be a sample as most people would end up having to delete the code each time, it aims to provide the starter code, server configuration and build to which you can add your code).
 
