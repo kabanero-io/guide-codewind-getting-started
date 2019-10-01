@@ -213,6 +213,13 @@ The Codewind installation includes two parts:
 . The Eclipse plug-in installs when you install Codewind from the Eclipse Marketplace or when you install by searching in the `Eclipse Extensions` view.
 . The Codewind back end containers install after you click `Install` when you are prompted. After you click `Install`, the necessary images are downloaded from the internet. The download is approximately 1 GB.
 
+The following images are pulled. These images together form the Codewind backend:
+```
+. eclipse/codewind-initialize-amd64
+. eclipse/codewind-performance-amd64
+. eclipse/codewind-pfe-amd64
+```
+
 To view Codewind Explorer: 
 
 . Select `Window` in the top command bar.
@@ -221,12 +228,6 @@ To view Codewind Explorer:
 . Find the `Codewind` folder and click the drop down arrow.
 . Select `Codewind Explorer.`
 
-The following images are pulled. These images together form the Codewind back end:
-```
-. eclipse/codewind-initialize-amd64
-. eclipse/codewind-performance-amd64
-. eclipse/codewind-pfe-amd64
-```
 When the installation is complete, the extension is ready to use, and you are prompted to open the `Codewind workspace.` 
 
 Codewind creates the `~/codewind-workspace` folder to contain your projects.
@@ -251,7 +252,7 @@ Follow these steps to create a new Appsody project:
 . Note, since this project is a MicroProfile, it takes a long time to create due to all its dependencies. 
 . Right click your project and select `Open Application` to begin work.
 . To see the backend of your project, right click on your project and select `Show Log Files.`
-. Select 'Show All.` Then a 'console tab' appears where you see your project's backend. 
+. Select 'Show All.` Then a `console tab` appears where you see your project's backend. 
 
 Create an Appsody Template:
 
@@ -294,7 +295,7 @@ public class Calculator extends Application {
     @GET
     @Path("/aboutme")
     @Produces(MediaType.TEXT_PLAIN)
-    public String aboutme(){
+    public response aboutme(){
         return "You can add (+), subtract (-), and multiply (*) with this simple calculator.";
     }
 
@@ -340,8 +341,15 @@ http://127.0.0.1:/starter/calculator/aboutme You should see the following respon
 You can add (+), subtract (-), and multiply (*) with this simple calculator.
 ```
 You could also try a few of the functions: `http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}`, where you can input one of the available operations `(+, _, *)`, and an integer a, and an integer b.
-
 So for `http://127.0.0.1:<port>/starter/calculator/+/10/3` you should see: `10+3=13`
+
+To obtain your `<port>`:
+
+. Right click your project.
+. Select `Open Project Overview`
+. Under 'General' you'll find `External Application Port'
+. Copy the 'External Application Port` and replace `<port>` in the URL with this value. 
+. Make sure to remove the `< >` symbol in the URL. 
 
 *Edit the project files*
 
