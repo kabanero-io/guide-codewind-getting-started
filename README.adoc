@@ -75,6 +75,17 @@ You no longer need to install an Appsody Extension because Appsody is integrated
 . Create a new MicroProfile project. Hover over the `Projects` entry underneath `Codewind in Visual Studio Code` and press the `+` icon to create a new project.
 . Choose the `Appsody Eclipse Microprofile Template` and give the project a name, like `Appsody Calculator` (in this example).
 . Press `Enter` to create the project. 
+. If you don't see Appsody templates, go to this guide's section, `Create an Appsody template for VS Code.`
+
+Create an Appsody template for VS Code:
+
+. For Macs, press `Command+P` 
+. For Windows, press `Control+P`
+. Press `Shift+>`
+. You now see a list of commands. 
+. Find and select 'Codewind: Manage Template Sources.` 
+. Enable the 'Appsody Stacks - appsodyhub`
+. Continue to create an Appsody project by following the steps for the section, `Create an Appsody project.` 
 
 The project has now been generated and will take a little time to build. To monitor the progress, expand `Codewind -> Projects` and right click the menu option `Show all logs:`
 
@@ -161,13 +172,20 @@ Now we can do some interesting stuff with this new resource. You can point your 
 You can add (+), subtract (-), and multiply (*) with this simple calculator.
 ```
 You could also try a few of the functions: `http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}`, where you can input one of the available operations `(+, _, *)`, and an integer a, and an integer b.
-
 So for `http://127.0.0.1:<port>/starter/calculator/+/10/3` you should see: `10+3=13`
+
+To obtain your `<port>`:
+
+. Right click your project.
+. Select `Open Project Overview`
+. Find `Exposed App Port`and here is the port value
+. Copy the 'Exposed App Port`value and replace `<port>` in the URL with this value. 
+. Make sure to remove the `< >` symbol in the URL. 
 
 *Test the default endpoint*
 
 . To make sure your code change was picked up, test your new endpoint.
-    * Right-click the project and select Open in Browser. The project root endpoint opens in the browser, and the `IBM Cloud Starter` page appears.
+    * Right-click the project and select `Open App.` The project root endpoint opens in the browser, and the `Appsody Microservice` page appears.
     * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL.
     * See the new response: `Yep, it worked!!`
 
@@ -176,13 +194,18 @@ So for `http://127.0.0.1:<port>/starter/calculator/+/10/3` you should see: `10+3
  . You can debug your application within the container. To debug a containerized project, restart it in `Debug` mode.
     * Right-click the project and select `Restart in Debug Mode.`
     * The project restarts into the `Debugging` state.
-    * A debug launch configuration is created in `nodeproject/.vscode/launch.json.`
+    * A debug launch configuration is created in `.vscode/launch.json.`
     * The debugger attaches, and VS Code opens the `Debug` view.
     * You can detach and reattach the debugger at any time, as long as the project is still in `Debug` mode.
     
  . All of the VS Code debug functionality is now available.
-    * If your code matches the screenshot, set a breakpoint at line 13 in `health.js.`
     * Refresh the new endpoint page that you opened in step 7 so that a new request is made, and the breakpoint gets hit.
+
+If debugging does not work, complete the following:
+
+. Select the `debug icon`.
+. At the top, you see a green arrow, highlighting the debug session. 
+. Use the drop down arrow to select the debug session that corresponds to your project. 
     
 VS Code suspends your application at the breakpoint. Here you can step through the code, inspect variables, see the call stack, and evaluate expressions in the `Debug Console.`
 
@@ -190,7 +213,7 @@ VS Code suspends your application at the breakpoint. Here you can step through t
 
 . Right click your project and select `Open App.`
 
-*Nice work and were to next*
+*Nice work and where to next*
 
 If you would also like to use Codewind with Eclipse, you may read instructions to install and work with that IDE in this guide. 
 
@@ -244,7 +267,7 @@ Follow these steps to create a new Appsody project:
 . Expand `Codewind` by clicking the drop down arrow.
 . Right click on `Projects (Local).`
 . Select `Create New Project...`
-. Under `Template`, select `Appsody Eclipse MicroProfile template.` If you don't see Appsdoy templates, go to this guide's `Create an Appsody Template` section to complete steps to create an Appsody template for Eclipse. 
+. Under `Template`, select `Appsody Eclipse MicroProfile template.` If you don't see Appsdoy templates, go to this guide's section, `Create an Appsody template for Eclipse.`
 . Name your project `Appsody Calculator` (for this example) in the `Project` name bar.
 . Click the `Finish` button at the bottom.
 . Your project appears under `Projects (Local)`, and the bottom of the screen tracks the progress of creating your project.
@@ -254,7 +277,7 @@ Follow these steps to create a new Appsody project:
 . To see the backend of your project, right click on your project and select `Show Log Files.`
 . Select 'Show All.` Then a `console tab` appears where you see your project's backend. 
 
-Create an Appsody Template:
+Create an Appsody template for Eclipse:
 
 . Double click the `Codewind Explorer` tab.
 . Expand `Codewind` by clicking the drop down arrow.
@@ -347,8 +370,8 @@ To obtain your `<port>`:
 
 . Right click your project.
 . Select `Open Project Overview`
-. Under 'General' you'll find `External Application Port'
-. Copy the 'External Application Port` and replace `<port>` in the URL with this value. 
+. Under 'General' you find `External Application Port'
+. Copy the 'External Application Port` value and replace `<port>` in the URL with this value. 
 . Make sure to remove the `< >` symbol in the URL. 
 
 *Edit the project files*
@@ -368,7 +391,7 @@ You can configure project settings when you:
 *Test the new endpoint*
 
 . To make sure your code change was picked up, test your new endpoint.
-    * Right-click the project and select Open in Browser. The project root endpoint opens in the browser, and the `IBM Cloud Starter` page appears.
+    * Right-click the project and select `Open App.` The project root endpoint opens in the browser, and the `Appsody Microservice` page appears.
     * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL.
     * See the new response: `Yep, it worked!!`
 
