@@ -4,7 +4,7 @@ permalink: /guides/guide-codewind/
 :page-layout: guide
 :page-duration: 30
 :page-releasedate: 2019-09-19
-:page-guide-category: developer tools
+:page-guide-category: basic
 :page-description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use.
 :guide-author: Kabanero
 :page-tags: ['kabanero', 'appsody', 'codewind', 'tekton']
