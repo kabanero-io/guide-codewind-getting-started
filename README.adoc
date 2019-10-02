@@ -30,7 +30,7 @@ Before working with Codewind, understand that Codewind works within Kabanero, an
 . Codewind, the coding phase.
 . Tekton, the deployment phase.
 
-See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. Read about each component and its specific functions in greater detail in the 'Learn About' sections of Kabanero.io: [provide link to the learn about sections]
+See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. 
 
 *Diagram of Kabanero's components*
 
@@ -75,7 +75,7 @@ You no longer need to install an Appsody Extension because Appsody is integrated
 . Create a new MicroProfile project. Hover over the `Projects` entry underneath `Codewind in Visual Studio Code` and press the `+` icon to create a new project.
 . Choose the `Appsody Eclipse Microprofile Template` and give the project a name, like `Appsody Calculator` (in this example).
 . Press `Enter` to create the project. 
-. If you don't see Appsody templates, go to the section, `Create an Appsody template for VS Code.`
+. If you don't see Appsody templates, go to the section, `Create an Appsody template for VS Code`.
 
 Create an Appsody template for VS Code:
 
@@ -83,17 +83,17 @@ Create an Appsody template for VS Code:
 . For Windows, press `Control+P`.
 . Press `Shift+>`.
 . You now see a list of commands. 
-. Find and select 'Codewind: Manage Template Sources`. 
-. Enable the 'Appsody Stacks - appsodyhub`.
+. Find and select `Codewind: Manage Template Sources`. 
+. Enable the `Appsody Stacks - appsodyhub`.
 . Continue to create an Appsody project by following the steps for the section, `Create an Appsody project`. 
 
-The project has now been generated and will take a little time to build. To monitor the progress, expand `Codewind -> Projects` and right click the menu option `Show all logs:`
+The project has now been generated and takes a little time to build due it being a Microprofile with multiple dependencies. To monitor the progress, expand `Codewind -> Projects` and right click the menu option `Show all logs:`
 
 After several minutes, you should see a log message like the following:
 ```
 [Container] [�[1;34mINFO�[m] [AUDIT   ] CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 69.467 seconds.
 ```
-And the project status should change to `Running.`
+And the project status should change to `Running`.
 
 To access the application endpoint in a browser, select the Open App icon next to the project's name, or right-click on the project and select the Open App menu option. This opens up the application in the running container showing the Welcome to your Appsody Microservice page.
 
@@ -214,11 +214,9 @@ VS Code suspends your application at the breakpoint. Here you can step through t
 
 . Right click your project and select `Open App`.
 
-*Nice work and where to next*
+*Nice work! Where to next?*
 
-If you would also like to use Codewind with Eclipse, you may read instructions to install and work with that IDE in this guide. 
-
-To continue to learn about Codewind, visit Codewind at: `https://www.eclipse.org/codewind/`.
+If you would also like to use Codewind with Eclipse, read instructions to install and work with that IDE in this guide. 
 
 === Developing with Eclipse
 
@@ -467,11 +465,9 @@ To change the browser to use when launching a Node.js debug session, edit the Co
 
 . Right click your project and select `Open App.`
 
-*Nice work and where to next*
+*Nice work! Where to next?*
 
-If you would like to use Codewind with VS Code, you may read instructions to install and work that IDE in this guide. 
-
-To continue to learn about Codewind,  visit Codewind at: `https://www.eclipse.org/codewind/`.
+If you would like to use Codewind with VS Code, read instructions to install and work that IDE in this guide. 
 
 == What you have learned 
 
