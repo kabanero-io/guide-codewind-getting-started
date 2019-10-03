@@ -18,21 +18,21 @@ permalink: /guides/guide-codewind-conceptual-overview/
 
 == Kabanero overview 
 
-Kabanero is an open source project focused on bringing together foundational open source technologies into a modern microservices-based framework. Use Kabanero to build applications that are ready for deployment onto Kubernetes and Knative, without having to spend time defining container images or building infrastructure. Focus on developing new applications and let the Kabanero tools do the heavy lifting of building and packaging deployment-ready containers.
+Kabanero, an open source project, brings together foundational open source technologies into a modern microservices-based framework. Use Kabanero to build applications ready for deployment onto Kubernetes and Knative, without having to spend time defining container images or building infrastructure. Focus on developing new applications and let the Kabanero tools do the heavy lifting of building and packaging deployment-ready containers.
 
 Kabanero has four key features:
 
 *1. Kabanero Collections*
 
-Kabanero Collections are logical collections, stored and managed in a GitHub repository. During the development phase, the collection seamlessly empowers developers to build applications and microservices to the architect’s standard configuration. Collections allow standardization and customization. 
+Kabanero Collections are stored and managed in a GitHub repository. During the development phase, the collection seamlessly empowers developers to build applications and microservices to the architect’s standard configuration. Collections allow standardization and customization. 
 
 *2. Kabanero Foundation*
 
-Installing Kabanero Foundation allows you to activate, manage, and share collections with your team and maintain governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. 
+Kabanero Foundation allows you to activate, manage, and share collections with your team and maintain governance over each piece of the collection. Kabanero Foundation is installed in a Kubernetes cluster using a Kubernetes Operator. 
 
 *3. Management CLI*
 
-Using the Command Line Interface (CLI), you choose a collection and configure it. You then can set up your pipelines and share the pipelines with your development team so they can start to build applications. 
+The Command Line Interface (CLI) lets you choose a collection and configure it. You then can set up your pipelines and share the pipelines with your development team so they can start to build applications. 
 
 *4. Developer Tools* 
 
@@ -42,21 +42,21 @@ Developer tools give your team access to the collection(s) that have been activa
 
 Kabanero has three components:
 
-. Appsody, the architect phase
+. Appsody, the development phase
 . Codewind, the coding phase
 . Tekton, the deployment phase
 
 You need to use all three of Kabanero’s components in order to build cloud native applications. You install Kabanero to ensure integration and cooperation among its three components, and each component requires its own installations. 
 
-With cloud native projects, architects and developers face new challenges, like having to work with microservices and more technology than they used to. Kabanero helps these professionals select the technologies and cloud services best for their needs. Here is an explanation of Kabanero and all its moving parts:
+With cloud native projects, architects and developers face new challenges, like working with microservices and more technology than they used to. Kabanero helps these professionals select the technologies and cloud services best for their needs. See the following explanation of Kabanero and its moving parts:
 
-With Kabanero, Champ (a solution architect) builds preconfigured stacks which allow him to decide which languages and frameworks are used, how they are used, and how they interact with his platform. The platform Champ builds includes the preconfigured stacks and decided framework. Champ then gives these platforms to Jane (the lead developer), so now she can build and deploy microservices from the given preconfigured stacks.  During the Appsody stage in Kabanero, the stacks, frameworks, and platforms are created. 
+With Kabanero, Champ (a solution architect) builds preconfigured stacks which allow him to decide which languages and frameworks to use, how to use them, and how they interact with his platform. The platform Champ builds includes the preconfigured stacks and decided framework. Champ then gives these platforms to Jane (the lead developer), so now she can build and deploy microservices from the given preconfigured stacks. The stacks Champ selected are used by Jane during the Appsody phase. Jane works within the Appsody phase because development begins here. 
 
-Jane discovers the stacks available to her by using the CLI. Once Jane has chosen the project type she wants to build, and once she has made a new directory for her application, she can type “app dev init” in the CLI. This command pulls down Champ’s stacks and adds them to Jane’s application, giving her an iterative development environment using her application and Champs’s specified platform runtime stack. This stack also allows Jane to develop in any IDE of her choosing, like Eclipse or VS Code. During the Codewind stage in Kabanero, the code is built, tested, and debugged. 
+In the Appsody phase, Jane discovers Appsody stacks available to her by using the CLI. Once Jane has chosen the project type she wants to build, and once she has made a new directory for her application, she can type “app dev init” in the CLI. This command pulls down Appsody stacks Champ selected and adds them to Jane’s application, giving her an iterative development environment. Appsody stacks provide Jane the plugin, Codewind, so she can develope in any IDE, like Eclipse or VS Code. Appsody stacks enable the Codewind phase where Jane builds, tests, and debugs code.
 
-The CLI provides a build command to allow Jane to set up a Continuous Integration and Continuous Delivery (CI/CD) pipeline. Jane can use this pipeline for her Git project or for a local build. When Jane commits the code to GitHub, the pipeline pushes the code to a Kubernetes cluster on OpenShift Cloud. If Jane is building locally, the pipeline takes Jane’s application and Champ’s stacks and uses the two to build a full microservice inside a Docker container that can be used anywhere. During the Tekton stage in Kabanero, the CI/CD pipeline automates and deploys code. 
+The CLI provides a build command to allow Jane to set up a Continuous Integration and Continuous Delivery (CI/CD) pipeline. Jane uses this pipeline for her Git project or for a local build. When Jane commits the code to GitHub, the pipeline pushes the code to a Kubernetes cluster on OpenShift Cloud. If Jane builds locally, the pipeline takes Jane’s application and Champ’s stacks and uses the two to build a full microservice inside a Docker container that can be used anywhere. This CI/CD pipeline makes up the Tekton phase, and with its pipeline, the Tekton phase automates and deploys code. Jane completes her work once she finishes developing code in the Appsody and Codewind phases. Now Champ resumes his work in the Tekton phase because he ensures the finished product on the Kubernetes cluster on OpenShift cloud. 
 
-See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. Then read about each component and its specific functions in greater detail. 
+See the following diagram for an illustration of how Appsody, Codewind, and Tekton work within Kabanero to build cloud native applications. Then read about each component and its specific functions in greater detail. 
 
 *Diagram of Kabanero's components*
 
