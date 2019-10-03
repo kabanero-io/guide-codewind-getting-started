@@ -88,13 +88,13 @@ Appsody deploy allows you to create a standard production optimized container im
 
 == Codewind overview 
 
-Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che. As an open source project under Eclipse, Codewind gives you a set of tools for you to use to build high quality cloud native applications for Kubernetes regardless of the IDE or language you use. When Codewind enhances your IDE, you can run your applications in a Docker container. So you now can rapidly iterate, debug, and perform test apps inside containers with the same environment as production and in your preferred IDE. During the Codewind phase, developers can simply code and not concern themselves with any other tasks. 
+Codewind provides Kabanero with IDE integration and extensions to popular IDEs like VS Code, Eclipse, and Eclipse Che. As an open source project under Eclipse, Codewind gives you a set of tools for you to use to build high quality cloud native applications for Kubernetes regardless of the IDE or language you use. When Codewind enhances your IDE, you can run your applications in a Docker container. So you now can rapidly iterate, debug, and perform test apps inside containers with the same environment as production and in your preferred IDE. 
 
 Codewind consists of four key features: 
 
 *1. Inner Loop*
 
-Codewind adopts the “inner loop” practice which basically is an iterative process that developers perform as they write, build, or debug code. The inner loop mostly has three parts: experimentation (example, coding), feedback collection (example, building) and tax (example, committing). Adopting the inner loop, Codewind quickens development and feedback.   
+Codewind adopts the “inner loop” practice which basically is an iterative process that developers perform as they write, build, or debug code. The inner loop mostly has three parts: experimentation (coding), feedback collection (ebuilding) and tax (committing). Adopting the inner loop, Codewind quickens development and feedback.   
 
 *2. Container Development Everywhere*
 
@@ -110,30 +110,24 @@ Codewind automatically analyzes applications for performance issues. Configurabl
 
 == Tekton overview
 
-Tekton is a Kubernetes-native open-source framework for creating continuous integration and delivery (CI/CD) systems. Tekton lets you build, test, and deploy across multiple cloud providers or on-premises systems. Tekton provides open-source components to help standardize your CI/CD tooling and processes across vendors, languages, and deployment environments. 
+Tekton, a Kubernetes-native open-source framewor, creates continuous integration and delivery (CI/CD) systems. Tekton lets you build, test, and deploy across multiple cloud providers or on-premises systems. Tekton provides open-source components to help standardize your CI/CD tooling and processes across vendors, languages, and deployment environments. 
 
-Tekton pipeline is a collection of tasks, and each task is a set of instructions to execute within a container. The pipeline can then automate common activities in Kubernetes environments. Tekton takes all the work, development, build, and code from the Codewind phase and uses its pipeline to deploy Codewind’s outcomes to OpenShift Cloud. 
+Tekton pipeline is a collection of tasks, and each task has a set of instructions to execute within a container. The pipeline then automates common activities in Kubernetes environments. Tekton takes all the work, development, build, and code from the Codewind and Appsody phase and uses its pipeline to deploy the outcomes to OpenShift Cloud. 
 
 Tekton consists of four key features: 
 
 *1. Steps*
 
-A step is a container spec which is a container image with all the information that you need to run it. Steps are also the most basic building blocks of Tekton pipelines.  Steps run in sequential order on the same Kubernetes node. 
+A step is a container spec which is a container image with all the information you need to run it. Steps are also the basic building blocks of Tekton pipelines.  Steps run in sequential order on the same Kubernetes node. 
 
 *2. Tasks*
 
-Tasks are made up by steps. Tasks are custom resource definitions (CRDs). Tasks can run sequentially or concurrently on different nodes. Tasks make up a pipeline. 
+Tasks consist of steps. Tasks are custom resource definitions (CRDs). Tasks run sequentially or concurrently on different nodes. Tasks make up a pipeline. 
 
 *3. Pipelines*
 
-Pipelines express the order of the tasks. Pipelines connect the outputs of one task with the inputs of another. Pipelines: git clones, build docker images, publish images to repositories, and deploys images. 
+Pipelines express the order of the tasks. Pipelines connect the outputs of one task with the inputs of another. Pipelines git clones, build docker images, publish images to repositories, and deploy images. 
 
 *4. Dashboard* 
 
-The dashboard is the web user interface for Tekton Pipelines. The dashboard inputs runtime parameters into pipeline runs and views the execution logs of the pipeline runs. A deployment pipeline is an automated manifestation of your software process from version control all the way to production. It ensures a consistent, repeatable and reliable way to release software to production including new releases, fixes, security patches basically anything released to production should always go through this automated process.
-
-== What you have learned
-
-. Foundation of Kabanero and its subcomponents: Appsody, Codewind, and Tekton
-
-. How Kabanero, Appsody, Codewind, and Tekton build cloud native applications 
+The dashboard is the web user interface for Tekton Pipelines. The dashboard inputs runtime parameters into pipeline runs and views the execution logs of the pipeline runs. A deployment pipeline is an automated manifestation of your software process from version control to production. It ensures a consistent, repeatable, and reliable way to release software to production.
