@@ -66,21 +66,21 @@ image::/img/guide/kabanero-moving-parts.png[link=”/img/guide/kabanero-moving-p
 
 Appsody simplifies Kabanero's creation of cloud-native applications in containers. Appsody provides pre-configured container images, or stacks, that are prebuilt, cloud optimized development and production configurations for different languages and microservice frameworks. These stacks provide a foundation to build applications for Kubernetes and Knative deployments.
 
-If you're a software developer, Appsody aims to remove the burden of managing the full software development stack. With Appsody, you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code! Basically, by providing stacks and templates, Appsody allows developers to focus solely on coding during the Codewind phase.    
+If you're a software developer, Appsody aims to remove the burden of managing the full software development stack. With Appsody, you can build applications for the cloud that are ready to be deployed to Kubernetes without being an expert on the underlying container technology. You can simply focus on the important stuff - developing application code!   
 
 Appsody consists of three key features:
 
 *1. Appsody Stacks*
 
-Appsody provides pre-configured application stacks that enable rapid development of quality microservice-based applications. Stacks include a base container image and project templates which act as a starting point for your application development.
+Appsody provides pre-configured application stacks, enabling rapid development of quality microservice-based applications. Stacks include a base container image and project templates which act as a starting point for your application development.
 
-Appsody stacks include language runtimes, frameworks and any additional libraries and tools that are required to simplify your local application development. Stacks are an easy way to manage consistency and adopt best practices across many applications.
+Appsody stacks include language runtimes, frameworks and any additional libraries and tools required to simplify your local application development. Stacks easily manage consistency and adopt best practices across many applications.
 
 Appsody Hub is the central point of control for Appsody Stacks where you can find available stacks, create new stacks, or modify existing ones. By making changes to the stacks in the hub, you can deploy updates to any application that's been built on them, simply by restarting the application.
 
 *2. Appsody CLI*
 
-Working with the stacks, Appsody CLI provides commands that implement the full development lifecycle, so it has the ability to create a new or enable an existing application. Appsody CLI also provides commands to run, test, debug, and build an image and deploy it to Kubernetes. Appsody CLI works with Codewind so you can develop with the stacks directly in your choice of IDE using Codewind’s plugins. 
+Working with the stacks, Appsody CLI provides commands that implement the full development lifecycle, so it creates a new or enables an existing application. Appsody CLI also provides commands to run, test, debug, and build an image and deploy it to Kubernetes. Appsody CLI works with Codewind's plugins so you can develop with the stacks directly in your chosen IDE. 
 
 *3. Appsody Deploy*
 
