@@ -18,9 +18,9 @@ permalink: /guides/guide-codewind/
 
 *Learning objectives*
 
-. Install Codewind on VS Code or Eclipse.
+. Install Codewind and begin <<Developing with VS Code>> or <<Developing with Eclipse>>.
 
-. Develope a simple microservice with your chosen IDE. 
+. Develop a simple microservice with your chosen IDE. 
 
 == Codewind in Kabanero 
 
