@@ -14,31 +14,29 @@ permalink: /guides/guide-codewind/
 
 *Guide's objective*
 
-. To explain how Codewind provides tools to help build high quality cloud native applications regardless of which IDE or language you use.
+* To explain how Codewind provides tools to help build high quality cloud-native applications; regardless of which IDE or language you use.
 
 *Learning objectives*
 
-. Install Codewind and begin <<Developing with VS Code>> or <<Developing with Eclipse>>.
+You can either:
 
-. Develop a simple microservice with your chosen IDE. 
+* Install Codewind and begin <<Developing with VS Code>> or <<Developing with Eclipse>>. 
+
+* Develop a simple microservice with your chosen IDE. 
 
 == Codewind in Kabanero 
 
 Before working with Codewind, understand that Codewind works within Kabanero, an open source project in a microservices-based framework. Kabanero has three components:
 
-. Appsody, the architect phase.
-. Codewind, the coding phase.
-. Tekton, the deployment phase.
+* Appsody
+* Codewind
+* Tekton
 
-See the following diagram for an illustration of how Kabanero’s components work with one another to build cloud native applications. 
-
-*Diagram of Kabanero's components*
-
-image::/img/guide/kabanero-moving-parts.png[link=”/img/guide/kabanero-moving-parts.png”alt=”A diagram of Kabanero and all its moving parts: Appsody, Codewind, and Tekton."] 
+For more information on how Kabanero and its components work, please see https://kabanero.io/guides/overview/#architecture[Kabanero's Architecture and Development Workflows] 
 
 == Developing a simple microservice
 
-=== Developing with VS Code
+=== *Developing with VS Code*
 
 Why VS Code? You can use Codewind for Visual Studio Code to develop and debug your containerized projects from within VS Code.
 
@@ -48,7 +46,7 @@ In addition, the tools support easily debugging Microprofile/Java EE, Spring, an
 
 The VS Code tools are open source. You can browse the code, open issues, and contribute.
 
-*Install Codewind for VS Code*
+*Installing Codewind for VS Code*
 
 The Codewind installation includes two parts:
 
@@ -68,40 +66,32 @@ Codewind creates the `~/codewind-workspace` folder to contain your projects.
 On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
 You can open the `codewind-workspace` or a project within the workspace as your VS Code workspace.
 
-You no longer need to install an Appsody Extension because Appsody is integrated into Codewind 0.3.0.
+*Creating an Appsody project*
 
-*Create an Appsody project*
-
-. Create a new MicroProfile project. Hover over the `Projects` entry underneath `Codewind in Visual Studio Code` and press the `+` icon to create a new project.
-. Choose the `Appsody Eclipse Microprofile Template` and give the project a name, like `Appsody Calculator` (in this example).
+. Create a new MicroProfile project. Hover over the `Projects` entry underneath `Codewind in Visual Studio Code`, and press the `+` icon to create a project.
+. Choose the `Appsody Eclipse Microprofile Template`, and give the project a name, like `Appsody Calculator` (in this example).
+.. Use the `Command+P` key combination. 
+.. You now see a list of commands.
+.. Press `Shift+>`.
+.. Find and select `Codewind: Manage Template Sources`. 
+.. Enable the `Appsody Stacks - appsodyhub`.
 . Press `Enter` to create the project. 
-. If you don't see Appsody templates, go to the section, `Create an Appsody template for VS Code`.
 
-Create an Appsody template for VS Code:
+The project has now been generated and takes a little time to build because it is a Microprofile microservice with multiple dependencies. To monitor the progress, expand `Codewind -> Projects`, and right-click the menu option `Show all logs:`
 
-. For Macs, press `Command+P`. 
-. For Windows, press `Control+P`.
-. Press `Shift+>`.
-. You now see a list of commands. 
-. Find and select `Codewind: Manage Template Sources`. 
-. Enable the `Appsody Stacks - appsodyhub`.
-. Continue to create an Appsody project by following the steps for the section, `Create an Appsody project`. 
-
-The project has now been generated and takes a little time to build due it being a Microprofile with multiple dependencies. To monitor the progress, expand `Codewind -> Projects` and right click the menu option `Show all logs:`
-
-After several minutes, you should see a log message like the following:
+After several minutes, you should see the following message:
 ```
 [Container] [�[1;34mINFO�[m] [AUDIT   ] CWWKF0011I: The defaultServer server is ready to run a smarter planet. The defaultServer server started in 69.467 seconds.
 ```
 And the project status should change to `Running`.
 
-To access the application endpoint in a browser, select the Open App icon next to the project's name, or right-click on the project and select the Open App menu option. This opens up the application in the running container showing the Welcome to your Appsody Microservice page.
+To access the application endpoint in a browser, select the Open App icon next to the project's name, or right-click the project and select the `Open App menu option`. This opens up the application in the running container showing the Welcome to your Appsody Microservice page.
 
-Let's take a look at the code. In the `VS Code EXPLORER` you should see a `CODEWIND-WORKSPACE` entry with your project name. If you don't find it, right-click on the project and choose Add Folder to Workspace. In the workspace view, expand the project and the sub-folders to show all the files created from the Appsody template (Note, the template is not intended to be a sample as most people would end up having to delete the code each time, it aims to provide the starter code, server configuration and build to which you can add your code).
+Let's take a look at the code. In the `VS Code EXPLORER` you should see a `CODEWIND-WORKSPACE` entry with your project name. If you don't find it, right-click the project and choose `Add Folder to Workspace`. In the workspace view, expand the project and the sub-folders to show all the files created from the Appsody template. Note: The template is not intended to be a sample as most people would end up having to delete the code each time. It aims to provide the starter code, server configuration and build to which you can add your code.
 
-The main Java files are StarterLivenessCheck, StarterReadinessCheck and StarterApplication. The first two provide the outlines for liveness and readiness checks that can be hooked up to Kubernetes liveness and readiness probes. These are implemented using MicroProflie Health. The third file is a JAX-RS application, which provides the Application Path for your REST API.
+The main Java files are StarterLivenessCheck, StarterReadinessCheck and StarterApplication. The first two provide the outlines for liveness and readiness checks that can be hooked up to Kubernetes liveness and readiness probes. These are implemented using MicroProflie Health. The third file is a JAX-RS application,which provides the Application Path for your REST API.
 
-Let's add a REST service to your application. Navigate to the `src/main/java/dev/appsody/starter` directory, and create a file called `Calculator.java` - this will be our JAX-RS resource. Populate the file with the following code and save it:
+Let's add a REST service to your application. Navigate to the `src/main/java/dev/appsody/starter` directory, and create a file called `Calculator.java`, which will be our JAX-RS resource. Populate the file with the following code and save it:
 ```
 package dev.appsody.starter;
 
@@ -157,7 +147,7 @@ public class Calculator extends Application {
 ```
 Any changes you make to your code will automatically be built and re-deployed by Codewind, and viewed in your browser. Let's see this in action.
 
-If you still have the logs `OUTPUT` tab open you will see that the code is compiled and the application restarted. You should see messages like:
+If you still have the logs `OUTPUT` tab open, you will see that the code is compiled and the application has restarted. You should see messages like:
 ```
 [Container] [�[1;34mINFO�[m] Source compilation was successful.
 [Container] [�[1;34mINFO�[m] [AUDIT   ] CWWKT0017I: Web application removed (default_host): http://04013dbc9c11:9080/
@@ -165,32 +155,34 @@ If you still have the logs `OUTPUT` tab open you will see that the code is compi
 [Container] [�[1;34mINFO�[m] [WARNING ] CWMH0053W: The readiness health check reported a DOWN overall status because the following applications have not started yet: [starter-app]
 [Container] [�[1;34mINFO�[m] [AUDIT   ] CWWKT0016I: Web application available (default_host): http://04013dbc9c11:9080/
 ```
-Now we can do some interesting stuff with this new resource. You can point your browser at a couple of things (note, is the port number you saw when you first opened the application):
+Now we can do some interesting stuff with this new resource. You can point your browser at a couple of things. Note: Use the port number you saw when you first opened the application):
 
 `http://127.0.0.1:/starter/calculator/aboutme` You should see the following response:
+
 ```
 You can add (+), subtract (-), and multiply (*) with this simple calculator.
 ```
-You could also try a few of the functions: `http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}`, where you can input one of the available operations `(+, _, *)`, and an integer a, and an integer b.
+
+You could also try a few of the sample calculator functions: `http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}`, where you can input one of the available operations `(+, _, *)`, and an integer a, and an integer b.
 
 So for `http://127.0.0.1:<port>/starter/calculator/+/10/3` you should see: `10+3=13`.
 
-To obtain your `<port>`:
+To obtain your `<port>` number: 
 
-. Right click your project.
+. Right-click your project.
 . Select `Open Project Overview`.
 . Find `Exposed App Port`and here is the port value.
 . Copy the 'Exposed App Port`value and replace `<port>` in the URL with this value. 
 . Make sure to remove the `< >` symbol in the URL. 
 
-*Test the default endpoint*
+*Testing the default endpoint*
 
 . To make sure your code change was picked up, test your new endpoint.
     * Right-click the project and select `Open App.` The project root endpoint opens in the browser, and the `Appsody Microservice` page appears.
     * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL.
     * See the new response: `Yep, it worked!!`
 
-*Debug the app*
+*Debuggging the app*
 
  . You can debug your application within the container. To debug a containerized project, restart it in `Debug` mode.
     * Right-click the project and select `Restart in Debug Mode.`
@@ -210,7 +202,7 @@ If debugging does not work, complete the following:
     
 VS Code suspends your application at the breakpoint. Here you can step through the code, inspect variables, see the call stack, and evaluate expressions in the `Debug Console.`
 
-*Run the app*
+*Running the app*
 
 . Right click your project and select `Open App`.
 
@@ -218,7 +210,7 @@ VS Code suspends your application at the breakpoint. Here you can step through t
 
 If you would also like to use Codewind with Eclipse, read instructions to install and work with that IDE in this guide. 
 
-=== Developing with Eclipse
+=== *Developing with Eclipse*
 
 Why Eclipse? You can use Codewind for Eclipse to develop and debug your containerized projects from within Eclipse.
 
@@ -228,7 +220,7 @@ In addition, Microprofile/Java EE, Spring, and Node.js applications can be debug
 
 The Eclipse tools are open source. You are encouraged to browse the code, open issues, and contribute.
 
-*Install Codewind for Eclipse*
+*Installing Codewind for Eclipse*
 
 The Codewind installation includes two parts:
 
@@ -256,15 +248,21 @@ Codewind creates the `~/codewind-workspace` folder to contain your projects.
 On Windows, you can find the workspace at the `C:\codewind-workspace` folder. 
 You can open the `codewind-workspace` or a project within the workspace as your Eclipse workspace. 
 
-You no longer need to install an Appsody Extension because Appsody is integrated into Codewind 0.3.0.
-
-*Create an Appsody project*
+*Creating an Appsody project*
 
 . Double click the `Codewind Explorer` tab.
 . Expand `Codewind` by clicking the drop down arrow.
 . Right click on `Projects (Local).`
 . Select `Create New Project...`
-. Under `Template`, select `Appsody Eclipse MicroProfile template.` If you don't see Appsdoy templates, go to this guide's section, `Create an Appsody template for Eclipse.`
+. Under `Template`, select `Appsody Eclipse MicroProfile template.` 
+.. Double click the `Codewind Explorer` tab.
+.. Expand `Codewind` by clicking the drop down arrow.
+.. Right click on `Projects (Local)`.
+.. Select `Create New Project...`
+.. If you don't see an Appsody template, select the `Manage Tenplate Sources...` link at the bottom.  
+.. Check the box next to `Appsody Stacks - appsodyhub.`
+.. Select the `OK` button at the bottom. 
+.. The templates are refreshed and you now can see the Appsody templates. 
 . Name your project `Appsody Calculator` (for this example) in the `Project` name bar.
 . Click the `Finish` button at the bottom.
 . Your project appears under `Projects (Local)`, and the bottom of the screen tracks the progress of creating your project.
@@ -273,18 +271,6 @@ You no longer need to install an Appsody Extension because Appsody is integrated
 . Right click your project and select `Open Application` to begin work.
 . To see the backend of your project, right click on your project and select `Show Log Files.`
 . Select 'Show All.` Then a `console tab` appears where you see your project's backend. 
-
-Create an Appsody template for Eclipse:
-
-. Double click the `Codewind Explorer` tab.
-. Expand `Codewind` by clicking the drop down arrow.
-. Right click on `Projects (Local)`.
-. Select `Create New Project...`
-. If you don't see an Appsody template, select the `Manage Tenplate Sources...` link at the bottom.  
-. Check the box next to `Appsody Stacks - appsodyhub.`
-. Select the `OK` button at the bottom. 
-. The templates are refreshed and you now can see the Appsody templates. 
-. Continue to create an Appsody project by starting with step 5 of `Create an Appsody project`. 
 
 Let's take a look at the code. In the `Eclipse EXPLORER` you should see a `CODEWIND-WORKSPACE` entry with your project name. If you don't find it, right-click on the project and choose Add Folder to Workspace. In the workspace view, expand the project and the sub-folders to show all the files created from the Appsody template (Note, the template is not intended to be a sample as most people would end up having to delete the code each time, it aims to provide the starter code, server configuration and build to which you can add your code).
 
@@ -372,7 +358,7 @@ To obtain your `<port>`:
 . Copy the 'External Application Port` value and replace `<port>` in the URL with this value. 
 . Make sure to remove the `< >` symbol in the URL. 
 
-*Edit the project files*
+*Editing the project files*
 
 Editing actions are available by right clicking on the project in the `Codewind Explorer` view.
 Most actions are only available if the project is enabled.
@@ -386,14 +372,14 @@ You can configure project settings when you:
 . Go to Project Overview page that is accessible from a project’s context menu, or, 
 . Find the project settings in the `.cw-settings` file of the project which you can edit
 
-*Test the new endpoint*
+*Testing the new endpoint*
 
 . To make sure your code change was picked up, test your new endpoint.
     * Right-click the project and select `Open App.` The project root endpoint opens in the browser, and the `Appsody Microservice` page appears.
     * Navigate to the new endpoint. If you copied the previous snippet, add `/health/test/` to the URL.
     * See the new response: `Yep, it worked!!`
 
-*Debug the app*
+*Debugging the app*
 
 Codewind for Eclipse supports debugging Microprofile/Java EE and Spring projects.
 The tools also help you set up a debug session for Node.js projects in a Chromium based browser.
@@ -461,7 +447,7 @@ To change the browser to use when launching a Node.js debug session, edit the Co
 . In the `Select a Chromium based web browser for launching the Node.js debugger` group, choose a Chromium based web browser from the list of browsers or add one using the `Manage`link. You can also clear the selected browser by selecting `No web browser selected` in the list. 
 . Click `Apply and Close`.
 
-*Run the app* 
+*Running the app* 
 
 . Right click your project and select `Open App.`
 
