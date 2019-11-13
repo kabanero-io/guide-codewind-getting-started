@@ -20,6 +20,8 @@ permalink: /guides/guide-codewind/
 = Getting Started with Codewind in Kabanero
 :toc:
 
+[ATTN]: opening PR for review of guide
+
 == Objectives
 
 *Learning objectives*
