@@ -2,12 +2,12 @@
 permalink: /guides/guide-codewind/
 ---
 :layout: guide
-:duration: 60
+:duration: 30
 :description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use.
 :tags: ['kabanero', 'appsody', 'codewind', 'microservice']
 :projectid: guide-codewind
 :page-layout: guide
-:page-duration: 60
+:page-duration: 30
 :page-releasedate: TBD
 :page-guide-category: developer tools
 :page-essential: true
@@ -32,7 +32,9 @@ You can either:
 == Kabanero Overview 
 
 Before working with Codewind, understand that Codewind works within Kabanero, an open source project in a microservices-based framework.
-For more information on how Kabanero and its components work, please see https://kabanero.io/guides/overview/#architecture[Kabanero's Architecture and Development Workflows] 
+For more information on how Kabanero and its components work, visist https://kabanero.io/guides/overview/#architecture[Kabanero's Architecture and Development Workflows].
+
+To deploy your applications onto OpenShift, you need to build and work with Kabanero Collections. If you plan to deploy any applications onto OpenShift complete the guide, https://kabanero.io/guides/working-with-collections/[Working with Kabanero Collections]. 
 
 == Developing a simple microservice
 
@@ -46,9 +48,10 @@ Codewind for VS Code supports development of Microprofile/Java EE, Java Lagom, S
 
 Before you can develop a microservice with VS Code, you need to:
 
+* https://docs.docker.com/install/[Install Docker] 
+** [Note]: Make sure to install or upgrade to minimum Docker version 19.03. 
 * https://code.visualstudio.com/download[Install VS Code]
-* https://docs.docker.com/install/[Install Docker]  
-
+ 
 *Installing Codewind for VS Code*
 
 The Codewind installation includes two parts:
@@ -60,23 +63,23 @@ The Codewind installation includes two parts:
 
 The following images are pulled. These images together form the Codewind backend:
 ```
-. eclipse/codewind-initialize-amd64
 . eclipse/codewind-performance-amd64 
 . eclipse/codewind-pfe-amd64
 ```
 
 *Creating an Appsody project*
 
+Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page]. 
+
 . Under the Explorer pane, select `Codewind`.
 . Expand `Codewind` by clicking the drop-down arrow. 
 . Hover over the `Projects` entry underneath Codewind in the Explorer pane, and press the `+` icon to create a project.
-* [Tip]: Make sure Docker is running. Otherwise, you get an error. 
+* [Note]: Make sure Docker is running. Otherwise, you get an error. 
 . Choose the `Appsody Eclipse MicroProfile template`. 
 . Name your project `appsody-calculator`.
 * If you don't see Appsody templates, find and select `Template Source Manager` and enable `Appsody Stacks - appsodyhub`. 
 * The templates are refreshed, and the Appsody templates are available. 
 . Press `Enter`. 
-* [Note]: since this project is a Microprofile, it takes a long time to create due to all its dependencies. 
 * To monitor your project's progress, right-click your project, and select `Show all logs`. Then an `Output` tab is displayed where you see your project's build logs. 
 
 Your project is complete when you see your application status is running and your build status is successful. 
@@ -181,8 +184,10 @@ Codewind for Eclipse supports development of Microprofile/Java EE, Java Lagom, S
 
 Before you can develop a microservice with Eclipse, you need to:
 
-* https://www.eclipse.org/downloads/packages/release/[Install Eclipse]
 * https://docs.docker.com/install/[Install Docker] 
+** [Note]: Make sure to install or upgrade to minimum Docker version 19.03. 
+* https://www.eclipse.org/downloads/packages/release/[Install Eclipse]
+** [Note]: Make sure to install or upgrade to mimimum Eclipse version 2019-09 R (4.13.0). 
 
 *Installing Codewind for Eclipse*
 
@@ -199,11 +204,13 @@ The following images are pulled. These images together form the Codewind backend
 
 *Creating an Appsody project*
 
+Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page]. 
+
 . Click the `Codewind` tab.
 . Expand `Codewind` by clicking the drop-down arrow.
 . Right-click `Projects (Local)`.
 . Select `Create New Project...`
-* [Tip]: Make sure Docker is running. Otherwise, you get an error. 
+* [Note]: Make sure Docker is running. Otherwise, you get an error. 
 . Name your project `appsody-calculator`. 
 . Under `Template`, select `Appsody Eclipse MicroProfile template`. 
 * If you don't see an Appsody template, select the `Manage Template Sources...` link at the end of the window.
@@ -211,7 +218,6 @@ The following images are pulled. These images together form the Codewind backend
 * Click `OK`.
 * The templates are refreshed, and the Appsody templates are available. 
 . Click `Finish`.
-* [Note]: since this project is a Microprofile, it takes a long time to create due to all its dependencies. 
 * To monitor your project's progress, right-click on your project, and select `Show Log Files`.
 * Select `Show All`. Then a `Console` tab is displayed where you see your project's build logs. 
 
