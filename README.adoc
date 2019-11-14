@@ -24,11 +24,11 @@ permalink: /guides/guide-codewind/
 
 *Learning objectives*
 
-In this guide you will learn how to develop a simple microservice with your chosen IDE, using Eclipse Codewind, an open source project, which provides IDE extensions for popular IDEs (VSCode and Eclipse IDE).  Eclipse Codewind provides the ability to create new projects based on Kabanero Collections that include application stacks customized to meet your company policies and consistently deploy apps and microservices at scale.
+In this guide you will learn how to develop a simple microservice with your chosen IDE, using Eclipse Codewind, an open source project, which provides IDE extensions for popular IDEs (VS Code and Eclipse IDE).  Eclipse Codewind provides the ability to create new projects based on Kabanero Collections that include application stacks customized to meet your company policies and consistently deploy applications and microservices at scale.
 
 == Overview 
 
-Kabanero's developer experience for IDEs is provided by Elcipse Codewind.  For more information on how Kabanero and its components work, visist https://kabanero.io/guides/overview/#architecture[Kabanero's Architecture and Development Workflows].
+Kabanero's developer experience for IDEs is provided by Eclipse Codewind.  For more information on how Kabanero and its components work, visit https://kabanero.io/guides/overview/#architecture[Kabanero's Architecture and Development Workflows].
 
 Kabanero installs on OKD (The Origin Community Distribution of Kubernetes) or OpenShift and integrates a modern DevOps toolchain and Kabanero Collections which enable developers to use runtimes and frameworks in pre-built container images called 'Application stacks'.  
 
