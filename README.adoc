@@ -79,7 +79,7 @@ Configure Codewind to use Kabanero Collections in a CollectionHub so you can foc
 . Expand `Codewind` by clicking the drop-down arrow. 
 . Right-click `Projects (Local)`. 
 . Select `Manage Template Sources`.
-. Select `Kabanero Collections`. 
+. Enable `Kabanero Collections`. 
 
 You have now configured Codewind to Kabanero Collections and can proceed to develop your microservice within Codewind. 
 
