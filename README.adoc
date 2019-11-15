@@ -34,7 +34,7 @@ Kabanero installs on OKD (The Origin Community Distribution of Kubernetes) or Op
 
 Eclipse Codewind provides the ability to create application projects for these `Application Stacks` that your company has built, enabling developers to focus on their code and not infrastructure and Kubernetes.  Application deployments to Kubernetes occur via pipelines when developers commit their local code to the correct Git repos Kabanero is managing via webhooks.    
 
-Eclipse Codewind provides the ability to create projects based on a variety of different template types.  These include IBM Cloud starters, Odo, and Appsody templates.  When used with Kabanero you will only use Appsody templates for the Collections your company has enabled.  Today there are collections for: Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback.
+Eclipse Codewind provides the ability to create projects based on a variety of different template types.  These include IBM Cloud starters, Odo, and Appsody templates.  When used with Kabanero, you will only use Appsody templates for the Collections your company has enabled.  Today there are collections for: Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback.
 
 == Developing a simple microservice
 
