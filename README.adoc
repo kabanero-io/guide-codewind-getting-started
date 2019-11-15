@@ -30,9 +30,9 @@ In this guide you will learn how to develop a simple microservice with your chos
 
 Kabanero's developer experience for IDEs is provided by Eclipse Codewind.  For more information on how Kabanero and its components work, visit https://kabanero.io/guides/overview/#architecture[Kabanero's Architecture and Development Workflows].
 
-Kabanero installs on OKD (The Origin Community Distribution of Kubernetes) or OpenShift and integrates a modern DevOps toolchain and Kabanero Collections which enable developers to use runtimes and frameworks in pre-built container images called 'Application stacks'.  
+Kabanero installs on OKD (The Origin Community Distribution of Kubernetes) or OpenShift and integrates a modern DevOps toolchain and Kabanero Collections which enable developers to use runtimes and frameworks in pre-built container images called `Application stacks`.  
 
-Eclipse Codewind provides the ability to create application projects for these 'Application Stacks' that your company has built, enabling developers to focus on their code and not infrastructure and Kubernetes.  Application deployments to Kubernetes occur via pipelines when developers commit their local code to the correct Git repos Kabanero is managing via webhooks.    
+Eclipse Codewind provides the ability to create application projects for these `Application Stacks` that your company has built, enabling developers to focus on their code and not infrastructure and Kubernetes.  Application deployments to Kubernetes occur via pipelines when developers commit their local code to the correct Git repos Kabanero is managing via webhooks.    
 
 Eclipse Codewind provides the ability to create projects based on a variety of different template types.  These include IBM Cloud starters, Odo, and Appsody templates.  When used with Kabanero you will only use Appsody templates for the Collections your company has enabled.  Today there are collections for: Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback.
 
@@ -177,12 +177,12 @@ You have created a simple microservice using the VS Code IDE. For further learni
 
 * Try https://www.kabanero.io/guides[additional Kabanero guides] available for each Collection: Eclipse MicroProfile, Springboot, Node.js.
 
-* Visit https://www.eclipse.org/codewind/ for more details on using Codewind.
+* Learn more about using https://www.eclipse.org/codewind/[Codewind].
 * Review https://www.eclipse.org/codewind/mdt-vsc-commands-project.html[project commands for Codewind for VS Code].
 
 === *Developing with Eclipse*
 
-If you are an Eclipse IDE user, you can use Codewind for Eclipse to develop and debug your containerized projects from within a local Eclipse IDE.
+If you use Eclipse, you can use Codewind for Eclipse to develop and debug your containerized projects from within a local Eclipse IDE.
 
 *Prerequisite* 
 
@@ -318,7 +318,7 @@ You have completed a simple microservice using the Eclipse IDE. For further lear
 
 * Try https://www.kabanero.io/guides[additional Kabanero guides] available for each Collection: Eclipse MicroProfile, Springboot, Node.js.
 
-* Visit https://www.eclipse.org/codewind/ for more details on using Codewind.
+* Learn more about using https://www.eclipse.org/codewind/[Codewind].
 
 * Review https://www.eclipse.org/codewind/mdteclipsemanagingprojects.html[managing Codewind projects for Eclipse]. 
 
