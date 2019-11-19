@@ -87,8 +87,6 @@ You have now configured Codewind to Kabanero Collections and can proceed to deve
 
 Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page]. 
 
-. Under the Explorer pane, select `Codewind`.
-. Expand `Codewind` by clicking the drop-down arrow. 
 . Hover over the `Projects` entry underneath Codewind in the Explorer pane, and press the `+` icon to create a project.
 * [Note]: Make sure Docker is running. Otherwise, you get an error. 
 . Choose the `Appsody Eclipse MicroProfile template`. 
@@ -234,9 +232,7 @@ You have now configured Codewind to Kabanero Collections and can proceed to deve
 
 Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page]. 
 
-. Click the `Codewind` tab.
-. Expand `Codewind` by clicking the drop-down arrow.
-. Right-click `Projects (Local)`.
+. Right-click `Projects (Local)` under `Codewind` in the `Codewind` tab. 
 . Select `Create New Project...`
 * [Note]: Make sure Docker is running. Otherwise, you get an error. 
 . Name your project `appsody-calculator`. 
