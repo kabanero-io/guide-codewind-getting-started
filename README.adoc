@@ -4,47 +4,49 @@ permalink: /guides/guide-codewind/
 :layout: guide
 :duration: 30
 :description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use.
-:tags: ['kabanero', 'appsody', 'codewind', 'microservice']
+:tags: ['kabanero collections', 'appsody stacks', 'codewind', 'microservice']
 :projectid: guide-codewind
 :page-layout: guide
 :page-duration: 30
 :page-releasedate: TBD
-:page-guide-category: developer tools
+:page-guide-category: collections
 :page-essential: true
 :page-essential-order: 1
 :page-description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use. 
 :guide-author: Kabanero
-:page-tags: ['kabanero', 'appsody', 'codewind', 'microservice']
+:page-tags: ['kabanero collection', 'appsody stacks', 'codewind', 'microservice']
 :page-permalink: /guides/{projectid}
 :repo-description: TBD
-= Getting Started with Codewind in Kabanero
+= Getting Started with Codewind and Kabanero
 :toc:
-
-[ATTN]: opening PR for review of guide
 
 == Objectives
 
 *Learning objectives*
 
-You can either:
+In this guide you will learn how to develop a simple microservice with your chosen IDE, using Eclipse Codewind, an open source project, which provides IDE extensions for popular IDEs (VS Code and Eclipse IDE).  Eclipse Codewind provides the ability to create new projects based on Kabanero Collections that include Application stacks customized to meet your company policies and consistently deploy applications and microservices at scale.
 
-* Install Codewind and begin <<#developing-with-vs-code, developing with VS Code>> or <<#developing-with-eclipse, developing with Eclipse>>. 
-* Develop a simple microservice with your chosen IDE. 
+== Overview 
 
-== Kabanero Overview 
+Kabanero's developer experience for IDEs is provided by Eclipse Codewind.  For more information on how Kabanero and its components work, visit https://kabanero.io/guides/overview/#architecture[Kabanero's Architecture and Development Workflows].
 
-Before working with Codewind, understand that Codewind works within Kabanero, an open source project in a microservices-based framework.
-For more information on how Kabanero and its components work, visist https://kabanero.io/guides/overview/#architecture[Kabanero's Architecture and Development Workflows].
+Kabanero installs on OKD (The Origin Community Distribution of Kubernetes) or OpenShift and integrates a modern DevOps toolchain and Kabanero Collections which enable developers to use runtimes and frameworks in pre-built container images called `Application stacks`.  
 
-To deploy your applications onto OpenShift, you need to build and work with Kabanero Collections. If you plan to deploy any applications onto OpenShift complete the guide, https://kabanero.io/guides/working-with-collections/[Working with Kabanero Collections]. 
+Eclipse Codewind provides the ability to create application projects for these Application stacks that your company has built, enabling developers to focus on their code and not infrastructure and Kubernetes.  Application deployments to Kubernetes occur via pipelines when developers commit their local code to the correct Git repos Kabanero is managing via webhooks.    
+
+Eclipse Codewind provides the ability to create projects based on a variety of different template types.  These include IBM Cloud starters, Odo, and Appsody templates.  When used with Kabanero, you will only use Appsody templates for the Collections your company has enabled.  Today there are collections for: Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback.
 
 == Developing a simple microservice
 
+Select the guide section based on your IDE of choice.
+
+<<#developing-with-vs-code, developing with VS Code>> 
+
+<<#developing-with-eclipse, developing with Eclipse>>
+
 === *Developing with VS Code*
 
-Why Visual Studio Code (VS Code)? You can use Codewind for VS Code to develop and debug your containerized projects from within VS Code.
-
-Codewind for VS Code supports development of Microprofile/Java EE, Java Lagom, Spring, Node.js, Go,Python, Swift, and Appsody containerized projects.
+If you use Visual Studio Code (VS Code), you can use Codewind for VS Code to develop and debug your containerized projects from within VS Code using the workflow you already use today.
 
 *Prerequisite*
 
@@ -69,12 +71,22 @@ The following images are pulled. These images together form the Codewind backend
 . eclipse/codewind-pfe-amd64
 ```
 
+*Configuring Codewind with Kabanero Collections* 
+
+Configure Codewind to use Kabanero Collections in a CollectionHub so you can focus exclusively on your code:
+
+. Under the Explorer pane, select `Codewind`.
+. Expand `Codewind` by clicking the drop-down arrow. 
+. Right-click `Projects (Local)`. 
+. Select `Manage Template Sources`.
+. Enable `Kabanero Collections`. 
+
+You have now configured Codewind to Kabanero Collections and can proceed to develop your microservice within Codewind. 
+
 *Creating an Appsody project*
 
 Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page]. 
 
-. Under the Explorer pane, select `Codewind`.
-. Expand `Codewind` by clicking the drop-down arrow. 
 . Hover over the `Projects` entry underneath Codewind in the Explorer pane, and press the `+` icon to create a project.
 * [Note]: Make sure Docker is running. Otherwise, you get an error. 
 . Choose the `Appsody Eclipse MicroProfile template`. 
@@ -173,14 +185,14 @@ You could also try a few of the sample calculator functions:
 
 You have created a simple microservice using the VS Code IDE. For further learning:
 
-* Visit this https://www.eclipse.org/codewind/mdt-vsc-tutorial.html[tutorial on Codewind for VS Code].
+* Try https://www.kabanero.io/guides[additional Kabanero guides] available for each Collection: Eclipse MicroProfile, Springboot, Node.js.
+
+* Learn more about using https://www.eclipse.org/codewind/[Codewind].
 * Review https://www.eclipse.org/codewind/mdt-vsc-commands-project.html[project commands for Codewind for VS Code].
 
 === *Developing with Eclipse*
 
-Why Eclipse? You can use Codewind for Eclipse to develop and debug your containerized projects from within Eclipse.
-
-Codewind for Eclipse supports development of Microprofile/Java EE, Java Lagom, Spring, Node.js, Go,Python, Swift, and Appsody containerized projects. 
+If you use Eclipse, you can use Codewind for Eclipse to develop and debug your containerized projects from within a local Eclipse IDE.
 
 *Prerequisite* 
 
@@ -204,13 +216,23 @@ The following images are pulled. These images together form the Codewind backend
 . eclipse/codewind-pfe-amd64
 ```
 
+*Configuring Codewind with Kabanero Collections*
+
+Configure Codewind to use Kabanero Collections in a CollectionHub so you can focus exclusively on your code:
+
+. Click the `Codewind` tab.
+. Expand `Codewind` by clicking the drop-down arrow. 
+. Right-click `Projects (Local)`. 
+. Select `Manage Template Sources`.
+. Select `Kabanero Collections`. 
+
+You have now configured Codewind to Kabanero Collections and can proceed to develop your microservice within Codewind. 
+
 *Creating an Appsody project*
 
 Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page]. 
 
-. Click the `Codewind` tab.
-. Expand `Codewind` by clicking the drop-down arrow.
-. Right-click `Projects (Local)`.
+. Right-click `Projects (Local)` under `Codewind` in the `Codewind` tab. 
 . Select `Create New Project...`
 * [Note]: Make sure Docker is running. Otherwise, you get an error. 
 . Name your project `appsody-calculator`. 
@@ -313,6 +335,10 @@ You could also try a few of the sample calculator functions:
 *Nice work! Where to next?*
 
 You have completed a simple microservice using the Eclipse IDE. For further learning: 
+
+* Try https://www.kabanero.io/guides[additional Kabanero guides] available for each Collection: Eclipse MicroProfile, Springboot, Node.js.
+
+* Learn more about using https://www.eclipse.org/codewind/[Codewind].
 
 * Review https://www.eclipse.org/codewind/mdteclipsemanagingprojects.html[managing Codewind projects for Eclipse]. 
 
