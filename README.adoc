@@ -1,24 +1,13 @@
 ---
 permalink: /guides/guide-codewind/
 ---
-:layout: guide
-:duration: 30
-:description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use.
-:tags: ['kabanero collections', 'appsody stacks', 'codewind', 'microservice']
-:projectid: guide-codewind
 :page-layout: guide
 :page-duration: 30
-:page-releasedate: TBD
+:page-releasedate: 2019-11-22
 :page-guide-category: collections
-:page-essential: true
-:page-essential-order: 1
 :page-description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use. 
-:guide-author: Kabanero
-:page-tags: ['kabanero collection', 'appsody stacks', 'codewind', 'microservice']
-:page-permalink: /guides/{projectid}
-:repo-description: TBD
+:page-tags: ['Collection', 'Appsody', 'Codewind', 'Microservice']
 = Getting Started with Codewind and Kabanero
-:toc:
 
 == Objectives
 
@@ -26,9 +15,9 @@ permalink: /guides/guide-codewind/
 
 In this guide you will learn how to develop a simple microservice with your chosen IDE, using Eclipse Codewind, an open source project, which provides IDE extensions for popular IDEs (VS Code and Eclipse IDE).  Eclipse Codewind provides the ability to create new projects based on Kabanero Collections that include Application stacks customized to meet your company policies and consistently deploy applications and microservices at scale.
 
-== Overview 
+== Overview
 
-Kabanero's developer experience for IDEs is provided by Eclipse Codewind.  For more information on how Kabanero and its components work, visit https://kabanero.io/guides/overview/#architecture[Kabanero's Architecture and Development Workflows].
+Kabanero's developer experience for IDEs is provided by Eclipse Codewind.  For more information on how Kabanero and its components work, visit https://kabanero.io/docs/ref/general/architecture-overview.html[Kabanero's Architecture and Development Workflows].
 
 Kabanero installs on OKD (The Origin Community Distribution of Kubernetes) or OpenShift and integrates a modern DevOps toolchain and Kabanero Collections which enable developers to use runtimes and frameworks in pre-built container images called `Application stacks`.  
 
@@ -36,42 +25,41 @@ Eclipse Codewind provides the ability to create application projects for these A
 
 Eclipse Codewind provides the ability to create projects based on a variety of different template types.  These include IBM Cloud starters, Odo, and Appsody templates.  When used with Kabanero, you will only use Appsody templates for the Collections your company has enabled.  Today there are collections for: Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback.
 
-== Developing a simple microservice
+This guide describes developing a simple microservice using 2 different IDEs. Select the guide section based on your IDE of choice.
 
-Select the guide section based on your IDE of choice.
+* <<#developing-a-simple-microservice-with-vs-code, Developing with VS Code>> 
 
-<<#developing-with-vs-code, developing with VS Code>> 
+* <<#developing-a-simple-microservice-with-eclipse, Developing with Eclipse>>
 
-<<#developing-with-eclipse, developing with Eclipse>>
+== Developing a simple microservice with VS Code
 
-=== *Developing with VS Code*
 
 If you use Visual Studio Code (VS Code), you can use Codewind for VS Code to develop and debug your containerized projects from within VS Code using the workflow you already use today.
 
-*Prerequisite*
+=== Prerequisite
 
 Before you can develop a microservice with VS Code, you need to:
 
-* https://docs.docker.com/install/[Install Docker] 
+* https://docs.docker.com/install/[Install Docker,window=_blank] 
 ** [Note]: Make sure to install or upgrade to minimum Docker version 19.03. 
-* https://code.visualstudio.com/download[Install VS Code]
+* https://code.visualstudio.com/download[Install VS Code,window=_blank]
  
-*Installing Codewind for VS Code*
+=== Installing Codewind for VS Code
 
 The Codewind installation includes two parts:
 
-. The VS Code extension installs when you install Codewind from the https://marketplace.visualstudio.com/items?itemName=IBM.codewind[VS Code Marketplace] and click `Install`. 
+. The VS Code extension installs when you install Codewind from the https://marketplace.visualstudio.com/items?itemName=IBM.codewind[VS Code Marketplace,window=_blank] and click `Install`. 
 * Or, go to `View->Extensions`, search for Codewind, and click `Install`. 
 . The Codewind backend containers install after you click `Install` when you are prompted. After you click `Install`, the necessary images are downloaded from the internet. The download is approximately 1 GB.
 * [Optional]: If you don’t click `Install` when the notification window first appears, you can access the notification again. Go to `View->Explorer`. Then click `Codewind` and hover the cursor over `Codewind` where there is a switch to turn Codewind on or off. Click the switch so that it is `On`. The notification window is displayed. 
 
 The following images are pulled. These images together form the Codewind backend:
-```
-. eclipse/codewind-performance-amd64 
-. eclipse/codewind-pfe-amd64
-```
 
-*Configuring Codewind with Kabanero Collections* 
+. `eclipse/codewind-performance-amd64`
+. `eclipse/codewind-pfe-amd64`
+
+
+=== Configuring Codewind with Kabanero Collections
 
 Configure Codewind to use Kabanero Collections in a CollectionHub so you can focus exclusively on your code:
 
@@ -83,9 +71,9 @@ Configure Codewind to use Kabanero Collections in a CollectionHub so you can foc
 
 You have now configured Codewind to Kabanero Collections and can proceed to develop your microservice within Codewind. 
 
-*Creating an Appsody project*
+=== Creating an Appsody project
 
-Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page]. 
+Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page,window=_blank]. 
 
 . Hover over the `Projects` entry underneath Codewind in the Explorer pane, and press the `+` icon to create a project.
 * [Note]: Make sure Docker is running. Otherwise, you get an error. 
@@ -98,23 +86,24 @@ Appsody helps you develop containerized applications and removes the burden of m
 
 Your project is complete when you see your application status is running and your build status is successful. 
 
-*Accessing the application endpoint in a browser*
+=== Accessing the application endpoint in a browser
 
 . Return to your project under the Explorer pane. 
 . Select the Open App icon next to your project's name, or right-click your project and select `Open App`. 
 
 Your application is now opened in the browser, showing the welcome to your Appsody microservice page.
 
-*Adding a REST service to your application*
+=== Adding a REST service to your application
 
  . Go to your project's workspace under the Explorer tab. 
  . Navigate to `src->main->java->dev->appsody->starter`.
  . Right-click `starter` and select `New File`.
  . Create a file, name it `Calculator.java`, and press `Enter`. This file is your JAX-RS resource. 
- . Populate the file with the following code.
- . Save the file after you input the code. 
+ . Populate the file with the following code then *save* the file.
 
-```
+Calculator.java
+[source,java]
+----
 package dev.appsody.starter;
 
 import javax.ws.rs.core.Application;
@@ -160,10 +149,11 @@ public class Calculator extends Application {
       }
     }
 }
-```
+----
+
 Any changes you make to your code will automatically be built and re-deployed by Codewind and viewed in your browser. 
 
-*Working with the microservice* 
+=== Working with the microservice
 
 You now can work with your calculator.
 
@@ -171,17 +161,17 @@ You now can work with your calculator.
 . Make sure to remove the `< >` symbol in the URL. 
 . `http://127.0.0.1:<port>/starter/calculator/aboutme` 
 . You should see the following response:
-
-```
++
+----
 You can add (+), subtract (-), and multiply (*) with this simple calculator.
-```
+----
 
 You could also try a few of the sample calculator functions: 
 
 * `http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}`, where you can input one of the available operations `(+, _, *)`, and an integer a, and an integer b.
 * So for `http://127.0.0.1:<port>/starter/calculator/+/10/3` you should see: `10+3=13`.
 
-*Nice work! Where to next?*
+=== More Learning
 
 You have created a simple microservice using the VS Code IDE. For further learning:
 
@@ -190,33 +180,32 @@ You have created a simple microservice using the VS Code IDE. For further learni
 * Learn more about using https://www.eclipse.org/codewind/[Codewind].
 * Review https://www.eclipse.org/codewind/mdt-vsc-commands-project.html[project commands for Codewind for VS Code].
 
-=== *Developing with Eclipse*
+== Developing a simple microservice with Eclipse
 
 If you use Eclipse, you can use Codewind for Eclipse to develop and debug your containerized projects from within a local Eclipse IDE.
 
-*Prerequisite* 
+=== Prerequisite
 
 Before you can develop a microservice with Eclipse, you need to:
 
-* https://docs.docker.com/install/[Install Docker] 
+* https://docs.docker.com/install/[Install Docker,window=_blank] 
 ** [Note]: Make sure to install or upgrade to minimum Docker version 19.03. 
-* https://www.eclipse.org/downloads/packages/release/[Install Eclipse]
+* https://www.eclipse.org/downloads/packages/release/[Install Eclipse,window=_blank]
 ** [Note]: Make sure to install or upgrade to mimimum Eclipse version 2019-09 R (4.13.0). 
 
-*Installing Codewind for Eclipse*
+=== Installing Codewind for Eclipse
 
 The Codewind installation includes two parts:
 
-.  The Eclipse plug-in installs when you install Codewind from the https://marketplace.eclipse.org/content/codewind[Eclipse Marketplace] or when you install by searching in the `Eclipse Extensions` view.
+.  The Eclipse plug-in installs when you install Codewind from the https://marketplace.eclipse.org/content/codewind[Eclipse Marketplace,window=_blank] or when you install by searching in the `Eclipse Extensions` view.
 . The Codewind backend containers install after you click `Install`. After you click `Install`, the necessary images are downloaded from the internet. The download is approximately 1 GB.
 
 The following images are pulled. These images together form the Codewind backend:
-```
-. eclipse/codewind-performance-amd64
-. eclipse/codewind-pfe-amd64
-```
 
-*Configuring Codewind with Kabanero Collections*
+. `eclipse/codewind-performance-amd64`
+. `eclipse/codewind-pfe-amd64`
+
+=== Configuring Codewind with Kabanero Collections
 
 Configure Codewind to use Kabanero Collections in a CollectionHub so you can focus exclusively on your code:
 
@@ -228,7 +217,7 @@ Configure Codewind to use Kabanero Collections in a CollectionHub so you can foc
 
 You have now configured Codewind to Kabanero Collections and can proceed to develop your microservice within Codewind. 
 
-*Creating an Appsody project*
+=== Creating an Appsody project
 
 Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page]. 
 
@@ -249,23 +238,24 @@ Your project is displayed in the `Projects (Local)` section. The progress for cr
 
 Your project is complete when you see your project is running and its build is successful. 
 
-*Accessing the application endpoint in a browser*
+=== Accessing the application endpoint in a browser
 
 . Return to your project under the Codewind tab. 
 . Right-click your project and select `Open Application`. 
 
 Your application is now opened in the browser, showing the welcome to your Appsody microservice page. 
 
-*Adding a REST service to your application*
+=== Adding a REST service to your application
 
 . Go to your project's workspace under the Project Explorer tab. 
 . Navigate to `Java Resources->src/main/java->dev.appsody.starter`. 
 . Right-click `dev.appsody.starter` and select `New->Class`.
 . Create a Class file, name it `Calculator.java`, and select `Finish`. This file is your JAX-RS resource. 
-. Populate the file with the following code. 
-. Save the file after you input the code. 
+. Populate the file with the following code then *save* the file.
 
-```
+Calculator.java
+[source,java]
+----
 package dev.appsody.starter;
 
 import javax.ws.rs.core.Application;
@@ -311,10 +301,11 @@ public class Calculator extends Application {
       }
     }
 }
-```
+----
+
 Any changes you make to your code will automatically be built and re-deployed by Codewind and viewed in your browser.
 
-*Working with the microservice* 
+=== Working with the microservice
 
 You now can work with your calculator. 
 
@@ -323,16 +314,16 @@ You now can work with your calculator.
 * http://127.0.0.1:<port>/starter/calculator/aboutme 
 * You should see the following response:
 
-```
 You can add (+), subtract (-), and multiply (*) with this simple calculator.
-```
 
+----
 You could also try a few of the sample calculator functions:
+----
 
 * `http://127.0.0.1:<port>/starter/calculator/{op}/{a}/{b}`, where you can input one of the available operations `(+, _, *)`, and an integer a, and an integer b.
 * So for `http://127.0.0.1:<port>/starter/calculator/+/10/3` you should see: `10+3=13` 
 
-*Nice work! Where to next?*
+=== More Learning
 
 You have completed a simple microservice using the Eclipse IDE. For further learning: 
 
