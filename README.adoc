@@ -17,7 +17,7 @@ In this guide you will learn how to develop a simple microservice with your chos
 
 == Overview
 
-Kabanero's developer experience for IDEs is provided by Eclipse Codewind.  For more information on how Kabanero and its components work, visit https://kabanero.io//docs/ref/general/architecture-overview.html[Kabanero's Architecture and Development Workflows].
+Kabanero's developer experience for IDEs is provided by Eclipse Codewind.  For more information on how Kabanero and its components work, visit https://kabanero.io/docs/ref/general/architecture-overview.html[Kabanero's Architecture and Development Workflows].
 
 Kabanero installs on OKD (The Origin Community Distribution of Kubernetes) or OpenShift and integrates a modern DevOps toolchain and Kabanero Collections which enable developers to use runtimes and frameworks in pre-built container images called `Application stacks`.  
 
