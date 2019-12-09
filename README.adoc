@@ -2,7 +2,7 @@
 permalink: /guides/guide-codewind/
 ---
 :page-layout: guide
-:page-duration: 30
+:page-duration: 30 minutes
 :page-releasedate: 2019-11-22
 :page-guide-category: collections
 :page-description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use. 
