@@ -8,8 +8,8 @@ tags: ['kabanero', 'appsody', 'codewind', 'microservice']
 projectid: guide-codewind
 page-layout: guide-markdown
 page-duration: 30 minutes 
-page-releasedate: TBD
-page-guide-category: collections
+page-releasedate: 02-21-2020
+page-guide-category: stacks
 page-essential: true
 page-essential-order: 1
 page-description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use. 
@@ -35,7 +35,7 @@ Kabanero installs on OpenShift and integrates a modern DevOps toolchain and appl
 
 Eclipse Codewind provides the ability to create application projects for these `Application Stacks` that your company has built, enabling developers to focus on their code and not infrastructure and Kubernetes.  Application deployments to Kubernetes occur via pipelines when developers commit their local code to the correct Git repos Kabanero is managing via webhooks.    
 
-Eclipse Codewind provides the ability to create projects based on a variety of different template types.  These include IBM Cloud starters,Odo, and Appsody templates.  When used with Kabanero, you will only use Appsody templates for the Collections your company has enabled.  Today, there are collections for: Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback.
+Eclipse Codewind provides the ability to create projects based on a variety of different template types.  These include IBM Cloud starters,Odo, and Appsody templates.  When used with Kabanero, you will only use Appsody templates for the Collections your company has enabled.  Today, there are collections for: IBM Cloud Starters, OpenShift Do (odo), Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback.
 
 This guide describes developing a simple microservice using two different IDEs. Select the guide section based on your IDE of choice: 
 
@@ -56,17 +56,17 @@ Before you can develop a microservice with VS Code, you need to:
  
 ### Installing Codewind for VS Code
 
+The Codewind installation pulls the following images that form the Codewind backend:
+
+1. `eclipse/codewind-performance-amd64`
+2. `eclipse/codewind-pfe-amd64`
+
 The Codewind installation includes two parts:
 
 1. The VS Code extension installs when you install Codewind from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=IBM.codewind) and click `Install`. 
     * Or, go to `View->Extensions`, search for Codewind, and click `Install`. 
-2. The Codewind backend containers install after you click `Install` when you are prompted. After you click `Install`, the necessary images are downloaded from the internet. The download is approximately 1 GB.
+2. The Codewind backend containers install after you click `Install` when you are prompted. Clicking `Install` downloads the Codewind backend containers, ~1GB. 
     * **Optional:** If you don’t click `Install` when the notification window first appears, you can access the notification again. Go to `View->Explorer`. Then click `Codewind` and hover the cursor over `Codewind` where there is a switch to turn Codewind on or off. Click the switch so that it is `On`. The notification window is displayed. 
-
-The following images are pulled. These images together form the Codewind backend:
-
-1. `eclipse/codewind-performance-amd64`
-2. `eclipse/codewind-pfe-amd64`
 
 ### Configuring Codewind with application stack hubs
 
@@ -83,7 +83,7 @@ proceed to develop your microservice within Codewind.
 
 ### Creating an Appsody project
 
-Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the [Appsody welcome page](https://appsody.dev/docs). 
+Throughout the application lifestyle, Appsody helps you develop containerized applications and leverage containers curated for your usage. If you want more context about Appsody, visit the [Appsody welcome page](https://appsody.dev/docs). 
 
 1. Under the Explorer pane, select `Codewind`.
 2. Expand `Codewind` by clicking the drop-down arrow. 
@@ -160,7 +160,7 @@ public class Calculator extends Application {
     }
 }
 ```
-Any changes you make to your code is automatically built and re-deployed by Codewind and viewed in your browser. 
+Any changes you make to your code is automatically built and re-deployed by Codewind and viewable in your browser. 
 
 ### Working with the microservice
 
@@ -203,15 +203,15 @@ Before you can develop a microservice with Eclipse, you need to:
 
 ### Installing Codewind for Eclipse
 
-The Codewind installation includes two parts:
-
-1. The Eclipse plug-in installs when you install Codewind from the [Eclipse Marketplace](https://marketplace.eclipse.org/content/codewind)or when you install by searching in the `Eclipse Extensions` view.
-2. The Codewind backend containers install after you click `Install`. After you click `Install`, the necessary images are downloaded from the internet. The download is approximately 1 GB.
-
-The following images are pulled. These images together form the Codewind backend:
+The Codewind installation pulls the following images that form the Codewind backend:
 
 1. `eclipse/codewind-performance-amd64`
 2. `eclipse/codewind-pfe-amd64`
+
+The Codewind installation includes two parts:
+
+1. The Eclipse plug-in installs when you install Codewind from the [Eclipse Marketplace](https://marketplace.eclipse.org/content/codewind)or when you install by searching in the `Eclipse Extensions` view.
+2. The Codewind backend containers install after you click `Install`. Clicking `Install` downloads the Codewind backend containers, ~1GB. 
 
 ### Configuring Codewind with application stack hubs
 
