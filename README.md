@@ -25,7 +25,7 @@ repo-description: TBD
 
 ### Learning objectives 
 
-In this guide you will learn how to develop a simple microservice with your chosen IDE, using Eclipse Codewind, an open source project, which provides IDE extensions for popular IDEs (VS Code and Eclipse IDE).  Eclipse Codewind provides the ability to create new projects based on application stack hub that include application stacks customized to meet your company policies and consistently deploy applications and microservices at scale.
+In this guide you will learn how to develop a simple microservice with your chosen IDE, using Eclipse Codewind, an open source project, which provides IDE extensions for popular IDEs (VS Code and Eclipse IDE).  Eclipse Codewind provides the ability to create new projects based on application stacks that can be customized to meet your company policies and consistently deploy applications and microservices at scale.
 
 ## Overview 
 
@@ -33,9 +33,9 @@ Kabanero's developer experience for IDEs is provided by Eclipse Codewind.  For m
 
 Kabanero installs on OpenShift and integrates a modern DevOps toolchain and application stack hubs which enable developers to use runtimes and frameworks in pre-built container images called `Application stacks`.  
 
-Eclipse Codewind provides the ability to create application projects for these `Application Stacks` that your company has built, enabling developers to focus on their code and not infrastructure and Kubernetes.  Application deployments to Kubernetes occur via pipelines when developers commit their local code to the correct Git repos Kabanero is managing via webhooks.    
+Eclipse Codewind provides the ability to create application projects from these `Application Stacks` that your company has built, enabling developers to focus on their code and not infrastructure and Kubernetes.  Application deployments to Kubernetes occur via pipelines when developers commit their local code to the correct Git repos Kabanero is managing via webhooks.    
 
-Eclipse Codewind provides the ability to create projects based on a variety of different template types.  These include IBM Cloud starters,Odo, and Appsody templates.  When used with Kabanero, you will only use Appsody templates for the Collections your company has enabled.  Today, there are collections for: IBM Cloud Starters, OpenShift Do (odo), Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback.
+Eclipse Codewind provides the ability to create projects based on a variety of different template types.  These include IBM Cloud starters, OpenShift Do (odo), and Appsody templates. Today, there are templates for: IBM Cloud Starters, odo, Eclipse MicroProfile/Java EE, Springboot, Node.js, Node.js with Express, Node.js with Loopback.
 
 This guide describes developing a simple microservice using two different IDEs. Select the guide section based on your IDE of choice: 
 
@@ -68,18 +68,23 @@ The Codewind installation includes two parts:
 2. The Codewind backend containers install after you click `Install` when you are prompted. Clicking `Install` downloads the Codewind backend containers, ~1GB. 
     * **Optional:** If you don’t click `Install` when the notification window first appears, you can access the notification again. Go to `View->Explorer`. Then click `Codewind` and hover the cursor over `Codewind` where there is a switch to turn Codewind on or off. Click the switch so that it is `On`. The notification window is displayed. 
 
-### Configuring Codewind with application stack hubs
+### Configuring Codewind to use application stacks 
 
-Configure Codewind to use application stack hubs so you can focus exclusively on your code:
+Configure Codewind to use Appsody templates so you can focus exclusively on your code. These templates include an Eclipse MicroProfile stack that you can use to follow this guide. Complete the following steps to select the Appsody templates:
 
 1. Under the Explorer pane, select `Codewind`. 
-2. Expand `Codewind` by clicking the drop-down arrow.
-3. Right-click `Projects (Local)`.
-4. Select `Manage Template Sources`. 
-5. Enable application stack hubs. 
+2. Right-click `Local`.
+3. Select `Template Source Manager`. 
+4. Enable `Appsody Stacks - incubator`. 
 
-You now have configured Codewind to application stack hubs and can 
-proceed to develop your microservice within Codewind.
+You now have configured Codewind to Appsody templates and can proceed to develop your microservice within Codewind.
+
+If your organization uses customized application stacks and has given you a URL that points to an `index.json` file, you can add it to Codewind: 
+
+1. Return to  `Codewind` and right-click `Local`. 
+2. Select `Template Source Manager`. 
+3. Click the `Add New +` button to add your URL.
+4. Add your URL in the pop up window and save your changes. 
 
 ### Creating an Appsody project
 
@@ -184,7 +189,7 @@ You could also try a few of the sample calculator functions:
 
 You have created a simple microservice using the VS Code IDE. For further learning:
 
-* Try [additional Kabanero guides](https://www.kabanero.io/guides) available for each Collection: Eclipse MicroProfile, Springboot, Node.js.
+* Try [additional Kabanero guides](https://www.kabanero.io/guides) available for other application stacks: Eclipse MicroProfile, Springboot, Node.js.
 * Learn more about [Codewind](https://www.eclipse.org/codewind/).
 * Review [project commands for Codewind for VS Code](https://www.eclipse.org/codewind/mdt-vsc-commands-project.html).
 
@@ -213,18 +218,25 @@ The Codewind installation includes two parts:
 1. The Eclipse plug-in installs when you install Codewind from the [Eclipse Marketplace](https://marketplace.eclipse.org/content/codewind)or when you install by searching in the `Eclipse Extensions` view.
 2. The Codewind backend containers install after you click `Install`. Clicking `Install` downloads the Codewind backend containers, ~1GB. 
 
-### Configuring Codewind with application stack hubs
+### Configuring Codewind to use application stacks
 
-Configure Codewind to use application stack hubs so you can focus exclusively on your code:
+Configure Codewind to use Appsody templates so you can focus exclusively on your code. These templates include an Eclipse MicroProfile stack that you can use to follow this guide. Complete the following steps to select the Appsody templates:
 
 1. Click the `Codewind` tab. 
 2. Expand `Codewind` by clicking the drop-down arrow.
-3. Right-click `Projects (Local)`.
-4. Select `Manage Template Sources`. 
-5. Select application stack hubs. 
+3. Right-click `Local [Running]`.
+4. Select `Manage Template Sources...`. 
+5. Select `Appsody Stacks - incubator`.
+6. Click the `OK` button. 
 
-You now have configured Codewind to application stack hubs and can 
-proceed to develop your microservice within Codewind.
+You now have configured Codewind to Appsody templates and can proceed to develop your microservice within Codewind.
+
+If your organization uses customized application stacks and has given you a URL that points to an `index.json` file, you can add it to Codewind: 
+
+1. Return to  `Codewind` and right-click `Local [Running]`. 
+2. Select `Manage Template Sources...`. 
+3. Click the `Add...` button to add your URL.
+4. Add your URL in the `URL:` box in the pop up window and save your changes. 
 
 ### Creating an Appsody project
 
@@ -333,7 +345,7 @@ You could also try a few of the sample calculator functions:
 
 You have completed a simple microservice using the Eclipse IDE. For further learning: 
 
-* Try [additional Kabanero guides](https://www.kabanero.io/guides) available for each Collection: Eclipse MicroProfile, Springboot, Node.js.
+* Try [additional Kabanero guides](https://www.kabanero.io/guides) available for other application stacks: Eclipse MicroProfile, Springboot, Node.js.
 * Learn more about [Codewind](https://www.eclipse.org/codewind).
 * Review [managing Codewind projects for Eclipse](https://www.eclipse.org/codewind/mdteclipsemanagingprojects.html). 
 
