@@ -5,18 +5,7 @@ title: Getting Started with Codewind and Kabanero
 duration: 30 minutes 
 description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use.
 tags: ['kabanero', 'appsody', 'codewind', 'microservice']
-projectid: guide-codewind
-page-layout: guide-markdown
-page-duration: 30 minutes 
-page-releasedate: 02-21-2020
-page-guide-category: stacks
-page-essential: true
-page-essential-order: 1
-page-description: Take advantage of Codewind's tools to help build high quality cloud native applications regardless of which IDE or language you use. 
-guide-author: Kabanero
-page-tags: ['kabanero', 'appsody', 'codewind', 'microservice']
-page-permalink: /guides/{projectid}
-repo-description: TBD
+guide-category: stacks
 ---
 
 # Getting Started with Codewind and Kabanero
@@ -25,7 +14,7 @@ repo-description: TBD
 
 ### Learning objectives 
 
-In this guide you will learn how to develop a simple microservice with your chosen IDE, using Eclipse Codewind, an open source project, which provides IDE extensions for popular IDEs (VS Code and Eclipse IDE).  Eclipse Codewind provides the ability to create new projects based on application stacks that can be customized to meet your company policies and consistently deploy applications and microservices at scale.
+In this guide you will learn how to develop a simple microservice with your chosen IDE, using Eclipse Codewind, an open source project, which provides IDE extensions for popular IDEs (VS Code and Eclipse IDE). Eclipse Codewind provides the ability to create new projects based on application stacks that can be customized to meet your company policies and consistently deploy applications and microservices at scale.
 
 ## Overview 
 
@@ -94,7 +83,7 @@ Throughout the application lifestyle, Appsody helps you develop containerized ap
 2. Expand `Codewind` by clicking the drop-down arrow. 
 3. Hover over the `Projects` entry underneath Codewind in the Explorer pane, and press the `+` icon to create a project.
     * **Note:** Make sure Docker is running. Otherwise, you get an error. 
-4. Choose the `Appsody Eclipse MicroProfile template`. 
+4. Choose the `Open Liberty (Default templates)`. 
 5. Name your project `appsody-calculator`.
     * If you don't see Appsody templates, find and select `Template Source Manager` and enable `Appsody Stacks - appsodyhub`. 
 ** The templates are refreshed, and the Appsody templates are available. 
@@ -242,11 +231,11 @@ If your organization uses customized application stacks and has given you a URL 
 
 Appsody helps you develop containerized applications and removes the burden of managing the full software development stack. If you want more context about Appsody, visit the https://appsody.dev/docs[Appsody welcome page]. 
 
-1. Right-click `Projects (Local)` under `Codewind` in the `Codewind` tab.
-2. Select `Create New Project...`
+1. Right-click `Local [Running]` under `Codewind` in the `Codewind` tab.
+2. Select `+ Create New Project...`
     * **Note:** Make sure Docker is running. Otherwise, you get an error. 
 3. Name your project `appsody-calculator`. 
-4. Under `Template`, select `Appsody Eclipse MicroProfile template`. 
+4. Under `Template`, select `Appsody Open Liberty template`. 
     * If you don't see an Appsody template, select the `Manage Template Sources...` link at the end of the window.
     * Select the `Appsody Stacks - appsodyhub` checkbox. 
     * Click `OK`.
@@ -255,7 +244,7 @@ Appsody helps you develop containerized applications and removes the burden of m
     * To monitor your project's progress, right-click on your project, and select `Show Log Files`.
     * Select `Show All`. Then a `Console` tab is displayed where you see your project's build logs. 
 
-Your project is displayed in the `Projects (Local)` section. The progress for creating your project is tracked next to the project's name. 
+Your project is displayed in the `Local [Running]` section. The progress for creating your project is tracked next to the project's name. 
 
 Your project is complete when you see your project is running and its build is successful. 
 
